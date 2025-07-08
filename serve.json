@@ -1,9 +1,0 @@
-{
-  "public": ".",
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/electric-car-cost-calculator.html"
-    }
-  ]
-}
