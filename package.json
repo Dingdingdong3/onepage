@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "echo 'Build complete - Static files ready'",
-    "start": "npx serve -s . -l $PORT -c serve.json",
+    "start": "serve -s . -l $PORT",
     "dev": "npx serve -s . -l 3000",
     "preview": "npm run dev"
   },
