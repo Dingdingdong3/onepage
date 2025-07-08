@@ -1,0 +1,33 @@
+{
+  "name": "html-static-site",
+  "version": "1.0.0",
+  "description": "Static HTML site deployed on Railway",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete - Static files ready'",
+    "start": "npx serve -s . -l $PORT",
+    "dev": "npx serve -s . -l 3000",
+    "preview": "npm run dev"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": [
+    "html",
+    "static",
+    "railway",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url"
+  }
+}
