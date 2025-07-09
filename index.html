@@ -75,47 +75,27 @@
       border-radius: 6px;
     }
     .result { display: none; margin-top: 30px; font-size: 16px; line-height: 1.8; }
-    .result-card { font-size: 16px; }
     .result-card .item {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
+      padding: 6px 0;
       border-bottom: 1px solid #eee;
     }
-    .result-card .item:last-child { border-bottom: none; }
     .calc-item {
       display: flex;
       justify-content: space-between;
       padding: 8px 0;
       border-top: 1px solid #e0e0e0;
     }
-    .subsidy-section .item {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid #eee;
-    }
-    .mono {
-    font-family: 'Courier New', monospace;
-    font-size: 15px;
-    }
     .final-price {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #007bff;
-    border-top: 2px solid #e0e0e0;
-    padding-top: 14px;
-    }
-    .section-title {
-    font-weight: bold;
-    margin: 30px 0 10px;
-    font-size: 16px;
-    color: #007bff;
-    border-bottom: 1px solid #d0d0d0;
-    padding-bottom: 6px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #007bff;
+      border-top: 2px solid #e0e0e0;
+      padding-top: 14px;
     }
     .note {
       font-size: 14px;
@@ -123,6 +103,14 @@
       line-height: 1.5;
       padding-top: 15px;
       margin-bottom: 10px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin: 30px 0 10px;
+      font-size: 16px;
+      color: #007bff;
+      border-bottom: 1px solid #d0d0d0;
+      padding-bottom: 6px;
     }
     .calc-line {
       display: flex;
@@ -135,13 +123,16 @@
       border-top: 2px dashed #ccc;
       margin: 16px 0;
     }
+    .mono {
+      font-family: 'Courier New', monospace;
+    }
   </style>
 </head>
 <body>
 <h1>전기차 취등록세 계산기</h1>
 <div class="box">
   <label for="price">🚗 차량 출고가 (원)</label>
-  <input type="number" id="price" placeholder="예: 55000000" />
+  <input type="text" id="price" inputmode="numeric" placeholder="예: 55,000,000" />
   <div class="quick-buttons">
     <button type="button" onclick="adjustPrice(10000000)">+1,000만원</button>
     <button type="button" onclick="adjustPrice(5000000)">+500만원</button>
@@ -149,38 +140,44 @@
   </div>
 
   <label for="gov">💰 국고 보조금 (원, 선택)</label>
-  <input type="number" id="gov" placeholder="예: 5000000" />
+  <input type="text" id="gov" inputmode="numeric" placeholder="예: 5,000,000" />
 
   <label for="local">🏙️ 지자체 보조금 (원, 선택)</label>
-  <input type="number" id="local" placeholder="예: 1200000" />
+  <input type="text" id="local" inputmode="numeric" placeholder="예: 1,200,000" />
 
   <button onclick="calculate()">🧮 계산하기</button>
   <div class="result" id="result"></div>
 </div>
 
 <script>
-function formatNumberInput(input) {
-  const selectionStart = input.selectionStart;
-  const raw = input.value.replace(/[^\d]/g, "");
-  
-  if (raw === "") {
-    input.value = "";
-    return;
+  function formatNumberInput(input) {
+    const rawValue = input.value.replace(/[^\d]/g, '');
+    if (rawValue === '') {
+      input.value = '';
+      return;
+    }
+
+    const cursorPos = input.selectionStart;
+    const digitsBeforeCursor = input.value.slice(0, cursorPos).replace(/[^\d]/g, '').length;
+
+    const formatted = parseInt(rawValue, 10).toLocaleString();
+    input.value = formatted;
+
+    // 새 커서 위치 계산
+    let newCursorPos = 0, digitCount = 0;
+    for (let i = 0; i < formatted.length; i++) {
+      if (/\d/.test(formatted[i])) digitCount++;
+      if (digitCount >= digitsBeforeCursor) {
+        newCursorPos = i + 1;
+        break;
+      }
+    }
+    input.setSelectionRange(newCursorPos, newCursorPos);
   }
 
-  const prevLength = input.value.length;
-  const formatted = parseInt(raw, 10).toLocaleString();
-  input.value = formatted;
-
-  // 커서 위치 재조정
-  const diff = input.value.length - prevLength;
-  input.setSelectionRange(selectionStart + diff, selectionStart + diff);
-}
-
-
   function getNumberValue(id) {
-    const raw = document.getElementById(id).value.replace(/,/g, '');
-    return parseInt(raw) || 0;
+    const val = document.getElementById(id).value.replace(/,/g, '');
+    return parseInt(val) || 0;
   }
 
   function adjustPrice(amount) {
@@ -189,84 +186,74 @@ function formatNumberInput(input) {
     input.value = (current + amount).toLocaleString();
   }
 
-function calculate() {
-  const price = getNumberValue("price");
-  const govSubsidy = getNumberValue("gov");
-  const localSubsidy = getNumberValue("local");
-  const resultDiv = document.getElementById("result");
+  function calculate() {
+    const price = getNumberValue("price");
+    const govSubsidy = getNumberValue("gov");
+    const localSubsidy = getNumberValue("local");
+    const resultDiv = document.getElementById("result");
 
-  if (!price) {
-    resultDiv.innerHTML = `<span style="color:red;">차량 출고가를 입력해주세요.</span>`;
-    resultDiv.style.display = 'block';
-    return;
-  }
+    if (!price) {
+      resultDiv.innerHTML = `<span style="color:red;">차량 출고가를 입력해주세요.</span>`;
+      resultDiv.style.display = 'block';
+      return;
+    }
 
-  const 총보조금 = govSubsidy + localSubsidy;
-  const 보조금차감가 = price - 총보조금;
-  const 취득세_원래 = price * 0.07;
-  const 감면금액 = Math.min(취득세_원래, 1400000);
-  const 최종_취득세 = 취득세_원래 - 감면금액;
-  const 실구매가 = 보조금차감가 + 최종_취득세;
+    const 총보조금 = govSubsidy + localSubsidy;
+    const 보조금차감가 = price - 총보조금;
+    const 취득세_원래 = price * 0.07;
+    const 감면금액 = Math.min(취득세_원래, 1400000);
+    const 최종_취득세 = 취득세_원래 - 감면금액;
+    const 실구매가 = 보조금차감가 + 최종_취득세;
 
-  // 보조금 영역 (분리 표시)
-  let subsidySection = `
-    <div class="subsidy-section">
-      <div class="item"><span>차량 출고가</span><strong>${price.toLocaleString()}원</strong></div>
-      <div class="item"><span>국고 보조금</span><strong>${govSubsidy.toLocaleString()}원</strong></div>
-      <div class="item"><span>지자체 보조금</span><strong>${localSubsidy.toLocaleString()}원</strong></div>
-      <div class="item"><span>총 보조금</span><strong>${총보조금.toLocaleString()}원</strong></div>
-    </div>
-    <div class="dashed-line"></div>
-  `;
-
-  // 보조금 차감 계산 영역
-  let deductionSection = '';
-  if (총보조금 > 0) {
-    deductionSection = `
-      <div class="section-title">💡 보조금 차감 계산</div>
-      <div class="calc-line">
-        <span>출고가 − 총 보조금</span>
-        <span class="mono">${price.toLocaleString()} - ${총보조금.toLocaleString()}</span>
+    let subsidySection = `
+      <div class="result-card">
+        <div class="item"><span>차량 출고가</span><strong>${price.toLocaleString()}원</strong></div>
+        <div class="item"><span>국고 보조금</span><strong>${govSubsidy.toLocaleString()}원</strong></div>
+        <div class="item"><span>지자체 보조금</span><strong>${localSubsidy.toLocaleString()}원</strong></div>
+        <div class="item"><span>총 보조금</span><strong>${총보조금.toLocaleString()}원</strong></div>
       </div>
-      <div class="calc-item"><span>보조금 차감 차량가</span><strong>${보조금차감가.toLocaleString()}원</strong></div>
+      <div class="dashed-line"></div>
     `;
-  } else {
-    // 보조금이 0원이면 감면은 여전히 적용됨 (법 기준)
-    deductionSection = `
-      <div class="section-title">💡 취득세 계산</div>
+
+    let deductionSection = '';
+    if (총보조금 > 0) {
+      deductionSection += `
+        <div class="section-title">💡 보조금 차감 계산</div>
+        <div class="calc-line">
+          <span>출고가 − 총 보조금</span>
+          <span class="mono">${price.toLocaleString()} - ${총보조금.toLocaleString()}</span>
+        </div>
+        <div class="calc-item"><span>보조금 차감 차량가</span><strong>${보조금차감가.toLocaleString()}원</strong></div>
+      `;
+    } else {
+      deductionSection += `<div class="section-title">💡 취득세 계산</div>`;
+    }
+
+    deductionSection += `
+      <div class="calc-item"><span>취득세 (7%)</span><strong>${취득세_원래.toLocaleString()}원</strong></div>
+      <div class="calc-item"><span>감면 금액</span><strong>${감면금액.toLocaleString()}원</strong></div>
+      <div class="calc-item"><span>최종 부담 취득세</span><strong>${최종_취득세.toLocaleString()}원</strong></div>
     `;
+
+    const finalSection = `
+      <div class="section-title">🧾 실구매가 계산</div>
+      <div class="calc-line">
+        <span>(보조금 차감 차량가 + 최종 취득세)</span>
+        <span class="mono">${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()}</span>
+      </div>
+      <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
+    `;
+
+    resultDiv.innerHTML = subsidySection + deductionSection + finalSection;
+    resultDiv.style.display = 'block';
   }
 
-  deductionSection += `
-    <div class="calc-item"><span>취득세 (7%)</span><strong>${취득세_원래.toLocaleString()}원</strong></div>
-    <div class="calc-item"><span>감면 금액</span><strong>${감면금액.toLocaleString()}원</strong></div>
-    <div class="calc-item"><span>최종 부담 취득세</span><strong>${최종_취득세.toLocaleString()}원</strong></div>
-  `;
-
-  // 실구매가 계산 영역
-  const finalSection = `
-    <div class="section-title">🧾 실구매가 계산</div>
-    <div class="calc-line">
-      <span>(보조금 차감 차량가 + 최종 취득세)</span>
-      <span class="mono">${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()}</span>
-    </div>
-    <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
-  `;
-
-  // 출력
-  resultDiv.innerHTML = subsidySection + deductionSection + finalSection;
-  resultDiv.style.display = 'block';
-}
-
-
-  // 자동 포맷 적용
-    document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     ["price", "gov", "local"].forEach(id => {
-        const el = document.getElementById(id);
-        el.addEventListener("input", () => formatNumberInput(el));
+      const input = document.getElementById(id);
+      input.addEventListener("input", () => formatNumberInput(input));
     });
-});
+  });
 </script>
-
 </body>
 </html>
