@@ -32,7 +32,7 @@
       font-size: 15px;
       display: block;
     }
-    input, select {
+    input {
       width: 100%;
       padding: 14px;
       margin-top: 8px;
@@ -41,7 +41,7 @@
       border-radius: 6px;
       transition: border-color 0.2s;
     }
-    input:focus, select:focus {
+    input:focus {
       border-color: #007bff;
       outline: none;
     }
@@ -59,6 +59,21 @@
       transition: background 0.2s;
     }
     button:hover { background: #0056d6; }
+    .quick-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .quick-buttons button {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      background: #e7f0fb;
+      color: #007bff;
+      font-weight: bold;
+      border: 1px solid #cce0ff;
+      border-radius: 6px;
+    }
     .result { display: none; margin-top: 30px; font-size: 16px; line-height: 1.8; }
     .result-card { font-size: 16px; }
     .result-card .item {
@@ -110,107 +125,80 @@
   </style>
 </head>
 <body>
-<h1>전기차 실구매가 계산기</h1>
+<h1>전기차 취등록세 계산기</h1>
 <div class="box">
   <label for="price">🚗 차량 출고가 (원)</label>
   <input type="number" id="price" placeholder="예: 55000000" />
-  <label for="region">📍 지역 선택</label>
-  <select id="region">
-    <option value="">-- 시/도를 선택하세요 --</option>
-    <option value="서울">서울특별시</option>
-    <option value="부산">부산광역시</option>
-    <option value="대구">대구광역시</option>
-    <option value="인천">인천광역시</option>
-    <option value="광주">광주광역시</option>
-    <option value="대전">대전광역시</option>
-    <option value="울산">울산광역시</option>
-    <option value="세종">세종특별자치시</option>
-    <option value="경기">경기도</option>
-    <option value="강원">강원특별자치도</option>
-    <option value="충북">충청북도</option>
-    <option value="충남">충청남도</option>
-    <option value="전북">전라북도</option>
-    <option value="전남">전라남도</option>
-    <option value="경북">경상북도</option>
-    <option value="경남">경상남도</option>
-    <option value="제주">제주특별자치도</option>
-  </select>
+  <div class="quick-buttons">
+    <button type="button" onclick="adjustPrice(10000000)">+1,000만원</button>
+    <button type="button" onclick="adjustPrice(5000000)">+500만원</button>
+    <button type="button" onclick="adjustPrice(1000000)">+100만원</button>
+  </div>
+
+  <label for="gov">💰 국고 보조금 (원)</label>
+  <input type="number" id="gov" placeholder="예: 5000000" />
+
+  <label for="local">🏙️ 지자체 보조금 (원)</label>
+  <input type="number" id="local" placeholder="예: 1200000" />
+
   <button onclick="calculate()">🧮 계산하기</button>
   <div class="result" id="result"></div>
 </div>
+
 <script>
-function getGovSubsidy(carPrice) {
-  if (carPrice <= 57000000) return 5000000;
-  else if (carPrice <= 85000000) return 2500000;
-  else return 0;
-}
-const subsidyData = {
-  "서울": 1500000, "부산": 1000000, "대구": 1300000,
-  "인천": 1200000, "광주": 1700000, "대전": 1100000,
-  "울산": 1000000, "세종": 1200000, "경기": 1200000,
-  "강원": 1300000, "충북": 1100000, "충남": 1100000,
-  "전북": 1100000, "전남": 1200000, "경북": 1200000,
-  "경남": 1300000, "제주": 2000000
-};
-function calculate() {
-  const price = parseInt(document.getElementById("price").value);
-  const region = document.getElementById("region").value;
-  const resultDiv = document.getElementById("result");
-  if (!price || !region || subsidyData[region] === undefined) {
-    resultDiv.innerHTML = `<span style="color:red;">모든 항목을 입력해주세요.</span>`;
-    resultDiv.style.display = 'block';
-    return;
+  function adjustPrice(amount) {
+    const priceInput = document.getElementById("price");
+    const current = parseInt(priceInput.value) || 0;
+    priceInput.value = current + amount;
   }
-  const 국고보조금 = getGovSubsidy(price);
-  const 지자체보조금 = subsidyData[region];
-  const 총보조금 = 국고보조금 + 지자체보조금;
-  const 보조금차감가 = price - 총보조금;
-  const 취득세_원래 = price * 0.07;
-  const 감면금액 = Math.min(취득세_원래, 1400000);
-  const 최종_취득세 = 취득세_원래 - 감면금액;
-  const 실구매가 = 보조금차감가 + 최종_취득세;
-  const govNote = (price <= 57000000)
-    ? "전액 500만원이 적용되었습니다."
-    : (price <= 85000000)
-      ? "50% 감액되어 250만원이 적용되었습니다."
-      : "차량가가 8,500만원 초과로 미지급되었습니다.";
-  const regionName = document.querySelector('#region option:checked').textContent;
-  resultDiv.innerHTML = `
-    <div class="result-card">
-      <div class="item"><span>차량 출고가</span><strong>${price.toLocaleString()}원</strong></div>
-      <div class="item"><span>국고 보조금</span><strong>${국고보조금.toLocaleString()}원</strong></div>
-      <div class="item"><span>지자체 보조금</span><strong>${지자체보조금.toLocaleString()}원</strong></div>
-      <div class="item"><span>총 보조금</span><strong>${총보조금.toLocaleString()}원</strong></div>
-    </div>
-    <div class="dashed-line"></div>
-    <div class="section-title">💡 보조금 차감 계산</div>
-    <div class="calc-line">출고가 − 총 보조금 <span>${price.toLocaleString()} - ${총보조금.toLocaleString()} =</span></div>
-    <div class="calc-item"><span>보조금 차감 차량가</span><strong>${보조금차감가.toLocaleString()}원</strong></div>
-    <div class="calc-item"><span>취득세 (7%)</span><strong>${취득세_원래.toLocaleString()}원</strong></div>
-    <div class="calc-item"><span>감면 금액</span><strong>${감면금액.toLocaleString()}원</strong></div>
-    <div class="calc-item"><span>최종 부담 취득세</span><strong>${최종_취득세.toLocaleString()}원</strong></div>
-    <div class="section-title">🧾 실구매가 계산</div>
-    <div class="calc-line">(보조금 차감 차량가 + 최종 취득세) <span>${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()} =</span></div>
-    <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
-    <div class="note">
-      ✅ 전기차는 취득세 7%에서 <strong>최대 140만 원 감면</strong> 혜택이 있습니다.<br>
-      ✅ 보조금은 <strong>국고 + 지자체</strong>로 구성되며 지역과 예산에 따라 매년 달라질 수 있습니다.<br><br>
-      <strong>📌 참고사항</strong><br>
-      - 국고 보조금은 차량 가격 기준으로 ${govNote}<br>
-      - 지자체 보조금은 "${regionName}" 기준으로 ${지자체보조금.toLocaleString()}원이 적용되었습니다.<br>
-      - 실구매가는 보조금 차감 차량가(${보조금차감가.toLocaleString()}원) + 최종 부담 취득세(${최종_취득세.toLocaleString()}원)로 계산되었습니다.
-    </div>
-  `;
-  resultDiv.style.display = 'block';
-}
+
+  function calculate() {
+    const price = parseInt(document.getElementById("price").value);
+    const govSubsidy = parseInt(document.getElementById("gov").value);
+    const localSubsidy = parseInt(document.getElementById("local").value);
+    const resultDiv = document.getElementById("result");
+
+    if (!price || !govSubsidy || !localSubsidy) {
+      resultDiv.innerHTML = `<span style="color:red;">모든 항목을 입력해주세요.</span>`;
+      resultDiv.style.display = 'block';
+      return;
+    }
+
+    const 총보조금 = govSubsidy + localSubsidy;
+    const 보조금차감가 = price - 총보조금;
+    const 취득세_원래 = price * 0.07;
+    const 감면금액 = Math.min(취득세_원래, 1400000);
+    const 최종_취득세 = 취득세_원래 - 감면금액;
+    const 실구매가 = 보조금차감가 + 최종_취득세;
+
+    resultDiv.innerHTML = `
+      <div class="result-card">
+        <div class="item"><span>차량 출고가</span><strong>${price.toLocaleString()}원</strong></div>
+        <div class="item"><span>국고 보조금</span><strong>${govSubsidy.toLocaleString()}원</strong></div>
+        <div class="item"><span>지자체 보조금</span><strong>${localSubsidy.toLocaleString()}원</strong></div>
+        <div class="item"><span>총 보조금</span><strong>${총보조금.toLocaleString()}원</strong></div>
+      </div>
+      <div class="dashed-line"></div>
+      <div class="section-title">💡 보조금 차감 계산</div>
+      <div class="calc-line">출고가 − 총 보조금 <span>${price.toLocaleString()} - ${총보조금.toLocaleString()} =</span></div>
+      <div class="calc-item"><span>보조금 차감 차량가</span><strong>${보조금차감가.toLocaleString()}원</strong></div>
+      <div class="calc-item"><span>취득세 (7%)</span><strong>${취득세_원래.toLocaleString()}원</strong></div>
+      <div class="calc-item"><span>감면 금액</span><strong>${감면금액.toLocaleString()}원</strong></div>
+      <div class="calc-item"><span>최종 부담 취득세</span><strong>${최종_취득세.toLocaleString()}원</strong></div>
+      <div class="section-title">🧾 실구매가 계산</div>
+      <div class="calc-line">(보조금 차감 차량가 + 최종 취득세) <span>${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()} =</span></div>
+      <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
+      <div class="note">
+        ✅ 전기차는 취득세 7%에서 <strong>최대 140만 원 감면</strong> 혜택이 있습니다.<br>
+        ✅ 보조금은 <strong>사용자 입력</strong> 기준으로 계산되었습니다.<br><br>
+        <strong>📌 참고사항</strong><br>
+        - 국고 보조금 입력값: ${govSubsidy.toLocaleString()}원<br>
+        - 지자체 보조금 입력값: ${localSubsidy.toLocaleString()}원<br>
+        - 실구매가는 보조금 차감 차량가(${보조금차감가.toLocaleString()}원) + 최종 부담 취득세(${최종_취득세.toLocaleString()}원)로 계산되었습니다.
+      </div>
+    `;
+    resultDiv.style.display = 'block';
+  }
 </script>
 </body>
 </html>
-
-
-<script>
-  console.log("🔥 스크립트 작동함");
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("✅ DOM 로딩 완료");
-  });
-</script>
