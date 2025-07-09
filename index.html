@@ -146,16 +146,30 @@
 </div>
 
 <script>
+  function formatNumberInput(input) {
+    const value = input.value.replace(/[^\d]/g, ""); // 숫자만 추출
+    if (value === "") {
+      input.value = "";
+      return;
+    }
+    input.value = parseInt(value, 10).toLocaleString(); // 쉼표 추가
+  }
+
+  function getNumberValue(id) {
+    const raw = document.getElementById(id).value.replace(/,/g, '');
+    return parseInt(raw) || 0;
+  }
+
   function adjustPrice(amount) {
-    const priceInput = document.getElementById("price");
-    const current = parseInt(priceInput.value) || 0;
-    priceInput.value = current + amount;
+    const input = document.getElementById("price");
+    const current = getNumberValue("price");
+    input.value = (current + amount).toLocaleString();
   }
 
   function calculate() {
-    const price = parseInt(document.getElementById("price").value);
-    const govSubsidy = parseInt(document.getElementById("gov").value) || 0;
-    const localSubsidy = parseInt(document.getElementById("local").value) || 0;
+    const price = getNumberValue("price");
+    const govSubsidy = getNumberValue("gov");
+    const localSubsidy = getNumberValue("local");
     const resultDiv = document.getElementById("result");
 
     if (!price) {
@@ -199,6 +213,15 @@
     `;
     resultDiv.style.display = 'block';
   }
+
+  // 자동 포맷 적용
+  document.addEventListener("DOMContentLoaded", function () {
+    ["price", "gov", "local"].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener("input", () => formatNumberInput(el));
+    });
+  });
 </script>
+
 </body>
 </html>
