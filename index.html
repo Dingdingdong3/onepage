@@ -135,10 +135,10 @@
     <button type="button" onclick="adjustPrice(1000000)">+100만원</button>
   </div>
 
-  <label for="gov">💰 국고 보조금 (원)</label>
+  <label for="gov">💰 국고 보조금 (원, 선택)</label>
   <input type="number" id="gov" placeholder="예: 5000000" />
 
-  <label for="local">🏙️ 지자체 보조금 (원)</label>
+  <label for="local">🏙️ 지자체 보조금 (원, 선택)</label>
   <input type="number" id="local" placeholder="예: 1200000" />
 
   <button onclick="calculate()">🧮 계산하기</button>
@@ -154,12 +154,12 @@
 
   function calculate() {
     const price = parseInt(document.getElementById("price").value);
-    const govSubsidy = parseInt(document.getElementById("gov").value);
-    const localSubsidy = parseInt(document.getElementById("local").value);
+    const govSubsidy = parseInt(document.getElementById("gov").value) || 0;
+    const localSubsidy = parseInt(document.getElementById("local").value) || 0;
     const resultDiv = document.getElementById("result");
 
-    if (!price || !govSubsidy || !localSubsidy) {
-      resultDiv.innerHTML = `<span style="color:red;">모든 항목을 입력해주세요.</span>`;
+    if (!price) {
+      resultDiv.innerHTML = `<span style="color:red;">차량 출고가를 입력해주세요.</span>`;
       resultDiv.style.display = 'block';
       return;
     }
@@ -190,7 +190,7 @@
       <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
       <div class="note">
         ✅ 전기차는 취득세 7%에서 <strong>최대 140만 원 감면</strong> 혜택이 있습니다.<br>
-        ✅ 보조금은 <strong>사용자 입력</strong> 기준으로 계산되었습니다.<br><br>
+        ✅ 보조금은 <strong>입력한 값</strong> 기준으로 계산되며, 입력하지 않으면 0원으로 간주됩니다.<br><br>
         <strong>📌 참고사항</strong><br>
         - 국고 보조금 입력값: ${govSubsidy.toLocaleString()}원<br>
         - 지자체 보조금 입력값: ${localSubsidy.toLocaleString()}원<br>
