@@ -75,56 +75,60 @@
       border-radius: 6px;
     }
     .result { display: none; margin-top: 30px; font-size: 16px; line-height: 1.8; }
-    .result-card .item {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid #eee;
+    
+    /* 그룹화된 섹션 스타일 */
+    .section {
+      background: #fafbfc;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
     }
-    .calc-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-top: 1px solid #e0e0e0;
-    }
-    .final-price {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      text-align: center;
-      font-size: 22px;
+    .section-header {
       font-weight: bold;
-      color: #007bff;
-      border-top: 2px solid #e0e0e0;
-      padding-top: 14px;
-    }
-    .note {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.5;
-      padding-top: 15px;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-weight: bold;
-      margin: 30px 0 10px;
       font-size: 16px;
       color: #007bff;
-      border-bottom: 1px solid #d0d0d0;
-      padding-bottom: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .calc-line {
+    .section-item {
       display: flex;
       justify-content: space-between;
-      font-family: monospace;
       padding: 8px 0;
-      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e9ecef;
     }
-    .dashed-line {
-      border-top: 2px dashed #ccc;
-      margin: 16px 0;
+    .section-item:last-child {
+      border-bottom: none;
+      font-weight: bold;
+      color: #007bff;
+      margin-top: 10px;
+      padding-top: 15px;
+      border-top: 2px solid #e9ecef;
     }
-    .mono {
-      font-family: 'Courier New', monospace;
+    .calculation-formula {
+      font-family: monospace;
+      font-size: 14px;
+      color: #666;
+      background: #f8f9fa;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin: 8px 0;
+    }
+    .final-result {
+      background: #e7f3ff;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .final-amount {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007bff;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -205,46 +209,94 @@
     const 최종_취득세 = 취득세_원래 - 감면금액;
     const 실구매가 = 보조금차감가 + 최종_취득세;
 
-    let subsidySection = `
-      <div class="result-card">
-        <div class="item"><span>차량 출고가</span><strong>${price.toLocaleString()}원</strong></div>
-        <div class="item"><span>국고 보조금</span><strong>${govSubsidy.toLocaleString()}원</strong></div>
-        <div class="item"><span>지자체 보조금</span><strong>${localSubsidy.toLocaleString()}원</strong></div>
-        <div class="item"><span>총 보조금</span><strong>${총보조금.toLocaleString()}원</strong></div>
+    let resultHTML = `
+      <!-- 1. 차량 출고가 섹션 -->
+      <div class="section">
+        <div class="section-header">🚗 차량 출고가</div>
+        <div class="section-item">
+          <span>차량 출고가</span>
+          <strong>${price.toLocaleString()}원</strong>
+        </div>
       </div>
-      <div class="dashed-line"></div>
     `;
 
-    let deductionSection = '';
+    // 2. 보조금 섹션 (보조금이 있을 때만 표시)
     if (총보조금 > 0) {
-      deductionSection += `
-        <div class="section-title">💡 보조금 차감 계산</div>
-        <div class="calc-line">
-          <span>출고가 − 총 보조금</span>
-          <span class="mono">${price.toLocaleString()} - ${총보조금.toLocaleString()}</span>
+      resultHTML += `
+      <div class="section">
+        <div class="section-header">💰 보조금 내역</div>`;
+      
+      if (govSubsidy > 0) {
+        resultHTML += `
+        <div class="section-item">
+          <span>국고 보조금</span>
+          <span>${govSubsidy.toLocaleString()}원</span>
+        </div>`;
+      }
+      
+      if (localSubsidy > 0) {
+        resultHTML += `
+        <div class="section-item">
+          <span>지자체 보조금</span>
+          <span>${localSubsidy.toLocaleString()}원</span>
+        </div>`;
+      }
+      
+      resultHTML += `
+        <div class="section-item">
+          <span>총 보조금</span>
+          <strong>${총보조금.toLocaleString()}원</strong>
         </div>
-        <div class="calc-item"><span>보조금 차감 차량가</span><strong>${보조금차감가.toLocaleString()}원</strong></div>
-      `;
-    } else {
-      deductionSection += `<div class="section-title">💡 취득세 계산</div>`;
+      </div>`;
+
+      // 3. 보조금 차감 차량가 섹션 (보조금이 있을 때만 표시)
+      resultHTML += `
+      <div class="section">
+        <div class="section-header">💡 보조금 차감 계산</div>
+        <div class="calculation-formula">
+          출고가 - 총 보조금 = ${price.toLocaleString()} - ${총보조금.toLocaleString()}
+        </div>
+        <div class="section-item">
+          <span>보조금 차감 차량가</span>
+          <strong>${보조금차감가.toLocaleString()}원</strong>
+        </div>
+      </div>`;
     }
 
-    deductionSection += `
-      <div class="calc-item"><span>취득세 (7%)</span><strong>${취득세_원래.toLocaleString()}원</strong></div>
-      <div class="calc-item"><span>감면 금액</span><strong>${감면금액.toLocaleString()}원</strong></div>
-      <div class="calc-item"><span>최종 부담 취득세</span><strong>${최종_취득세.toLocaleString()}원</strong></div>
-    `;
+    resultHTML += `
 
-    const finalSection = `
-      <div class="section-title">🧾 실구매가 계산</div>
-      <div class="calc-line">
-        <span>(보조금 차감 차량가 + 최종 취득세)</span>
-        <span class="mono">${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()}</span>
+      <!-- 취득세 계산 섹션 -->
+      <div class="section">
+        <div class="section-header">🧾 취득세 계산</div>
+        <div class="section-item">
+          <span>취득세 (7%)</span>
+          <span>${취득세_원래.toLocaleString()}원</span>
+        </div>
+        <div class="section-item">
+          <span>감면 금액</span>
+          <span>${감면금액.toLocaleString()}원</span>
+        </div>
+        <div class="section-item">
+          <span>최종 부담 취득세</span>
+          <strong>${최종_취득세.toLocaleString()}원</strong>
+        </div>
       </div>
-      <div class="final-price">💰 총 실구매가: ${실구매가.toLocaleString()}원</div>
+
+      <!-- 최종 결과 -->
+      <div class="final-result">
+        <div style="font-size: 16px; color: #666;">
+          보조금 차감 차량가 + 최종 부담 취득세
+        </div>
+        <div style="font-family: monospace; font-size: 14px; color: #666; margin: 10px 0;">
+          ${보조금차감가.toLocaleString()} + ${최종_취득세.toLocaleString()}
+        </div>
+        <div class="final-amount">
+          💰 총 실구매가: ${실구매가.toLocaleString()}원
+        </div>
+      </div>
     `;
 
-    resultDiv.innerHTML = subsidySection + deductionSection + finalSection;
+    resultDiv.innerHTML = resultHTML;
     resultDiv.style.display = 'block';
   }
 
