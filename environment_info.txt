@@ -1,0 +1,45 @@
+=== 전기차 보조금 크롤러 환경 정보 ===
+설치 날짜: Thu Jul 10 20:47:03 KST 2025
+환경명: ev_scraper
+Python 경로: /opt/anaconda3/envs/ev_scraper/bin/python
+설치된 라이브러리: requests-html
+
+=== 환경 활성화 명령어 ===
+source /opt/anaconda3/bin/activate
+conda activate ev_scraper
+
+=== 실행 명령어 ===
+/opt/anaconda3/envs/ev_scraper/bin/python ev_crawler.py
+
+=== 각 방법별 특징 ===
+1. requests (기본):
+   - 가장 빠름
+   - JavaScript 미지원
+   - 정적 콘텐츠만 가능
+
+2. requests-html:
+   - 간단한 설정
+   - JavaScript 지원
+   - Selenium보다 가벼움
+   - 중간 정도 속도
+
+3. Playwright:
+   - 매우 빠름
+   - 현대적 API
+   - 강력한 JavaScript 지원
+   - Microsoft 개발/지원
+
+4. Pyppeteer:
+   - 비동기 처리
+   - Puppeteer의 Python 포트
+   - 복잡한 상호작용 가능
+
+=== 사용 예시 ===
+# 자동 방법 선택 (권장)
+manager = EVSubsidyManager(method='auto')
+
+# 특정 방법 지정
+manager = EVSubsidyManager(method='requests-html')
+manager = EVSubsidyManager(method='playwright')
+manager = EVSubsidyManager(method='pyppeteer')
+manager = EVSubsidyManager(method='requests')
