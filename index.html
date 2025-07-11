@@ -16,40 +16,15 @@
             background-color: #f8fafc;
             color: #334155;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .page-wrapper {
-            display: flex;
-            min-height: 100vh;
-            gap: 20px;
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .container {
-            flex: 1;
             max-width: 900px;
+            margin: 20px auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-        }
-
-        .sidebar {
-            width: 350px;
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-        }
-
-        .sidebar-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            padding: 24px;
         }
 
         .header {
@@ -191,6 +166,16 @@
             border-left: 4px solid #3b82f6;
         }
 
+        .vehicle-item.no-selection {
+            background: #f1f5f9;
+            border-left: 4px solid #64748b;
+            font-weight: 500;
+        }
+
+        .vehicle-item.no-selection:hover {
+            background: #e2e8f0;
+        }
+
         .vehicle-name {
             font-weight: 500;
             color: #1e293b;
@@ -201,101 +186,25 @@
 
         .vehicle-subsidy {
             font-size: 0.85rem;
-            color: #64748b;
-            margin-left: 12px;
-            flex-shrink: 0;
+            font-weight: 500;
+            min-width: 120px;
+            text-align: right;
         }
 
         .subsidy-high {
             color: #059669;
-            font-weight: 500;
         }
 
         .subsidy-medium {
             color: #d97706;
-            font-weight: 500;
         }
 
         .subsidy-low {
             color: #dc2626;
-            font-weight: 500;
         }
 
-        /* 정보 박스 분할 레이아웃 */
-        .info-box-container {
-            margin: 16px 0;
-        }
-
-        .info-box-split {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-radius: 8px;
-            padding: 16px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .info-box-left,
-        .info-box-right {
-            min-width: 0;
-        }
-
-        .info-box-left h4,
-        .info-box-right h4 {
-            color: #0369a1;
-            margin-bottom: 8px;
-            font-size: 0.925rem;
-        }
-
-        .info-box-left ul,
-        .info-box-right ul {
-            margin-left: 16px;
-            color: #0c4a6e;
-            font-size: 0.875rem;
-        }
-
-        .info-box-left ul li,
-        .info-box-right ul li {
-            margin-bottom: 4px;
-        }
-
-        /* 모바일 결과 섹션 개선 */
-        .result-section {
-            background: #f8fafc;
-            padding: 24px;
-            border-radius: 8px;
-            margin-top: 24px;
-            display: none;
-        }
-
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .result-item {
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-
-        .result-label {
-            font-size: 0.8rem;
+        .subsidy-none {
             color: #64748b;
-            margin-bottom: 4px;
-            line-height: 1.3;
-        }
-
-        .result-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e293b;
-            line-height: 1.2;
         }
 
         /* 가격 입력 버튼 */
@@ -357,74 +266,132 @@
 
         /* 결과 섹션 */
         .result-section {
-            background: #f8fafc;
-            padding: 24px;
-            border-radius: 8px;
-            margin-top: 24px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 32px;
             display: none;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .result-title {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.75rem;
+            font-weight: 700;
             color: #1e293b;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .result-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .result-item {
-            background: white;
-            padding: 16px;
-            border-radius: 8px;
+            background: #f8fafc;
+            padding: 28px 24px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .result-item:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .result-item.subsidy {
+            background: linear-gradient(135deg, #f0fdf4 0%, #f7fee7 100%);
+            border-color: #bbf7d0;
+        }
+
+        .result-item.tax {
+            background: linear-gradient(135deg, #fef2f2 0%, #fef7f7 100%);
+            border-color: #fecaca;
+        }
+
+        .result-item.reduction {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border-color: #d8b4fe;
         }
 
         .result-label {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: #64748b;
-            margin-bottom: 4px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .result-value {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.75rem;
+            font-weight: 800;
             color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .result-value.positive {
+            color: #059669;
+        }
+
+        .result-value.negative {
+            color: #dc2626;
+        }
+
+        .result-icon {
+            font-size: 1.25rem;
         }
 
         .final-result {
-            background: #1e293b;
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
             color: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 36px;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.2);
         }
 
         .final-label {
-            font-size: 1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
 
         .final-value {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
 
         /* 정보 박스 */
+        .info-box-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
         .info-box {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
             border-radius: 8px;
             padding: 16px;
-            margin: 16px 0;
         }
 
         .info-box h4 {
@@ -486,18 +453,9 @@
 
         /* 반응형 */
         @media (max-width: 768px) {
-            .page-wrapper {
-                flex-direction: column;
-                padding: 10px;
-            }
-
             .container {
+                margin: 10px;
                 border-radius: 8px;
-            }
-
-            .sidebar {
-                width: 100%;
-                position: static;
             }
 
             .main-content {
@@ -517,37 +475,26 @@
             }
 
             .result-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .result-item {
-                padding: 10px 8px;
-            }
-
-            .result-label {
-                font-size: 0.75rem;
-            }
-
-            .result-value {
-                font-size: 1rem;
-            }
-
-            .final-result {
-                padding: 16px;
-            }
-
-            .final-value {
-                font-size: 1.5rem;
+                grid-template-columns: 1fr;
             }
 
             .vehicle-tabs {
                 flex-direction: column;
             }
 
-            .info-box-split {
+            .info-box-container {
                 grid-template-columns: 1fr;
-                gap: 16px;
+            }
+
+            .vehicle-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .vehicle-subsidy {
+                text-align: left;
+                min-width: auto;
             }
         }
 
@@ -706,6 +653,10 @@
             background-color: #fef3c7;
             font-weight: 500;
         }
+
+        .search-container {
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -728,11 +679,11 @@
                         <span>만원</span>
                     </div>
                     <div class="price-buttons">
-                        <button class="price-btn" onclick="addPrice(1000)">+1천만</button>
-                        <button class="price-btn" onclick="addPrice(500)">+500만</button>
-                        <button class="price-btn" onclick="addPrice(100)">+100만</button>
-                        <button class="price-btn" onclick="addPrice(50)">+50만</button>
-                        <button class="price-btn" onclick="addPrice(10)">+10만</button>
+                        <button class="price-btn" onclick="addPrice(1000)">+ 1,000만</button>
+                        <button class="price-btn" onclick="addPrice(500)">+ 500만</button>
+                        <button class="price-btn" onclick="addPrice(100)">+ 100만</button>
+                        <button class="price-btn" onclick="addPrice(50)">+ 50만</button>
+                        <button class="price-btn" onclick="addPrice(10)">+ 10만</button>
                         <button class="price-btn" onclick="clearPrice()">초기화</button>
                     </div>
                 </div>
@@ -757,19 +708,15 @@
                     <label class="form-label">차량 선택 (국고 보조금 자동 적용)</label>
                     <div class="vehicle-selection">
                         <div class="vehicle-tabs">
-                            <button class="vehicle-tab active" onclick="switchVehicleTab('none')">선택 안함</button>
-                            <button class="vehicle-tab" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
+                            <button class="vehicle-tab active" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
                             <button class="vehicle-tab" onclick="switchVehicleTab('direct')">직접 입력</button>
                         </div>
                         
                         <div class="vehicle-tab-content">
-                            <!-- 선택 안함 탭 -->
-                            <div id="none-tab" class="vehicle-tab-panel active">
-                                <div class="custom-input-section">
-                                    <p style="color: #64748b; text-align: center; padding: 20px;">
-                                        차량을 선택하지 않고 계산합니다.<br>
-                                        <strong>국고 보조금: 0원</strong>으로 적용됩니다.
-                                    </p>
+                            <!-- 차량 목록 탭 -->
+                            <div id="list-tab" class="vehicle-tab-panel active">
+                                <div class="vehicle-list" id="vehicleList">
+                                    <!-- 차량 목록이 여기에 동적으로 생성됩니다 -->
                                 </div>
                             </div>
                             
@@ -798,13 +745,6 @@
                                     </p>
                                 </div>
                             </div>
-                            
-                            <!-- 차량 목록 탭 -->
-                            <div id="list-tab" class="vehicle-tab-panel">
-                                <div class="vehicle-list" id="vehicleList">
-                                    <!-- 차량 목록이 여기에 동적으로 생성됩니다 -->
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -817,29 +757,26 @@
                 <div class="form-group">
                     <label class="form-label">지역 선택 (지자체 보조금)</label>
                     <select id="localSubsidy" class="input">
-                        <option value="">지역을 선택하세요</option>
-                        <option value="0">지자체 보조금 없음</option>
+                        <option value="0">없음</option>
                     </select>
                 </div>
 
                 <div class="info-box-container">
-                    <div class="info-box-split">
-                        <div class="info-box-left">
-                            <h4>💰 보조금 지원 기준</h4>
-                            <ul>
-                                <li><strong>전액 지원:</strong> 차량 가액 5,300만원 미만</li>
-                                <li><strong>50% 지원:</strong> 5,300만원 이상 ~ 8,500만원 미만</li>
-                                <li><strong>미지원:</strong> 8,500만원 이상</li>
-                            </ul>
-                        </div>
-                        <div class="info-box-right">
-                            <h4>🏷️ 취득세 감면 혜택</h4>
-                            <ul>
-                                <li><strong>경차:</strong> 4% 적용 후 75만원 감면</li>
-                                <li><strong>일반 전기차:</strong> 2026년까지 140만원, 2027년 100만원 감면</li>
-                                <li><strong>플러그인 하이브리드:</strong> 40만원 감면</li>
-                            </ul>
-                        </div>
+                    <div class="info-box">
+                        <h4>💰 보조금 지원 기준</h4>
+                        <ul>
+                            <li><strong>전액 지원:</strong> 차량 가액 5,300만원 미만</li>
+                            <li><strong>50% 지원:</strong> 5,300만원 이상 ~ 8,500만원 미만</li>
+                            <li><strong>미지원:</strong> 8,500만원 이상</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h4>🏷️ 취득세 감면 혜택</h4>
+                        <ul>
+                            <li><strong>경차:</strong> 4% 적용 후 75만원 감면</li>
+                            <li><strong>일반 전기차:</strong> 2026년까지 140만원, 2027년 100만원 감면</li>
+                            <li><strong>플러그인 하이브리드:</strong> 40만원 감면</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -850,34 +787,48 @@
 
             <!-- 결과 표시 영역 -->
             <div id="resultSection" class="result-section">
-                <h3 class="result-title">📊 계산 결과</h3>
+                <h3 class="result-title">
+                    📊 계산 결과
+                </h3>
                 
                 <div class="result-grid">
-                    <div class="result-item">
+                    <div class="result-item subsidy">
                         <div class="result-label">국고 보조금</div>
-                        <div class="result-value" id="nationalSubsidy">0만원</div>
+                        <div class="result-value positive" id="nationalSubsidy">
+                            <span class="result-icon">💰</span>0만원
+                        </div>
                     </div>
-                    <div class="result-item">
+                    <div class="result-item subsidy">
                         <div class="result-label">지자체 보조금</div>
-                        <div class="result-value" id="localSubsidyAmount">0만원</div>
+                        <div class="result-value positive" id="localSubsidyAmount">
+                            <span class="result-icon">🏛️</span>0만원
+                        </div>
                     </div>
-                    <div class="result-item">
+                    <div class="result-item subsidy">
                         <div class="result-label">총 보조금</div>
-                        <div class="result-value" id="totalSubsidy">0만원</div>
+                        <div class="result-value positive" id="totalSubsidy">
+                            <span class="result-icon">💎</span>0만원
+                        </div>
                     </div>
-                    <div class="result-item">
+                    <div class="result-item tax">
                         <div class="result-label">기본 취득세</div>
-                        <div class="result-value" id="baseTax">0만원</div>
+                        <div class="result-value" id="baseTax">
+                            <span class="result-icon">📋</span>0만원
+                        </div>
                     </div>
-                    <div class="result-item">
+                    <div class="result-item reduction">
                         <div class="result-label">감면 혜택</div>
-                        <div class="result-value" id="taxReduction">0만원</div>
+                        <div class="result-value positive" id="taxReduction">
+                            <span class="result-icon">🎁</span>0만원
+                        </div>
                     </div>
                 </div>
 
                 <div class="final-result">
                     <div class="final-label">최종 부담 취득세</div>
-                    <div class="final-value" id="finalTax">0만원</div>
+                    <div class="final-value" id="finalTax">
+                        <span>💸</span>0만원
+                    </div>
                 </div>
             </div>
 
@@ -1169,32 +1120,6 @@
             console.log(`데이터 로드 완료: 국고보조금 ${nationalSubsidyData.length}개, 지자체보조금 ${localSubsidyData.length}개`);
         }
 
-        // 차량 탭 전환
-        function switchVehicleTab(tab) {
-            currentTab = tab;
-            
-            // 탭 버튼 활성화 상태 변경
-            document.querySelectorAll('.vehicle-tab').forEach(t => t.classList.remove('active'));
-            document.querySelector(`[onclick="switchVehicleTab('${tab}')"]`).classList.add('active');
-            
-            // 탭 패널 표시/숨김
-            document.querySelectorAll('.vehicle-tab-panel').forEach(panel => panel.classList.remove('active'));
-            document.getElementById(`${tab}-tab`).classList.add('active');
-            
-            // 선택 안함으로 변경시 기존 선택 초기화
-            if (tab === 'none') {
-                clearVehicleSelection();
-            }
-            
-            // 차량 목록 탭 선택 시 목록이 비어있으면 다시 생성
-            if (tab === 'list') {
-                const vehicleList = document.getElementById('vehicleList');
-                if (!vehicleList.innerHTML.trim()) {
-                    populateVehicleList();
-                }
-            }
-        }
-
         // 차량 목록 생성
         function populateVehicleList() {
             const vehicleList = document.getElementById('vehicleList');
@@ -1210,15 +1135,15 @@
                 return;
             }
             
-            // 첫 번째 항목으로 "선택 안함" 추가
-            const noneItem = document.createElement('div');
-            noneItem.className = 'vehicle-item selected';
-            noneItem.onclick = () => selectNoneVehicle(noneItem);
-            noneItem.innerHTML = `
+            // 선택 안함 옵션 추가
+            const noSelectionItem = document.createElement('div');
+            noSelectionItem.className = 'vehicle-item no-selection';
+            noSelectionItem.onclick = () => selectVehicleFromList(null, noSelectionItem);
+            noSelectionItem.innerHTML = `
                 <div class="vehicle-name">선택 안함</div>
-                <div class="vehicle-subsidy">국고보조금: 0만원</div>
+                <div class="vehicle-subsidy subsidy-none">국고 보조금: 0만원</div>
             `;
-            vehicleList.appendChild(noneItem);
+            vehicleList.appendChild(noSelectionItem);
             
             nationalSubsidyData.forEach((vehicle, index) => {
                 const vehicleItem = document.createElement('div');
@@ -1235,30 +1160,13 @@
                 
                 vehicleItem.innerHTML = `
                     <div class="vehicle-name">${vehicle.manufacturer} ${vehicle.model}</div>
-                    <div class="vehicle-subsidy ${subsidyClass}">국고보조금: ${vehicle.subsidy}만원</div>
+                    <div class="vehicle-subsidy ${subsidyClass}">국고 보조금: ${vehicle.subsidy}만원</div>
                 `;
                 
                 vehicleList.appendChild(vehicleItem);
             });
             
-            // 기본적으로 "선택 안함"이 선택된 상태로 시작
-            selectedVehicle = null;
-            document.getElementById('selectedVehicleInfo').style.display = 'none';
-            
-            console.log(`차량 목록 생성 완료: ${nationalSubsidyData.length + 1}개 차량 (선택 안함 포함)`);
-        }
-
-        // "선택 안함" 선택
-        function selectNoneVehicle(element) {
-            // 이전 선택 해제
-            document.querySelectorAll('.vehicle-item').forEach(item => item.classList.remove('selected'));
-            
-            // 현재 선택 표시
-            element.classList.add('selected');
-            
-            // 차량 정보 초기화
-            selectedVehicle = null;
-            document.getElementById('selectedVehicleInfo').style.display = 'none';
+            console.log(`차량 목록 생성 완료: ${nationalSubsidyData.length}개 차량`);
         }
 
         // 목록에서 차량 선택
@@ -1273,159 +1181,49 @@
             selectedVehicle = vehicle;
             
             // 선택된 차량 정보 표시
-            showSelectedVehicleInfo(`${vehicle.manufacturer} ${vehicle.model}`, vehicle.subsidy);
+            if (vehicle) {
+                showSelectedVehicleInfo(`${vehicle.manufacturer} ${vehicle.model}`, vehicle.subsidy);
+            } else {
+                // 선택 안함의 경우
+                showSelectedVehicleInfo('선택 안함', 0);
+            }
         }
 
         // 직접 입력 차량 선택
         function selectCustomVehicle() {
             const customName = document.getElementById('customVehicleName').value.trim();
-            if (!customName) {
-                showError('차량 모델명을 입력해주세요.');
+            const customSubsidyInput = document.getElementById('customSubsidy').value;
+            
+            if (!customName && !customSubsidyInput) {
+                showError('차량 모델명 또는 보조금을 입력해주세요.');
                 return;
             }
             
-            // 입력된 이름과 정확히 일치하는 차량 찾기
-            const exactMatch = nationalSubsidyData.find(vehicle => 
-                `${vehicle.manufacturer} ${vehicle.model}`.toLowerCase() === customName.toLowerCase()
-            );
+            let finalSubsidy = 680; // 기본값
             
-            if (exactMatch) {
-                selectedVehicle = exactMatch;
-                showSelectedVehicleInfo(`${exactMatch.manufacturer} ${exactMatch.model}`, exactMatch.subsidy);
+            // 직접 입력된 보조금이 있으면 우선 적용
+            if (customSubsidyInput) {
+                finalSubsidy = parseInt(customSubsidyInput);
             } else {
-                // 정확한 일치가 없으면 기본값으로 설정
-                selectedVehicle = {
-                    manufacturer: '사용자 입력',
-                    model: customName,
-                    subsidy: 680,
-                    type: '승용'
-                };
-                showSelectedVehicleInfo(customName, 680);
-            }
-            
-            hideCustomSuggestions();
-        }
-
-        // 취득세 계산
-        function calculateTax() {
-            // 입력값 검증
-            const vehiclePrice = parseInt(document.getElementById('vehiclePrice').value) || 0;
-            const vehicleType = document.getElementById('vehicleType').value;
-            const localSubsidyAmount = parseInt(document.getElementById('localSubsidy').value) || 0;
-
-            if (!vehiclePrice) {
-                showError('차량 가액을 입력해주세요.');
-                return;
-            }
-
-            if (!vehicleType) {
-                showError('차량 종류를 선택해주세요.');
-                return;
-            }
-
-            // 세율 설정
-            const taxRates = {
-                'passenger': 0.07,
-                'van': 0.05,
-                'truck': 0.05,
-                'commercial': 0.04
-            };
-
-            // 보조금 계산
-            let nationalSubsidy = 0; // 기본값: 선택 안함
-            
-            if (selectedVehicle) {
-                // 차량 선택했거나 직접 입력한 경우
-                nationalSubsidy = selectedVehicle.subsidy;
-            }
-
-            // 보조금 지원 기준 적용
-            let subsidyRate = 1;
-            if (vehiclePrice >= 8500) {
-                subsidyRate = 0;
-            } else if (vehiclePrice >= 5300) {
-                subsidyRate = 0.5;
-            }
-
-            const finalNationalSubsidy = Math.floor(nationalSubsidy * subsidyRate);
-            const finalLocalSubsidy = Math.floor(localSubsidyAmount * subsidyRate);
-            const totalSubsidy = finalNationalSubsidy + finalLocalSubsidy;
-
-            // 기본 취득세 계산
-            const taxRate = taxRates[vehicleType];
-            const baseTax = Math.floor(vehiclePrice * taxRate);
-
-            // 감면 계산
-            let taxReduction = 0;
-            const currentYear = new Date().getFullYear();
-            
-            if (selectedVehicle && (selectedVehicle.model.includes('레이') || selectedVehicle.type === '경차')) {
-                const miniCarTax = Math.floor(vehiclePrice * 0.04);
-                taxReduction = Math.min(75, miniCarTax);
-            } else {
-                if (currentYear <= 2026) {
-                    taxReduction = Math.min(140, baseTax);
-                } else if (currentYear === 2027) {
-                    taxReduction = Math.min(100, baseTax);
+                // 입력된 이름과 정확히 일치하는 차량 찾기
+                const exactMatch = nationalSubsidyData.find(vehicle => 
+                    `${vehicle.manufacturer} ${vehicle.model}`.toLowerCase() === customName.toLowerCase()
+                );
+                
+                if (exactMatch) {
+                    finalSubsidy = exactMatch.subsidy;
                 }
             }
-
-            // 최종 취득세 계산
-            const finalTax = Math.max(0, baseTax - taxReduction);
-
-            // 결과 표시
-            displayResults({
-                nationalSubsidy: finalNationalSubsidy,
-                localSubsidy: finalLocalSubsidy,
-                totalSubsidy: totalSubsidy,
-                baseTax: baseTax,
-                taxReduction: taxReduction,
-                finalTax: finalTax
-            });
-
-            document.getElementById('resultSection').style.display = 'block';
-        }
-
-        // 개인정보처리방침 모달
-        function showPrivacyPolicy() {
-            alert('개인정보처리방침\n\n본 계산기는 사용자의 개인정보를 수집하지 않습니다.\n입력된 차량 정보와 계산 결과는 로컬에서만 처리되며 서버에 저장되지 않습니다.\n\n문의사항이 있으시면 contact@ev-calculator.com으로 연락주세요.');
-        }
-
-        // 이용약관 모달  
-        function showTerms() {
-            alert('이용약관\n\n1. 본 계산기는 참고용으로 제공되며, 실제 세액과 차이가 있을 수 있습니다.\n2. 정확한 세액은 관할 세무서나 전문기관에 문의하시기 바랍니다.\n3. 보조금 정보는 수시로 변경될 수 있으므로 구매 전 공식 사이트에서 확인하세요.\n4. 본 서비스 이용으로 인한 손해에 대해 책임지지 않습니다.\n\n서비스 이용 시 위 약관에 동의하는 것으로 간주합니다.');
-        }
-
-        // 선택된 차량 정보 표시
-        function showSelectedVehicleInfo(name, subsidy) {
-            document.getElementById('selectedVehicleName').textContent = name;
-            document.getElementById('selectedVehicleSubsidy').textContent = subsidy;
-            document.getElementById('selectedVehicleInfo').style.display = 'block';
-        }
-
-        // 지자체 보조금 옵션 생성
-        function populateLocalSubsidyOptions() {
-            const select = document.getElementById('localSubsidy');
-            // 기본 옵션들 유지하고 지역 옵션들만 추가
-            const existingOptions = select.innerHTML;
             
-            localSubsidyData.forEach(item => {
-                const option = document.createElement('option');
-                option.value = item.subsidy;
-                option.textContent = `${item.region} (${item.subsidy}만원)`;
-                select.appendChild(option);
-            });
-        }
-
-        // 가격 조작 함수들
-        function addPrice(amount) {
-            const priceInput = document.getElementById('vehiclePrice');
-            const currentValue = parseInt(priceInput.value) || 0;
-            priceInput.value = currentValue + amount;
-        }
-
-        function clearPrice() {
-            document.getElementById('vehiclePrice').value = '';
+            selectedVehicle = {
+                manufacturer: '사용자 입력',
+                model: customName || '직접 입력',
+                subsidy: finalSubsidy,
+                type: '승용'
+            };
+            
+            showSelectedVehicleInfo(customName || '직접 입력', finalSubsidy);
+            hideCustomSuggestions();
         }
 
         // 취득세 계산
@@ -1479,7 +1277,7 @@
             let taxReduction = 0;
             const currentYear = new Date().getFullYear();
             
-            if (selectedVehicle && selectedVehicle.model.includes('레이')) {
+            if (selectedVehicle && (selectedVehicle.model.includes('레이') || selectedVehicle.type === '경차')) {
                 const miniCarTax = Math.floor(vehiclePrice * 0.04);
                 taxReduction = Math.min(75, miniCarTax);
             } else {
@@ -1510,14 +1308,56 @@
             });
         }
 
+        // 개인정보처리방침 모달
+        function showPrivacyPolicy() {
+            alert('개인정보처리방침\n\n본 계산기는 사용자의 개인정보를 수집하지 않습니다.\n입력된 차량 정보와 계산 결과는 로컬에서만 처리되며 서버에 저장되지 않습니다.\n\n문의사항이 있으시면 contact@ev-calculator.com으로 연락주세요.');
+        }
+
+        // 이용약관 모달  
+        function showTerms() {
+            alert('이용약관\n\n1. 본 계산기는 참고용으로 제공되며, 실제 세액과 차이가 있을 수 있습니다.\n2. 정확한 세액은 관할 세무서나 전문기관에 문의하시기 바랍니다.\n3. 보조금 정보는 수시로 변경될 수 있으므로 구매 전 공식 사이트에서 확인하세요.\n4. 본 서비스 이용으로 인한 손해에 대해 책임지지 않습니다.\n\n서비스 이용 시 위 약관에 동의하는 것으로 간주합니다.');
+        }
+
+        // 선택된 차량 정보 표시
+        function showSelectedVehicleInfo(name, subsidy) {
+            document.getElementById('selectedVehicleName').textContent = name;
+            document.getElementById('selectedVehicleSubsidy').textContent = subsidy;
+            document.getElementById('selectedVehicleInfo').style.display = 'block';
+        }
+
+        // 지자체 보조금 옵션 생성
+        function populateLocalSubsidyOptions() {
+            const select = document.getElementById('localSubsidy');
+            // 기본 옵션들 유지하고 지역 옵션들만 추가
+            const existingOptions = select.innerHTML;
+            
+            localSubsidyData.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.subsidy;
+                option.textContent = `${item.region} (${item.subsidy}만원)`;
+                select.appendChild(option);
+            });
+        }
+
+        // 가격 조작 함수들
+        function addPrice(amount) {
+            const priceInput = document.getElementById('vehiclePrice');
+            const currentValue = parseInt(priceInput.value) || 0;
+            priceInput.value = currentValue + amount;
+        }
+
+        function clearPrice() {
+            document.getElementById('vehiclePrice').value = '';
+        }
+
         // 결과 표시
         function displayResults(results) {
-            document.getElementById('nationalSubsidy').textContent = `${results.nationalSubsidy.toLocaleString()}만원`;
-            document.getElementById('localSubsidyAmount').textContent = `${results.localSubsidy.toLocaleString()}만원`;
-            document.getElementById('totalSubsidy').textContent = `${results.totalSubsidy.toLocaleString()}만원`;
-            document.getElementById('baseTax').textContent = `${results.baseTax.toLocaleString()}만원`;
-            document.getElementById('taxReduction').textContent = `${results.taxReduction.toLocaleString()}만원`;
-            document.getElementById('finalTax').textContent = `${results.finalTax.toLocaleString()}만원`;
+            document.getElementById('nationalSubsidy').innerHTML = `<span class="result-icon">💰</span>${results.nationalSubsidy.toLocaleString()}만원`;
+            document.getElementById('localSubsidyAmount').innerHTML = `<span class="result-icon">🏛️</span>${results.localSubsidy.toLocaleString()}만원`;
+            document.getElementById('totalSubsidy').innerHTML = `<span class="result-icon">💎</span>${results.totalSubsidy.toLocaleString()}만원`;
+            document.getElementById('baseTax').innerHTML = `<span class="result-icon">📋</span>${results.baseTax.toLocaleString()}만원`;
+            document.getElementById('taxReduction').innerHTML = `<span class="result-icon">🎁</span>${results.taxReduction.toLocaleString()}만원`;
+            document.getElementById('finalTax').innerHTML = `<span>💸</span>${results.finalTax.toLocaleString()}만원`;
         }
 
         // 에러 표시

@@ -266,17 +266,17 @@
 
         /* 결과 섹션 */
         .result-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: 32px;
+            background: #ffffff;
+            padding: 40px;
             border-radius: 16px;
-            margin-top: 24px;
+            margin-top: 32px;
             display: none;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .result-title {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: #1e293b;
             text-align: center;
@@ -284,57 +284,47 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .result-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .result-item {
-            background: white;
-            padding: 24px 20px;
+            background: #f8fafc;
+            padding: 28px 24px;
             border-radius: 12px;
             text-align: center;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .result-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            background: #f1f5f9;
+            border-color: #cbd5e1;
         }
 
-        .result-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        .result-item.subsidy {
+            background: linear-gradient(135deg, #f0fdf4 0%, #f7fee7 100%);
+            border-color: #bbf7d0;
         }
 
-        .result-item.subsidy::before {
-            background: linear-gradient(90deg, #059669, #10b981);
+        .result-item.tax {
+            background: linear-gradient(135deg, #fef2f2 0%, #fef7f7 100%);
+            border-color: #fecaca;
         }
 
-        .result-item.tax::before {
-            background: linear-gradient(90deg, #dc2626, #ef4444);
-        }
-
-        .result-item.reduction::before {
-            background: linear-gradient(90deg, #7c3aed, #a855f7);
+        .result-item.reduction {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border-color: #d8b4fe;
         }
 
         .result-label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #64748b;
             margin-bottom: 12px;
             font-weight: 600;
@@ -343,13 +333,13 @@
         }
 
         .result-value {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 8px;
         }
 
         .result-value.positive {
@@ -361,53 +351,32 @@
         }
 
         .result-icon {
-            font-size: 1.2rem;
-            opacity: 0.8;
+            font-size: 1.25rem;
         }
 
         .final-result {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
             color: white;
-            padding: 28px;
+            padding: 36px;
             border-radius: 16px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-result::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transform: rotate(45deg);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.2);
         }
 
         .final-label {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             font-weight: 500;
-            position: relative;
-            z-index: 1;
         }
 
         .final-value {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
 
         /* 정보 박스 */
@@ -710,11 +679,11 @@
                         <span>만원</span>
                     </div>
                     <div class="price-buttons">
-                        <button class="price-btn" onclick="addPrice(1000)">+1천만</button>
-                        <button class="price-btn" onclick="addPrice(500)">+500만</button>
-                        <button class="price-btn" onclick="addPrice(100)">+100만</button>
-                        <button class="price-btn" onclick="addPrice(50)">+50만</button>
-                        <button class="price-btn" onclick="addPrice(10)">+10만</button>
+                        <button class="price-btn" onclick="addPrice(1000)">+ 1,000만</button>
+                        <button class="price-btn" onclick="addPrice(500)">+ 500만</button>
+                        <button class="price-btn" onclick="addPrice(100)">+ 100만</button>
+                        <button class="price-btn" onclick="addPrice(50)">+ 50만</button>
+                        <button class="price-btn" onclick="addPrice(10)">+ 10만</button>
                         <button class="price-btn" onclick="clearPrice()">초기화</button>
                     </div>
                 </div>
@@ -857,7 +826,9 @@
 
                 <div class="final-result">
                     <div class="final-label">최종 부담 취득세</div>
-                    <div class="final-value" id="finalTax">💸 0만원</div>
+                    <div class="final-value" id="finalTax">
+                        <span>💸</span>0만원
+                    </div>
                 </div>
             </div>
 
@@ -1386,7 +1357,7 @@
             document.getElementById('totalSubsidy').innerHTML = `<span class="result-icon">💎</span>${results.totalSubsidy.toLocaleString()}만원`;
             document.getElementById('baseTax').innerHTML = `<span class="result-icon">📋</span>${results.baseTax.toLocaleString()}만원`;
             document.getElementById('taxReduction').innerHTML = `<span class="result-icon">🎁</span>${results.taxReduction.toLocaleString()}만원`;
-            document.getElementById('finalTax').innerHTML = `💸 ${results.finalTax.toLocaleString()}만원`;
+            document.getElementById('finalTax').innerHTML = `<span>💸</span>${results.finalTax.toLocaleString()}만원`;
         }
 
         // 에러 표시
