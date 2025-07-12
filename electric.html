@@ -18,9 +18,29 @@
             line-height: 1.6;
         }
 
+        .page-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .left-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .main-container {
+            min-width: 0;
+        }
+
         .container {
             max-width: 900px;
-            margin: 20px auto;
+            margin: 0;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -47,6 +67,183 @@
 
         .main-content {
             padding: 40px;
+        }
+
+        .sidebar-calculator {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+            margin-top: 60px;
+        }
+
+        .right-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 광고 스타일 - 주석처리 */
+        /*
+        .ad-space {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .left-sidebar .ad-space {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 280px;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+        }
+
+        .right-sidebar .ad-space {
+            position: static;
+            margin-top: 0;
+        }
+
+        .ad-space.top-ad {
+            margin-bottom: 20px;
+            position: static;
+        }
+
+        .ad-space.bottom-ad {
+            margin-top: 20px;
+            position: static;
+        }
+
+        .ad-space p {
+            margin: 0 0 4px 0;
+            font-weight: 500;
+        }
+
+        .ad-space span {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+        */
+
+        .quick-calculator {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .quick-calc-header {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .quick-calc-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .quick-calc-body {
+            padding: 20px;
+        }
+
+        .quick-input-group {
+            margin-bottom: 16px;
+        }
+
+        .quick-input-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+
+        .quick-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .quick-calc-btn {
+            width: 100%;
+            padding: 12px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .quick-calc-btn:hover {
+            background: #2563eb;
+        }
+
+        .quick-results {
+            display: none;
+        }
+
+        .quick-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.875rem;
+        }
+
+        .quick-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .quick-result-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .quick-result-value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .quick-result-value.positive {
+            color: #059669;
+        }
+
+        .quick-final-result {
+            background: #1e293b;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .quick-final-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .quick-final-value {
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
         .section {
@@ -289,7 +486,7 @@
 
         .result-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 32px;
         }
@@ -301,6 +498,11 @@
             text-align: center;
             border: 1px solid #e2e8f0;
             transition: all 0.2s ease;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .result-item:hover {
@@ -327,20 +529,22 @@
         .result-label {
             font-size: 0.875rem;
             color: #64748b;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            line-height: 1.2;
         }
 
         .result-value {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
+            line-height: 1.2;
         }
 
         .result-value.positive {
@@ -352,7 +556,7 @@
         }
 
         .result-icon {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         /* 지불금액 요약 섹션 */
@@ -360,7 +564,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .calculation-breakdown {
@@ -368,6 +572,8 @@
             padding: 24px;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
+            height: 100%;
+            min-height: 200px;
         }
 
         .calculation-breakdown h4 {
@@ -430,27 +636,43 @@
         .final-result {
             background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
             color: white;
-            padding: 32px;
-            border-radius: 16px;
+            padding: 32px 24px;
+            border-radius: 12px;
             text-align: center;
             box-shadow: 0 8px 20px rgba(30, 41, 59, 0.2);
-            height: fit-content;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .final-label {
             font-size: 1.1rem;
             opacity: 0.9;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             font-weight: 500;
+            line-height: 1.3;
+            text-align: center;
+            width: 100%;
         }
 
         .final-value {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
+            line-height: 1.1;
+            text-align: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .final-value span {
+            font-size: 2.0rem;
         }
 
         /* 정보 박스 */
@@ -527,6 +749,11 @@
 
         /* 반응형 */
         @media (max-width: 768px) {
+            .page-wrapper {
+                display: block;
+                padding: 10px;
+            }
+            
             .container {
                 margin: 10px;
                 border-radius: 8px;
@@ -550,6 +777,16 @@
 
             .result-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .result-item {
+                min-height: 100px;
+                padding: 20px 16px;
+            }
+
+            .result-value {
+                font-size: 1.3rem;
             }
 
             .payment-summary {
@@ -576,12 +813,48 @@
                 min-width: auto;
             }
 
+            .final-result {
+                min-height: 180px;
+                padding: 24px 20px;
+            }
+
+            .final-label {
+                font-size: 1.0rem;
+                margin-bottom: 16px;
+            }
+
             .final-value {
-                font-size: 1.8rem;
+                font-size: 2.0rem;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .final-value span {
+                font-size: 1.6rem;
             }
 
             .breakdown-item {
                 font-size: 0.875rem;
+            }
+            
+            /* 모바일에서 사이드바 숨김 - 광고 관련 주석처리 */
+            /*
+            .left-sidebar,
+            .right-sidebar {
+                display: none;
+            }
+            */
+        }
+
+        @media (max-width: 1200px) {
+            .result-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .result-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -614,7 +887,8 @@
             flex: 1;
         }
 
-        /* 광고 컨테이너 */
+        /* 광고 컨테이너 - 주석처리 */
+        /*
         .ad-container {
             margin: 32px 0;
             text-align: center;
@@ -638,6 +912,7 @@
             font-size: 0.75rem;
             opacity: 0.7;
         }
+        */
 
         /* 하단 푸터 */
         .footer {
@@ -763,253 +1038,342 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚗 전기차 스마트 계산기</h1>
-            <p>전기차 구매 시 취득세와 보조금을 간편하게 계산하세요</p>
-        </div>
-
-        <div class="main-content">
-            <!-- 필수 정보 입력 -->
-            <div class="section">
-                <h2 class="section-title">📋 필수 정보</h2>
-                
-                <div class="form-group">
-                    <label class="form-label required">차량 가액 (만원)</label>
-                    <div class="price-input-container">
-                        <input type="number" id="vehiclePrice" class="input price-input" 
-                               placeholder="차량 가격을 입력하세요" min="0" step="1" />
-                        <span>만원</span>
-                    </div>
-                    <div class="price-buttons">
-                        <button class="price-btn" onclick="addPrice(1000)">+ 1,000만</button>
-                        <button class="price-btn" onclick="addPrice(500)">+ 500만</button>
-                        <button class="price-btn" onclick="addPrice(100)">+ 100만</button>
-                        <button class="price-btn" onclick="addPrice(50)">+ 50만</button>
-                        <button class="price-btn" onclick="addPrice(10)">+ 10만</button>
-                        <button class="price-btn" onclick="clearPrice()">초기화</button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label required">차량 종류</label>
-                    <select id="vehicleType" class="input">
-                        <option value="passenger" selected>승용차 (7%)</option>
-                        <option value="van">승합차 (5%)</option>
-                        <option value="truck">화물차 (5%)</option>
-                        <option value="commercial">영업용 자동차 (4%)</option>
-                    </select>
-                </div>
+    <div class="page-wrapper">
+        <!-- 좌측 광고 공간 (하단 고정) - 주석처리 -->
+        <!--
+        <div class="left-sidebar">
+            <div class="ad-space">
+                <p>광고</p>
+                <span>Google AdSense</span>
             </div>
+        </div>
+        -->
 
-            <!-- 선택 정보 입력 -->
-            <div class="section">
-                <h2 class="section-title">⚙️ 선택 정보</h2>
-                
-                <div class="form-group">
-                    <label class="form-label">차량 선택 (국고 보조금 자동 적용)</label>
-                    <div class="vehicle-selection">
-                        <div class="vehicle-tabs">
-                            <button class="vehicle-tab active" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
-                            <button class="vehicle-tab" onclick="switchVehicleTab('direct')">직접 입력</button>
-                        </div>
+        <!-- 메인 전기차 계산기 -->
+        <div class="main-container">
+            <!-- 상단 광고 공간 - 주석처리 -->
+            <!--
+            <div class="ad-space top-ad">
+                <p>광고</p>
+                <span>Google AdSense</span>
+            </div>
+            -->
+
+            <div class="container">
+                <div class="header">
+                    <h1>🚗 전기차 스마트 계산기</h1>
+                    <p>전기차 구매 시 취득세와 보조금을 간편하게 계산하세요</p>
+                </div>
+
+                <div class="main-content">
+                    <!-- 필수 정보 입력 -->
+                    <div class="section">
+                        <h2 class="section-title">📋 필수 정보</h2>
                         
-                        <div class="vehicle-tab-content">
-                            <!-- 차량 목록 탭 -->
-                            <div id="list-tab" class="vehicle-tab-panel active">
-                                <!-- 제조사 선택 -->
-                                <div class="manufacturer-selection" style="margin-bottom: 16px;">
-                                    <label class="form-label">제조사 선택</label>
-                                    <select id="manufacturerFilter" class="input" onchange="filterByManufacturer()">
-                                        <option value="">전체 제조사</option>
-                                    </select>
+                        <div class="form-group">
+                            <label class="form-label required">차량 가액 (만원)</label>
+                            <div class="price-input-container">
+                                <input type="number" id="vehiclePrice" class="input price-input" 
+                                       placeholder="차량 가격을 입력하세요" min="0" step="1" oninput="syncQuickCalc()" />
+                                <span>만원</span>
+                            </div>
+                            <div class="price-buttons">
+                                <button class="price-btn" onclick="addPrice(1000)">+ 1,000만</button>
+                                <button class="price-btn" onclick="addPrice(500)">+ 500만</button>
+                                <button class="price-btn" onclick="addPrice(100)">+ 100만</button>
+                                <button class="price-btn" onclick="addPrice(50)">+ 50만</button>
+                                <button class="price-btn" onclick="addPrice(10)">+ 10만</button>
+                                <button class="price-btn" onclick="clearPrice()">초기화</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">차량 종류</label>
+                            <select id="vehicleType" class="input" onchange="syncQuickCalc()">
+                                <option value="passenger" selected>승용차 (7%)</option>
+                                <option value="van">승합차 (5%)</option>
+                                <option value="truck">화물차 (5%)</option>
+                                <option value="commercial">영업용 자동차 (4%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 선택 정보 입력 -->
+                    <div class="section">
+                        <h2 class="section-title">⚙️ 선택 정보</h2>
+                        
+                        <div class="form-group">
+                            <label class="form-label">차량 선택 (국고 보조금 자동 적용)</label>
+                            <div class="vehicle-selection">
+                                <div class="vehicle-tabs">
+                                    <button class="vehicle-tab active" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
+                                    <button class="vehicle-tab" onclick="switchVehicleTab('direct')">직접 입력</button>
                                 </div>
                                 
-                                <div class="vehicle-count" id="vehicleCount">총 0개 차량</div>
-                                <div class="vehicle-list" id="vehicleList">
-                                    <!-- 차량 목록이 여기에 동적으로 생성됩니다 -->
+                                <div class="vehicle-tab-content">
+                                    <!-- 차량 목록 탭 -->
+                                    <div id="list-tab" class="vehicle-tab-panel active">
+                                        <!-- 제조사 선택 -->
+                                        <div class="manufacturer-selection" style="margin-bottom: 16px;">
+                                            <label class="form-label">제조사 선택</label>
+                                            <select id="manufacturerFilter" class="input" onchange="filterByManufacturer()">
+                                                <option value="">전체 제조사</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="vehicle-count" id="vehicleCount">총 0개 차량</div>
+                                        <div class="vehicle-list" id="vehicleList">
+                                            <!-- 차량 목록이 여기에 동적으로 생성됩니다 -->
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 직접 입력 탭 -->
+                                    <div id="direct-tab" class="vehicle-tab-panel">
+                                        <div class="custom-input-section">
+                                            <div class="search-container">
+                                                <input type="text" id="customVehicleName" class="input" 
+                                                       placeholder="차량 모델명을 입력하세요 (예: 아이오닉6 롱레인지)" />
+                                                <div id="customVehicleSuggestions" class="suggestions-custom"></div>
+                                            </div>
+                                            
+                                            <div style="display: flex; gap: 8px; margin-top: 12px;">
+                                                <button class="select-vehicle-btn flex-1" onclick="selectCustomVehicle()">직접 입력으로 선택</button>
+                                                <button class="select-vehicle-btn" onclick="clearCustomSelection()">초기화</button>
+                                            </div>
+                                            
+                                            <div style="margin-top: 16px;">
+                                                <label class="form-label">국고 보조금 직접 입력 (만원)</label>
+                                                <input type="number" id="customSubsidy" class="input" 
+                                                       placeholder="보조금 금액을 입력하세요 (예: 680)" min="0" step="1" />
+                                            </div>
+                                            
+                                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px;">
+                                                * 차량명 입력 후 자동완성에서 선택하거나, 보조금을 직접 입력할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <!-- 직접 입력 탭 -->
-                            <div id="direct-tab" class="vehicle-tab-panel">
-                                <div class="custom-input-section">
-                                    <div class="search-container">
-                                        <input type="text" id="customVehicleName" class="input" 
-                                               placeholder="차량 모델명을 입력하세요 (예: 아이오닉6 롱레인지)" />
-                                        <div id="customVehicleSuggestions" class="suggestions-custom"></div>
-                                    </div>
-                                    
-                                    <div style="display: flex; gap: 8px; margin-top: 12px;">
-                                        <button class="select-vehicle-btn flex-1" onclick="selectCustomVehicle()">직접 입력으로 선택</button>
-                                        <button class="select-vehicle-btn" onclick="clearCustomSelection()">초기화</button>
-                                    </div>
-                                    
-                                    <div style="margin-top: 16px;">
-                                        <label class="form-label">국고 보조금 직접 입력 (만원)</label>
-                                        <input type="number" id="customSubsidy" class="input" 
-                                               placeholder="보조금 금액을 입력하세요 (예: 680)" min="0" step="1" />
-                                    </div>
-                                    
-                                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px;">
-                                        * 차량명 입력 후 자동완성에서 선택하거나, 보조금을 직접 입력할 수 있습니다.
-                                    </p>
+                            <div id="selectedVehicleInfo" style="margin-top: 12px; padding: 12px; background: #f0f9ff; border-radius: 6px; display: none;">
+                                <strong>선택된 차량:</strong> <span id="selectedVehicleName"></span><br>
+                                <strong>국고 보조금:</strong> <span id="selectedVehicleSubsidy"></span>만원
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">지역 선택 (지자체 보조금)</label>
+                            <select id="localSubsidy" class="input" onchange="syncQuickCalc()">
+                                <option value="0">없음</option>
+                            </select>
+                        </div>
+
+                        <div class="info-box-container">
+                            <div class="info-box">
+                                <h4>💰 보조금 지원 기준</h4>
+                                <ul>
+                                    <li><strong>전액 지원:</strong> 차량 가액 5,300만원 미만</li>
+                                    <li><strong>50% 지원:</strong> 5,300만원 이상 ~ 8,500만원 미만</li>
+                                    <li><strong>미지원:</strong> 8,500만원 이상</li>
+                                </ul>
+                            </div>
+                            <div class="info-box">
+                                <h4>🏷️ 취득세 감면 혜택</h4>
+                                <ul>
+                                    <li><strong>경차:</strong> 4% 적용 후 75만원 감면</li>
+                                    <li><strong>일반 전기차:</strong> 2026년까지 140만원, 2027년 100만원 감면</li>
+                                    <li><strong>플러그인 하이브리드:</strong> 40만원 감면</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateTax()">
+                        계산하기
+                    </button>
+
+                    <!-- 결과 표시 영역 -->
+                    <div id="resultSection" class="result-section">
+                        <h3 class="result-title">
+                            📊 계산 결과
+                        </h3>
+                        
+                        <div class="result-grid">
+                            <div class="result-item subsidy">
+                                <div class="result-label">국고 보조금</div>
+                                <div class="result-value positive" id="nationalSubsidy">
+                                    <span class="result-icon">💰</span>0만원
+                                </div>
+                            </div>
+                            <div class="result-item subsidy">
+                                <div class="result-label">지자체 보조금</div>
+                                <div class="result-value positive" id="localSubsidyAmount">
+                                    <span class="result-icon">🏛️</span>0만원
+                                </div>
+                            </div>
+                            <div class="result-item subsidy">
+                                <div class="result-label">총 보조금</div>
+                                <div class="result-value positive" id="totalSubsidy">
+                                    <span class="result-icon">💎</span>0만원
+                                </div>
+                            </div>
+                            <div class="result-item tax">
+                                <div class="result-label">기본 취득세</div>
+                                <div class="result-value" id="baseTax">
+                                    <span class="result-icon">📋</span>0만원
+                                </div>
+                            </div>
+                            <div class="result-item reduction">
+                                <div class="result-label">감면 혜택</div>
+                                <div class="result-value positive" id="taxReduction">
+                                    <span class="result-icon">🎁</span>0만원
+                                </div>
+                            </div>
+                            <div class="result-item tax">
+                                <div class="result-label">최종 취득세</div>
+                                <div class="result-value" id="finalTaxInGrid">
+                                    <span class="result-icon">💸</span>0만원
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 총 지불금액과 계산 요약 -->
+                        <div class="payment-summary">
+                            <div class="calculation-breakdown">
+                                <h4>💡 계산 요약</h4>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">차량 가격</span>
+                                    <span class="breakdown-value" id="vehiclePriceDisplay">0만원</span>
+                                </div>
+                                <div class="breakdown-item breakdown-add">
+                                    <span class="breakdown-label">+ 최종 취득세</span>
+                                    <span class="breakdown-value" id="finalTaxDisplay">0만원</span>
+                                </div>
+                                <div class="breakdown-item breakdown-subtract">
+                                    <span class="breakdown-label">- 총 보조금</span>
+                                    <span class="breakdown-value" id="totalSubsidyDisplay">0만원</span>
+                                </div>
+                                <div class="breakdown-divider"></div>
+                                <div class="breakdown-item breakdown-result">
+                                    <span class="breakdown-label">실제 지불 금액</span>
+                                    <span class="breakdown-value" id="totalPaymentBreakdown">0만원</span>
+                                </div>
+                            </div>
+                            
+                            <div class="final-result">
+                                <div class="final-label">총 차량 지불 금액</div>
+                                <div class="final-value" id="totalPayment">
+                                    <span>🏦</span>0만원
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div id="selectedVehicleInfo" style="margin-top: 12px; padding: 12px; background: #f0f9ff; border-radius: 6px; display: none;">
-                        <strong>선택된 차량:</strong> <span id="selectedVehicleName"></span><br>
-                        <strong>국고 보조금:</strong> <span id="selectedVehicleSubsidy"></span>만원
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">지역 선택 (지자체 보조금)</label>
-                    <select id="localSubsidy" class="input">
-                        <option value="0">없음</option>
-                    </select>
-                </div>
 
-                <div class="info-box-container">
-                    <div class="info-box">
-                        <h4>💰 보조금 지원 기준</h4>
-                        <ul>
-                            <li><strong>전액 지원:</strong> 차량 가액 5,300만원 미만</li>
-                            <li><strong>50% 지원:</strong> 5,300만원 이상 ~ 8,500만원 미만</li>
-                            <li><strong>미지원:</strong> 8,500만원 이상</li>
-                        </ul>
+                    <!-- 하단 안내 정보 -->
+                    <div class="footer-info">
+                        <h4>📌 더 자세한 정보 확인</h4>
+                        <p><strong>정확한 보조금 확인:</strong> <a href="https://www.ev.or.kr/nportal/buySupprt/initBuySubsidySupprtAction.do" target="_blank">전기차 누리집</a></p>
+                        <p>• 국고 보조금: 구매 및 지원 → 구매보조금 지원 → 국고 보조금</p>
+                        <p>• 지자체 보조금: 구매 및 지원 → 구매보조금 지원 → 지자체 보조금</p>
+                        <p>• 구매보조금 지급현황: 구매 및 지원 → 구매보조금 지급현황</p>
+                        <p style="margin-top: 12px; font-size: 0.8rem; color: #64748b;">
+                            * 본 계산기는 참고용이며, 정확한 세액은 관할 세무서나 전문기관에 문의하시기 바랍니다.
+                        </p>
+                        <p style="font-size: 0.8rem; color: #64748b;">
+                            * 차량 데이터는 2025년 7월 11일 기준이며, 최신 정보는 전기차 누리집에서 확인하세요.
+                        </p>
                     </div>
-                    <div class="info-box">
-                        <h4>🏷️ 취득세 감면 혜택</h4>
-                        <ul>
-                            <li><strong>경차:</strong> 4% 적용 후 75만원 감면</li>
-                            <li><strong>일반 전기차:</strong> 2026년까지 140만원, 2027년 100만원 감면</li>
-                            <li><strong>플러그인 하이브리드:</strong> 40만원 감면</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <button class="calculate-btn" onclick="calculateTax()">
-                계산하기
-            </button>
-
-            <!-- 결과 표시 영역 -->
-            <div id="resultSection" class="result-section">
-                <h3 class="result-title">
-                    📊 계산 결과
-                </h3>
-                
-                <div class="result-grid">
-                    <div class="result-item subsidy">
-                        <div class="result-label">국고 보조금</div>
-                        <div class="result-value positive" id="nationalSubsidy">
-                            <span class="result-icon">💰</span>0만원
+                    <!-- 광고 공간 (구글 애드센스) - 주석처리 -->
+                    <!--
+                    <div class="ad-container">
+                        <div class="ad-placeholder">
+                            <p>광고</p>
+                            <span>Google AdSense</span>
                         </div>
                     </div>
-                    <div class="result-item subsidy">
-                        <div class="result-label">지자체 보조금</div>
-                        <div class="result-value positive" id="localSubsidyAmount">
-                            <span class="result-icon">🏛️</span>0만원
-                        </div>
-                    </div>
-                    <div class="result-item subsidy">
-                        <div class="result-label">총 보조금</div>
-                        <div class="result-value positive" id="totalSubsidy">
-                            <span class="result-icon">💎</span>0만원
-                        </div>
-                    </div>
-                    <div class="result-item tax">
-                        <div class="result-label">기본 취득세</div>
-                        <div class="result-value" id="baseTax">
-                            <span class="result-icon">📋</span>0만원
-                        </div>
-                    </div>
-                    <div class="result-item reduction">
-                        <div class="result-label">감면 혜택</div>
-                        <div class="result-value positive" id="taxReduction">
-                            <span class="result-icon">🎁</span>0만원
-                        </div>
-                    </div>
-                    <div class="result-item tax">
-                        <div class="result-label">최종 취득세</div>
-                        <div class="result-value" id="finalTaxInGrid">
-                            <span class="result-icon">💸</span>0만원
-                        </div>
-                    </div>
+                    -->
                 </div>
 
-                <!-- 총 지불금액과 계산 요약 -->
-                <div class="payment-summary">
-                    <div class="calculation-breakdown">
-                        <h4>💡 계산 요약</h4>
-                        <div class="breakdown-item">
-                            <span class="breakdown-label">차량 가격</span>
-                            <span class="breakdown-value" id="vehiclePriceDisplay">0만원</span>
-                        </div>
-                        <div class="breakdown-item breakdown-add">
-                            <span class="breakdown-label">+ 최종 취득세</span>
-                            <span class="breakdown-value" id="finalTaxDisplay">0만원</span>
-                        </div>
-                        <div class="breakdown-item breakdown-subtract">
-                            <span class="breakdown-label">- 총 보조금</span>
-                            <span class="breakdown-value" id="totalSubsidyDisplay">0만원</span>
-                        </div>
-                        <div class="breakdown-divider"></div>
-                        <div class="breakdown-item breakdown-result">
-                            <span class="breakdown-label">실제 지불 금액</span>
-                            <span class="breakdown-value" id="totalPaymentBreakdown">0만원</span>
+                <!-- 하단 카피라이트 -->
+                <div class="footer">
+                    <div class="footer-content">
+                        <p>전기차 스마트 계산기</p>
+                        <p>&copy; 2025 All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="#" onclick="showPrivacyPolicy()">개인정보처리방침</a>
+                            <span>|</span>
+                            <a href="#" onclick="showTerms()">이용약관</a>
+                            <span>|</span>
+                            <a href="mailto:contact@ev-calculator.com">문의하기</a>
                         </div>
                     </div>
-                    
-                    <div class="final-result">
-                        <div class="final-label">총 차량 지불 금액</div>
-                        <div class="final-value" id="totalPayment">
-                            <span>🏦</span>0만원
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 하단 안내 정보 -->
-            <div class="footer-info">
-                <h4>📌 더 자세한 정보 확인</h4>
-                <p><strong>정확한 보조금 확인:</strong> <a href="https://www.ev.or.kr/nportal/buySupprt/initBuySubsidySupprtAction.do" target="_blank">전기차 누리집</a></p>
-                <p>• 국고 보조금: 구매 및 지원 → 구매보조금 지원 → 국고 보조금</p>
-                <p>• 지자체 보조금: 구매 및 지원 → 구매보조금 지원 → 지자체 보조금</p>
-                <p>• 구매보조금 지급현황: 구매 및 지원 → 구매보조금 지급현황</p>
-                <p style="margin-top: 12px; font-size: 0.8rem; color: #64748b;">
-                    * 본 계산기는 참고용이며, 정확한 세액은 관할 세무서나 전문기관에 문의하시기 바랍니다.
-                </p>
-                <p style="font-size: 0.8rem; color: #64748b;">
-                    * 차량 데이터는 2025년 7월 11일 기준이며, 최신 정보는 전기차 누리집에서 확인하세요.
-                </p>
-            </div>
-
-            <!-- 광고 공간 (구글 애드센스) -->
-            <div class="ad-container">
-                <div class="ad-placeholder">
-                    <p>광고</p>
-                    <span>Google AdSense</span>
                 </div>
             </div>
         </div>
 
-        <!-- 하단 카피라이트 -->
-        <div class="footer">
-            <div class="footer-content">
-                <p>전기차 스마트 계산기</p>
-                <p>&copy; 2025 All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#" onclick="showPrivacyPolicy()">개인정보처리방침</a>
-                    <span>|</span>
-                    <a href="#" onclick="showTerms()">이용약관</a>
-                    <span>|</span>
-                    <a href="mailto:contact@ev-calculator.com">문의하기</a>
+        <!-- 우측 사이드바 (빠른 계산기 + 광고) -->
+        <div class="right-sidebar">
+            <!-- 우측 독립 계산기 -->
+            <div class="sidebar-calculator">
+                <div class="quick-calculator">
+                    <div class="quick-calc-header">
+                        <h3>🚀 빠른 계산</h3>
+                    </div>
+                    <div class="quick-calc-body">
+                        <div class="quick-input-group">
+                            <label>차량 가격 (만원)</label>
+                            <input type="number" id="quickPrice" class="quick-input" placeholder="가격 입력" min="0" step="1">
+                        </div>
+                        
+                        <div class="quick-input-group">
+                            <label>국고 보조금 (만원)</label>
+                            <input type="number" id="quickSubsidy" class="quick-input" placeholder="보조금 입력" min="0" step="1" value="0">
+                        </div>
+                        
+                        <div class="quick-input-group">
+                            <label>지자체 보조금 (만원)</label>
+                            <input type="number" id="quickLocal" class="quick-input" placeholder="지역 보조금" min="0" step="1" value="0">
+                        </div>
+                        
+                        <button class="quick-calc-btn" onclick="quickCalculate()">
+                            ⚡ 즉시 계산
+                        </button>
+                        
+                        <div id="quickResults" class="quick-results">
+                            <div class="quick-result-item">
+                                <span class="quick-result-label">국고 보조금</span>
+                                <span class="quick-result-value positive" id="quickNationalSubsidy">0만원</span>
+                            </div>
+                            <div class="quick-result-item">
+                                <span class="quick-result-label">지자체 보조금</span>
+                                <span class="quick-result-value positive" id="quickLocalSubsidy">0만원</span>
+                            </div>
+                            <div class="quick-result-item">
+                                <span class="quick-result-label">총 보조금</span>
+                                <span class="quick-result-value positive" id="quickTotalSubsidy">0만원</span>
+                            </div>
+                            <div class="quick-result-item">
+                                <span class="quick-result-label">취득세</span>
+                                <span class="quick-result-value" id="quickTax">0만원</span>
+                            </div>
+                            
+                            <div class="quick-final-result">
+                                <div class="quick-final-label">총 지불 금액</div>
+                                <div class="quick-final-value" id="quickFinalAmount">0만원</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- 빠른 계산 하단 광고 (스크롤과 함께 이동) - 주석처리 -->
+            <!--
+            <div class="ad-space bottom-ad">
+                <p>광고</p>
+                <span>Google AdSense</span>
+            </div>
+            -->
         </div>
     </div>
 
@@ -1491,7 +1855,84 @@
             console.log(`차량 목록 생성 완료: ${displayVehicles.length}개 차량`);
         }
 
-        // 목록에서 차량 선택
+        // 빠른 계산 기능
+        function quickCalculate() {
+            console.log('빠른 계산 시작...');
+            
+            const quickPrice = parseInt(document.getElementById('quickPrice').value) || 0;
+            const quickSubsidy = parseInt(document.getElementById('quickSubsidy').value) || 0;
+            const quickLocal = parseInt(document.getElementById('quickLocal').value) || 0;
+
+            console.log('빠른 계산 입력값:', { quickPrice, quickSubsidy, quickLocal });
+
+            if (!quickPrice) {
+                alert('차량 가격을 입력해주세요.');
+                return;
+            }
+
+            // 보조금 지원 기준 적용
+            let subsidyRate = 1;
+            if (quickPrice >= 8500) {
+                subsidyRate = 0;
+            } else if (quickPrice >= 5300) {
+                subsidyRate = 0.5;
+            }
+
+            const finalNationalSubsidy = Math.floor(quickSubsidy * subsidyRate);
+            const finalLocalSubsidy = Math.floor(quickLocal * subsidyRate);
+            const totalSubsidy = finalNationalSubsidy + finalLocalSubsidy;
+
+            // 기본 취득세 계산 (승용차 7% 기준)
+            const baseTax = Math.floor(quickPrice * 0.07);
+            const taxReduction = Math.min(140, baseTax); // 전기차 감면
+            const finalTax = Math.max(0, baseTax - taxReduction);
+
+            // 총 지불 금액 수정 (음수 방지)
+            const totalPayment = Math.max(0, quickPrice + finalTax - totalSubsidy);
+
+            console.log('빠른 계산 상세:', {
+                quickPrice,
+                finalNationalSubsidy,
+                finalLocalSubsidy,
+                totalSubsidy,
+                baseTax,
+                taxReduction,
+                finalTax,
+                계산과정: `${quickPrice} + ${finalTax} - ${totalSubsidy} = ${totalPayment}`
+            });
+
+            // 결과 표시
+            document.getElementById('quickNationalSubsidy').textContent = `${finalNationalSubsidy.toLocaleString()}만원`;
+            document.getElementById('quickLocalSubsidy').textContent = `${finalLocalSubsidy.toLocaleString()}만원`;
+            document.getElementById('quickTotalSubsidy').textContent = `${totalSubsidy.toLocaleString()}만원`;
+            document.getElementById('quickTax').textContent = `${finalTax.toLocaleString()}만원`;
+            document.getElementById('quickFinalAmount').textContent = `${totalPayment.toLocaleString()}만원`;
+
+            document.getElementById('quickResults').style.display = 'block';
+            
+            console.log('빠른 계산 완료');
+        }
+
+        // 좌측과 우측 동기화
+        function syncQuickCalc() {
+            const vehiclePrice = document.getElementById('vehiclePrice').value;
+            const localSubsidy = document.getElementById('localSubsidy').value;
+            
+            if (vehiclePrice) {
+                document.getElementById('quickPrice').value = vehiclePrice;
+            }
+            
+            if (localSubsidy) {
+                document.getElementById('quickLocal').value = localSubsidy;
+            }
+
+            // 선택된 차량이 있으면 보조금도 동기화
+            if (selectedVehicle && selectedVehicle.subsidy) {
+                document.getElementById('quickSubsidy').value = selectedVehicle.subsidy;
+            }
+        }
+
+        // 기존 차량 선택 함수들 수정 (동기화 추가)
         function selectVehicleFromList(vehicle, element) {
             // 이전 선택 해제
             document.querySelectorAll('.vehicle-item').forEach(item => item.classList.remove('selected'));
@@ -1505,9 +1946,12 @@
             // 선택된 차량 정보 표시
             if (vehicle) {
                 showSelectedVehicleInfo(`${vehicle.manufacturer} ${vehicle.model}`, vehicle.subsidy);
+                // 빠른 계산기 동기화
+                document.getElementById('quickSubsidy').value = vehicle.subsidy;
             } else {
                 // 선택 안함의 경우
                 showSelectedVehicleInfo('선택 안함', 0);
+                document.getElementById('quickSubsidy').value = 0; // 기본값을 0으로 변경
             }
         }
 
@@ -1620,17 +2064,19 @@
             // 최종 취득세 계산
             const finalTax = Math.max(0, baseTax - taxReduction);
 
-            // 총 차량 지불 금액 계산 (차량 가격 + 최종 취득세 - 총 보조금)
-            const totalPayment = vehiclePrice + finalTax - totalSubsidy;
+            // 총 차량 지불 금액 계산 수정 (차량 가격 + 최종 취득세 - 총 보조금)
+            // 단, 음수가 되지 않도록 최소값 보장
+            const totalPayment = Math.max(0, vehiclePrice + finalTax - totalSubsidy);
 
             console.log('계산 결과:', {
+                vehiclePrice,
                 finalNationalSubsidy,
                 finalLocalSubsidy,
                 totalSubsidy,
                 baseTax,
                 taxReduction,
                 finalTax,
-                totalPayment
+                totalPayment: `${vehiclePrice} + ${finalTax} - ${totalSubsidy} = ${totalPayment}`
             });
 
             // 결과 표시
@@ -1641,7 +2087,8 @@
                 baseTax: baseTax,
                 taxReduction: taxReduction,
                 finalTax: finalTax,
-                totalPayment: totalPayment
+                totalPayment: totalPayment,
+                vehiclePrice: vehiclePrice
             });
 
             console.log('결과 표시 완료');
@@ -1690,15 +2137,17 @@
             });
         }
 
-        // 가격 조작 함수들
+        // 가격 조작 함수들 (동기화 추가)
         function addPrice(amount) {
             const priceInput = document.getElementById('vehiclePrice');
             const currentValue = parseInt(priceInput.value) || 0;
             priceInput.value = currentValue + amount;
+            syncQuickCalc(); // 동기화
         }
 
         function clearPrice() {
             document.getElementById('vehiclePrice').value = '';
+            document.getElementById('quickPrice').value = ''; // 동기화
         }
 
         // 결과 표시
@@ -1714,7 +2163,7 @@
             document.getElementById('finalTaxInGrid').innerHTML = `<span class="result-icon">💸</span>${results.finalTax.toLocaleString()}만원`;
             
             // 계산 요약 표시
-            const vehiclePrice = parseInt(document.getElementById('vehiclePrice').value) || 0;
+            const vehiclePrice = results.vehiclePrice || parseInt(document.getElementById('vehiclePrice').value) || 0;
             console.log('차량 가격:', vehiclePrice);
             
             const vehiclePriceEl = document.getElementById('vehiclePriceDisplay');
@@ -1751,9 +2200,9 @@
             }
             
             // 최종 결과 표시
-            document.getElementById('totalPayment').innerHTML = `<span>🏦</span>${results.totalPayment.toLocaleString()}만원`;
+            document.getElementById('totalPayment').innerHTML = `${results.totalPayment.toLocaleString()}만원`;
             
-            console.log('결과 표시 완료');
+            console.log('결과 표시 완료 - 최종 지불금액:', results.totalPayment);
         }
 
         // 에러 표시
