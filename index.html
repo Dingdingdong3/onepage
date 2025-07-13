@@ -1746,8 +1746,18 @@
             const finalLocalSubsidy = Math.floor(quickLocal * subsidyRate);
             const totalSubsidy = finalNationalSubsidy + finalLocalSubsidy;
 
-            // 기본 취득세 계산 (승용차 7% 기준)
-            const baseTax = Math.floor(quickPrice * 0.07);
+            // 차량 종류에 따른 세율 적용
+            const vehicleType = document.getElementById('vehicleType').value;
+            const taxRates = {
+                'passenger': 0.07,
+                'van': 0.05,
+                'truck': 0.05,
+                'commercial': 0.04
+            };
+            const taxRate = taxRates[vehicleType] || 0.07;
+            
+            // 기본 취득세 계산
+            const baseTax = Math.floor(quickPrice * taxRate);
             const taxReduction = Math.min(140, baseTax);
             const finalTax = Math.max(0, baseTax - taxReduction);
 
@@ -1836,6 +1846,9 @@
             const resultSection = document.getElementById('resultSection');
             resultSection.style.display = 'block';
             resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // 빠른 계산도 자동으로 실행
+            quickCalculate();
         }
 
         // 결과 표시
