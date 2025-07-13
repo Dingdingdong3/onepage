@@ -306,14 +306,32 @@
             border-left: 4px solid #3b82f6;
         }
 
-        .vehicle-item.no-selection {
-            background: #f1f5f9;
-            border-left: 4px solid #64748b;
-            font-weight: 500;
+        .no-selection-item {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
         }
 
-        .vehicle-item.no-selection:hover {
-            background: #e2e8f0;
+        .no-selection-item:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .no-selection-item.selected {
+            background: #f1f5f9;
+            border-color: #64748b;
+            box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+        }
+
+        .no-selection-text {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 1rem;
         }
 
         .vehicle-name {
@@ -814,15 +832,66 @@
                 </div>
 
                 <div class="main-content">
-                    <!-- 데이터 로딩 상태 표시 -->
-                    <div id="dataStatus" class="status-indicator">
-                        🔄 최신 차량 및 보조금 데이터를 불러오는 중...
-                    </div>
-
                     <!-- 필수 정보 입력 -->
                     <div class="section">
                         <h2 class="section-title">📋 필수 정보</h2>
                         
+                        <div class="form-group">
+                            <label class="form-label required">연도 선택</label>
+                            <select id="dataYear" class="input" onchange="loadYearData()">
+                                <option value="2025" selected>2025년</option>
+                                <option value="2026">2026년</option>
+                                <option value="2027">2027년</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">차량 선택 (국고 보조금 자동 적용)</label>
+                            <div class="vehicle-selection">
+                                <div class="vehicle-tabs">
+                                    <button class="vehicle-tab active" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
+                                    <button class="vehicle-tab" onclick="switchVehicleTab('direct')">직접 입력</button>
+                                </div>
+                                
+                                <div class="vehicle-tab-content">
+                                    <!-- 차량 목록 탭 -->
+                                    <div id="list-tab" class="vehicle-tab-panel active">
+                                        <!-- 제조사 선택 -->
+                                        <div class="manufacturer-selection">
+                                            <label class="form-label">제조사 선택</label>
+                                            <select id="manufacturerFilter" class="input" onchange="filterByManufacturer()">
+                                                <option value="">전체 제조사</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="vehicle-count" id="vehicleCount">데이터 로딩 중...</div>
+                                        <div class="vehicle-list" id="vehicleList">
+                                            <div class="vehicle-item">
+                                                <div class="vehicle-name">차량 데이터를 불러오는 중입니다...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 직접 입력 탭 -->
+                                    <div id="direct-tab" class="vehicle-tab-panel">
+                                        <div style="margin-top: 16px;">
+                                            <label class="form-label">국고 보조금 직접 입력 (만원)</label>
+                                            <input type="number" id="customSubsidy" class="input" 
+                                                   placeholder="보조금 금액을 입력하세요 (예: 680)" min="0" step="1" />
+                                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px;">
+                                                * 차량 목록에 없는 모델의 경우 직접 보조금을 입력할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="selectedVehicleInfo" style="margin-top: 12px; padding: 12px; background: #f0f9ff; border-radius: 6px; display: none;">
+                                <strong>선택된 차량:</strong> <span id="selectedVehicleName"></span><br>
+                                <strong>국고 보조금:</strong> <span id="selectedVehicleSubsidy"></span>만원
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="form-label required">차량 가액 (만원)</label>
                             <div class="price-input-container">
@@ -856,57 +925,40 @@
                         <h2 class="section-title">⚙️ 선택 정보</h2>
                         
                         <div class="form-group">
-                            <label class="form-label">차량 선택 (국고 보조금 자동 적용)</label>
+                            <label class="form-label">지역 선택 (지자체 보조금)</label>
                             <div class="vehicle-selection">
                                 <div class="vehicle-tabs">
-                                    <button class="vehicle-tab active" onclick="switchVehicleTab('list')">차량 목록에서 선택</button>
-                                    <button class="vehicle-tab" onclick="switchVehicleTab('direct')">직접 입력</button>
+                                    <button class="vehicle-tab active" onclick="switchLocalSubsidyTab('region')">지역별 보조금</button>
+                                    <button class="vehicle-tab" onclick="switchLocalSubsidyTab('manual')">직접 입력</button>
                                 </div>
                                 
                                 <div class="vehicle-tab-content">
-                                    <!-- 차량 목록 탭 -->
-                                    <div id="list-tab" class="vehicle-tab-panel active">
-                                        <!-- 제조사 선택 -->
-                                        <div class="manufacturer-selection">
-                                            <label class="form-label">제조사 선택</label>
-                                            <select id="manufacturerFilter" class="input" onchange="filterByManufacturer()">
-                                                <option value="">전체 제조사</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="vehicle-count" id="vehicleCount">데이터 로딩 중...</div>
-                                        <div class="vehicle-list" id="vehicleList">
-                                            <div class="vehicle-item">
-                                                <div class="vehicle-name">최신 차량 데이터를 불러오는 중입니다...</div>
+                                    <!-- 지역별 보조금 탭 -->
+                                    <div id="region-tab" class="vehicle-tab-panel active">
+                                        <div style="margin-top: 16px;">
+                                            <div class="info-text" style="font-size: 0.875rem; color: #64748b; margin-bottom: 8px;">
+                                                * 차량을 먼저 선택하면 해당 차량의 지역별 보조금이 표시됩니다
                                             </div>
+                                            <select id="localSubsidy" class="input" onchange="syncQuickCalc()" disabled>
+                                                <option value="0">먼저 차량을 선택해주세요</option>
+                                            </select>
                                         </div>
                                     </div>
                                     
                                     <!-- 직접 입력 탭 -->
-                                    <div id="direct-tab" class="vehicle-tab-panel">
+                                    <div id="manual-tab" class="vehicle-tab-panel">
                                         <div style="margin-top: 16px;">
-                                            <label class="form-label">국고 보조금 직접 입력 (만원)</label>
-                                            <input type="number" id="customSubsidy" class="input" 
-                                                   placeholder="보조금 금액을 입력하세요 (예: 680)" min="0" step="1" />
+                                            <label class="form-label">지자체 보조금 직접 입력 (만원)</label>
+                                            <input type="number" id="customLocalSubsidy" class="input" 
+                                                   placeholder="지자체 보조금을 입력하세요 (예: 400)" min="0" step="1" value="0" 
+                                                   oninput="syncQuickCalc()" />
                                             <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px;">
-                                                * 차량 목록에 없는 모델의 경우 직접 보조금을 입력할 수 있습니다.
+                                                * 거주 지역의 지자체 보조금을 직접 입력할 수 있습니다.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div id="selectedVehicleInfo" style="margin-top: 12px; padding: 12px; background: #f0f9ff; border-radius: 6px; display: none;">
-                                <strong>선택된 차량:</strong> <span id="selectedVehicleName"></span><br>
-                                <strong>국고 보조금:</strong> <span id="selectedVehicleSubsidy"></span>만원
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">지역 선택 (지자체 보조금)</label>
-                            <select id="localSubsidy" class="input" onchange="syncQuickCalc()">
-                                <option value="0">없음</option>
-                            </select>
                         </div>
 
                         <div class="info-box-container">
@@ -1021,7 +1073,7 @@
                             * 본 계산기는 참고용이며, 정확한 세액은 관할 세무서나 전문기관에 문의하시기 바랍니다.
                         </p>
                         <p style="font-size: 0.8rem; color: #64748b;">
-                            * 차량 데이터는 2025년 7월 11일 기준이며, 최신 정보는 전기차 누리집에서 확인하세요.
+                            * 차량 데이터는 선택된 연도 기준이며, 최신 정보는 전기차 누리집에서 확인하세요.
                         </p>
                     </div>
                 </div>
@@ -1084,276 +1136,237 @@
         </div>
     </div>
 
-    <!-- 통합 데이터 로더 모듈 -->
-    <script src="comprehensive_data_loader.js"></script>
     <script>
         // 전역 변수
-        const SPREADSHEET_ID = '1-r-TPHcy0TBAMmnytN510pKV3npE0b5M-hqQQIm3ddA';
-        const API_KEY = 'AIzaSyC2WdvJ29WTuvjkuCBGDwwiIMmmKll59ws';
         let vehicleData = [];
-        let localSubsidyData = [];
+        let regionData = [];
         let selectedVehicle = null;
         let currentTab = 'list';
+        let currentLocalSubsidyTab = 'region';
         let filteredVehicles = [];
 
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', function() {
             console.log('페이지 로드 시작...');
-            // 새로운 모듈 방식으로 데이터 로드
-            loadDataWithNewModule();
+            loadDataFromCSV();
         });
 
-        // 통합 데이터 로드
-        async function loadDataWithNewModule() {
-            updateDataStatus('loading');
-            
+        // CSV에서 데이터 로드
+        async function loadDataFromCSV() {
             try {
-                // 통합 데이터 로더 사용
-                const data = await loadComprehensiveData();
+                console.log('CSV 데이터 로드 시작...');
                 
-                if (data && data.vehicles && data.vehicles.length > 0) {
-                    vehicleData = data.vehicles;
-                    filteredVehicles = vehicleData;
-                    
-                    // 지역별 보조금 데이터 (지방비 = 지자체 보조금)
-                    localSubsidyData = data.regions.map(region => ({
-                        region: region.region,
-                        subsidy: region.avgSubsidy  // 평균 지방비 사용
-                    }));
-                    
-                    // UI 업데이트
-                    populateManufacturerOptions();
-                    populateVehicleList();
-                    populateLocalSubsidySelect();
-                    
-                    updateDataStatus('success');
-                    
-                    // 메타데이터 표시
-                    if (data.metadata) {
-                        console.log('📅 데이터 업데이트:', data.metadata.lastUpdated);
-                        console.log('🚗 총 차량:', data.metadata.totalVehicles + '개');
-                        console.log('🏭 총 지역:', data.metadata.totalRegions + '개');
-                    }
-                } else {
-                    throw new Error('유효한 데이터를 찾을 수 없음');
+                // 선택된 연도 기준 CSV 파일 경로
+                const selectedYear = document.getElementById('dataYear').value;
+                const csvPath = `csv/${selectedYear}.csv`;
+                
+                console.log(`CSV 파일 경로: ${csvPath}`);
+                
+                // CSV 파일 가져오기
+                const response = await fetch(csvPath);
+                
+                if (!response.ok) {
+                    throw new Error(`CSV 파일 로드 실패: HTTP ${response.status} - ${csvPath}`);
                 }
                 
-            } catch (error) {
-                console.error('데이터 로드 실패:', error);
-                updateDataStatus('error', error.message);
-                loadFallbackData();
-            }
-        }
-
-        // 기존 Google Sheets에서 데이터 로드 (백업용)
-        async function loadDataFromSheets() {
-            updateDataStatus('loading');
-            
-            try {
-                console.log('Google Sheets 데이터 로드 시작...');
+                const csvText = await response.text();
+                console.log(`${selectedYear}년 CSV 데이터 크기:`, csvText.length);
                 
-                // API 키와 스프레드시트 ID 확인
-                console.log('API 키:', API_KEY ? ' 설정됨' : '없음');
-                console.log('스프레드시트 ID:', SPREADSHEET_ID);
+                // CSV 파싱
+                const data = parseCSV(csvText);
+                console.log(`${selectedYear}년 파싱된 데이터 행 수:`, data.length);
                 
-                // 1. 먼저 스프레드시트 접근 테스트
-                await testSpreadsheetAccess();
+                // 데이터 연도 필터링
+                const filteredData = data.filter(row => row['데이터연도'] == selectedYear);
+                console.log(`${selectedYear}년 필터링된 데이터:`, filteredData.length);
                 
-                // 2. 서울특별시 탭에서 차량 데이터 가져오기
-                await loadVehicleData();
+                // 차량 데이터 처리
+                processVehicleData(filteredData);
                 
-                // 3. 모든 지역의 보조금 데이터 가져오기
-                await loadAllRegionsData();
+                // 지역 데이터 처리
+                processRegionData(filteredData);
                 
-                // 4. UI 업데이트
+                // UI 업데이트
                 populateManufacturerOptions();
                 populateVehicleList();
-                populateLocalSubsidySelect();
                 
-                updateDataStatus('success');
-                console.log('데이터 로드 완료');
+                console.log(`${selectedYear}년 CSV 데이터 로드 완료`);
                 
             } catch (error) {
-                console.error('데이터 로드 실패:', error);
-                console.error('에러 상세:', {
-                    message: error.message,
-                    status: error.status,
-                    response: error.response
-                });
-                updateDataStatus('error', error.message);
-                // 에러 발생 시 기본 데이터로 대체
-                loadFallbackData();
+                console.error('CSV 데이터 로드 실패:', error);
+                // 에러 발생 시에도 기본 UI는 표시
+                populateManufacturerOptions();
+                populateVehicleList();
             }
         }
 
-        // 스프레드시트 접근 테스트
-        async function testSpreadsheetAccess() {
-            const testUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?key=${API_KEY}`;
+        // 연도 변경 시 데이터 재로드
+        async function loadYearData() {
+            const selectedYear = document.getElementById('dataYear').value;
+            console.log(`${selectedYear}년 데이터로 변경`);
             
-            console.log('스프레드시트 접근 테스트:', testUrl);
+            // 기존 선택 초기화
+            resetVehicleSelection();
             
-            const response = await fetch(testUrl);
+            // 새 연도 데이터 로드
+            await loadDataFromCSV();
+        }
+
+        // 차량 선택 초기화
+        function resetVehicleSelection() {
+            // 모든 선택 해제
+            document.querySelectorAll('.vehicle-item, .no-selection-item').forEach(item => item.classList.remove('selected'));
+            selectedVehicle = null;
             
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error('스프레드시트 접근 실패:', {
-                    status: response.status,
-                    statusText: response.statusText,
-                    error: errorText
-                });
+            // 선택된 차량 정보 숨김
+            document.getElementById('selectedVehicleInfo').style.display = 'none';
+            
+            // 지자체 보조금 비활성화
+            const localSubsidySelect = document.getElementById('localSubsidy');
+            localSubsidySelect.disabled = true;
+            localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
+            localSubsidySelect.value = 0;
+            
+            // 제조사 필터 초기화
+            document.getElementById('manufacturerFilter').value = '';
+            
+            // 빠른 계산기 초기화
+            document.getElementById('quickSubsidy').value = 0;
+            document.getElementById('quickLocal').value = 0;
+        }
+
+        // CSV 파싱 함수
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            const data = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
                 
-                let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+                const values = [];
+                let current = '';
+                let inQuotes = false;
                 
-                if (response.status === 403) {
-                    errorMessage += ' - API 키 권한 문제 또는 Google Sheets API 미활성화';
-                } else if (response.status === 404) {
-                    errorMessage += ' - 스프레드시트를 찾을 수 없음';
-                } else if (response.status === 401) {
-                    errorMessage += ' - API 키가 유효하지 않음';
+                for (let j = 0; j < line.length; j++) {
+                    const char = line[j];
+                    
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
                 }
+                values.push(current.trim());
                 
-                throw new Error(errorMessage);
+                if (values.length >= headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                }
             }
             
-            const data = await response.json();
-            console.log('스프레드시트 메타데이터:', data);
             return data;
         }
 
-        // 데이터 상태 업데이트
-        function updateDataStatus(status, message = '') {
-            const statusEl = document.getElementById('dataStatus');
+        // 차량 데이터 처리
+        function processVehicleData(data) {
+            const vehicleMap = new Map();
             
-            switch (status) {
-                case 'loading':
-                    statusEl.innerHTML = '🔄 최신 차량 및 보조금 데이터를 불러오는 중...';
-                    statusEl.className = 'status-indicator';
-                    break;
-                case 'success':
-                    statusEl.innerHTML = `✅ 최신 데이터 로드 완료 - 차량 ${vehicleData.length}개, 지역 ${localSubsidyData.length}개`;
-                    statusEl.className = 'status-indicator working';
-                    break;
-                case 'error':
-                    statusEl.innerHTML = `❌ 데이터 로드 실패: ${message} - 기본 데이터로 작동 중`;
-                    statusEl.className = 'status-indicator error';
-                    break;
-            }
-        }
-
-        // 서울특별시 탭에서 차량 데이터 로드
-        async function loadVehicleData() {
-            const range = '2025 서울특별시!A:G';
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
-            
-            console.log('차량 데이터 요청:', url);
-            
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`차량 데이터 로드 실패: HTTP ${response.status}`);
-            }
-            
-            const data = await response.json();
-            if (!data.values || data.values.length < 2) {
-                throw new Error('차량 데이터가 없습니다');
-            }
-            
-            const rows = data.values.slice(1); // 헤더 제외
-            vehicleData = rows
-                .filter(row => row[0] && row[2] && row[3]) // 제조사, 모델명, 국고보조금이 있는 행만
-                .map(row => ({
-                    manufacturer: row[0].trim(),
-                    model: row[2].trim(),
-                    nationalSubsidy: parseInt(row[3]) || 0
-                }));
-            
-            filteredVehicles = vehicleData;
-            console.log(`차량 데이터 로드 완료: ${vehicleData.length}개`);
-        }
-
-        // 모든 지역의 보조금 데이터 로드
-        async function loadAllRegionsData() {
-            // 먼저 스프레드시트의 시트 목록 가져오기
-            const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?key=${API_KEY}`;
-            const sheetsResponse = await fetch(sheetsUrl);
-            
-            if (!sheetsResponse.ok) {
-                throw new Error(`시트 목록 로드 실패: HTTP ${sheetsResponse.status}`);
-            }
-            
-            const sheetsData = await sheetsResponse.json();
-            const sheets = sheetsData.sheets || [];
-            
-            // 2025로 시작하는 시트들 찾기
-            const regionSheets = sheets
-                .map(sheet => sheet.properties.title)
-                .filter(title => title.startsWith('2025 '))
-                .map(title => title.replace('2025 ', ''));
-            
-            console.log(`발견된 지자체: ${regionSheets.length}개`);
-            
-            localSubsidyData = [];
-            
-            // 각 지역별로 평균 지자체 보조금 계산
-            for (const region of regionSheets) {
-                try {
-                    const range = `2025 ${region}!A:G`;
-                    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
+            data.forEach(row => {
+                const manufacturer = row['제조사'];
+                const model = row['모델명'] || row['차종'];
+                const nationalSubsidy = parseInt(row['국비보조금(만원)']) || 0;
+                
+                if (manufacturer && model && nationalSubsidy > 0) {
+                    const vehicleKey = `${manufacturer}_${model}`;
                     
-                    const response = await fetch(url);
-                    if (!response.ok) continue;
-                    
-                    const data = await response.json();
-                    if (!data.values || data.values.length < 2) continue;
-                    
-                    const rows = data.values.slice(1);
-                    const localSubsidies = rows
-                        .filter(row => row[4]) // 지자체 보조금이 있는 행만
-                        .map(row => parseInt(row[4]) || 0)
-                        .filter(amount => amount > 0);
-                    
-                    if (localSubsidies.length > 0) {
-                        const avgSubsidy = Math.round(
-                            localSubsidies.reduce((sum, amount) => sum + amount, 0) / localSubsidies.length
-                        );
-                        
-                        localSubsidyData.push({
-                            region: region,
-                            subsidy: avgSubsidy
+                    if (!vehicleMap.has(vehicleKey)) {
+                        vehicleMap.set(vehicleKey, {
+                            id: vehicleKey,
+                            manufacturer: manufacturer,
+                            model: model,
+                            nationalSubsidy: nationalSubsidy,
+                            regions: new Map()
                         });
                     }
-                } catch (error) {
-                    console.warn(`${region} 데이터 로드 실패:`, error);
+                    
+                    // 지역별 보조금 저장
+                    const region = row['지역'];
+                    const localSubsidy = parseInt(row['지방비보조금(만원)']) || 0;
+                    
+                    if (region && localSubsidy > 0) {
+                        vehicleMap.get(vehicleKey).regions.set(region, localSubsidy);
+                    }
                 }
-            }
+            });
             
-            console.log(`지자체 데이터 로드 완료: ${localSubsidyData.length}개`);
+            vehicleData = Array.from(vehicleMap.values());
+            filteredVehicles = vehicleData;
+            
+            console.log(`차량 데이터 처리 완료: ${vehicleData.length}개`);
         }
 
-        // 기본 데이터 로드 (API 실패 시)
-        function loadFallbackData() {
-            vehicleData = [
-                { manufacturer: '현대자동차', model: '아이오닉6 롱레인지 2WD 18인치', nationalSubsidy: 686 },
-                { manufacturer: '현대자동차', model: '아이오닉5 2WD 롱레인지 19인치', nationalSubsidy: 659 },
-                { manufacturer: '기아', model: 'EV6 롱레인지 2WD 19인치', nationalSubsidy: 655 },
-                { manufacturer: '기아', model: 'EV3 롱레인지 2WD 17인치', nationalSubsidy: 565 },
-                { manufacturer: '현대자동차', model: '코나 일렉트릭 2WD 롱레인지 17인치', nationalSubsidy: 623 },
-                { manufacturer: 'BMW', model: 'i4 eDrive40', nationalSubsidy: 189 },
-                { manufacturer: '테슬라', model: 'Model 3 Long Range', nationalSubsidy: 202 }
-            ];
+        // 지역 데이터 처리
+        function processRegionData(data) {
+            const regionMap = new Map();
             
-            localSubsidyData = [
-                { region: '서울특별시', subsidy: 400 },
-                { region: '부산광역시', subsidy: 300 },
-                { region: '인천광역시', subsidy: 350 },
-                { region: '경기도', subsidy: 300 },
-                { region: '제주특별자치도', subsidy: 600 }
-            ];
+            data.forEach(row => {
+                const region = row['지역'];
+                const localSubsidy = parseInt(row['지방비보조금(만원)']) || 0;
+                
+                if (region && localSubsidy > 0) {
+                    if (!regionMap.has(region)) {
+                        regionMap.set(region, []);
+                    }
+                    regionMap.get(region).push(localSubsidy);
+                }
+            });
             
-            filteredVehicles = vehicleData;
-            populateManufacturerOptions();
-            populateVehicleList();
-            populateLocalSubsidySelect();
+            regionData = [];
+            regionMap.forEach((subsidies, region) => {
+                // 평균 보조금 계산
+                const avgSubsidy = Math.round(subsidies.reduce((sum, s) => sum + s, 0) / subsidies.length);
+                regionData.push({
+                    region: region,
+                    subsidy: avgSubsidy,
+                    count: subsidies.length
+                });
+            });
+            
+            // 지역 순서 정렬 (서울 -> 경기도 -> 광역시 -> 기타 순)
+            const regionOrder = {
+                '서울특별시': 1,
+                '인천광역시': 2,
+                '경기도': 3,
+                '부산광역시': 4,
+                '대구광역시': 5,
+                '광주광역시': 6,
+                '대전광역시': 7,
+                '울산광역시': 8,
+                '세종특별자치시': 9,
+                '제주특별자치도': 99
+            };
+            
+            regionData.sort((a, b) => {
+                const orderA = regionOrder[a.region] || 50;
+                const orderB = regionOrder[b.region] || 50;
+                if (orderA !== orderB) return orderA - orderB;
+                return a.region.localeCompare(b.region);
+            });
+            
+            console.log(`지역 데이터 처리 완료: ${regionData.length}개`);
         }
+
+        // 데이터 상태 업데이트 (함수 삭제됨)
+
+        // 기본 데이터 로드 함수 제거됨
 
         // 제조사 옵션 생성
         function populateManufacturerOptions() {
@@ -1386,34 +1399,33 @@
                 filteredVehicles = vehicleData;
             }
             
-            populateVehicleList(filteredVehicles);
+            populateVehicleList();
             updateVehicleCount(filteredVehicles.length);
         }
 
         // 차량 목록 생성
-        function populateVehicleList(vehicles = null) {
+        function populateVehicleList() {
             const vehicleList = document.getElementById('vehicleList');
             if (!vehicleList) return;
             
-            const displayVehicles = vehicles || filteredVehicles;
             vehicleList.innerHTML = '';
             
-            if (displayVehicles.length === 0) {
-                vehicleList.innerHTML = '<div class="vehicle-item"><div class="vehicle-name">검색 결과가 없습니다.</div></div>';
+            // 선택 안함 옵션 추가 (별도 박스)
+            const noSelectionItem = document.createElement('div');
+            noSelectionItem.className = 'no-selection-item';
+            noSelectionItem.onclick = () => selectVehicleFromList(null, noSelectionItem);
+            noSelectionItem.innerHTML = '<div class="no-selection-text">🚫 차량 선택 안함</div>';
+            vehicleList.appendChild(noSelectionItem);
+            
+            if (filteredVehicles.length === 0) {
+                const emptyItem = document.createElement('div');
+                emptyItem.className = 'vehicle-item';
+                emptyItem.innerHTML = '<div class="vehicle-name">검색 결과가 없습니다.</div>';
+                vehicleList.appendChild(emptyItem);
                 return;
             }
             
-            // 선택 안함 옵션 추가
-            const noSelectionItem = document.createElement('div');
-            noSelectionItem.className = 'vehicle-item no-selection';
-            noSelectionItem.onclick = () => selectVehicleFromList(null, noSelectionItem);
-            noSelectionItem.innerHTML = `
-                <div class="vehicle-name">선택 안함</div>
-                <div class="vehicle-subsidy subsidy-none">국고 보조금: 0만원</div>
-            `;
-            vehicleList.appendChild(noSelectionItem);
-            
-            displayVehicles.forEach((vehicle) => {
+            filteredVehicles.forEach((vehicle) => {
                 const vehicleItem = document.createElement('div');
                 vehicleItem.className = 'vehicle-item';
                 vehicleItem.onclick = () => selectVehicleFromList(vehicle, vehicleItem);
@@ -1434,7 +1446,7 @@
                 vehicleList.appendChild(vehicleItem);
             });
             
-            updateVehicleCount(displayVehicles.length);
+            updateVehicleCount(filteredVehicles.length);
         }
 
         // 차량 개수 업데이트
@@ -1448,7 +1460,7 @@
         // 차량 선택
         function selectVehicleFromList(vehicle, element) {
             // 이전 선택 해제
-            document.querySelectorAll('.vehicle-item').forEach(item => item.classList.remove('selected'));
+            document.querySelectorAll('.vehicle-item, .no-selection-item').forEach(item => item.classList.remove('selected'));
             
             // 현재 선택 표시
             element.classList.add('selected');
@@ -1456,21 +1468,37 @@
             // 차량 정보 저장
             selectedVehicle = vehicle;
             
+            // 지자체 보조금 처리 (지역별 보조금 탭인 경우에만)
+            if (currentLocalSubsidyTab === 'region') {
+                const localSubsidySelect = document.getElementById('localSubsidy');
+                
+                if (vehicle) {
+                    // 지역별 보조금 업데이트 및 활성화
+                    updateLocalSubsidyForVehicle(vehicle);
+                    localSubsidySelect.disabled = false;
+                } else {
+                    // 지역별 보조금 비활성화 및 초기화
+                    localSubsidySelect.disabled = true;
+                    localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
+                    localSubsidySelect.value = 0;
+                }
+            }
+            
             // 선택된 차량 정보 표시
             if (vehicle) {
                 showSelectedVehicleInfo(`${vehicle.manufacturer} ${vehicle.model}`, vehicle.nationalSubsidy);
                 // 빠른 계산기 동기화
                 document.getElementById('quickSubsidy').value = vehicle.nationalSubsidy;
             } else {
-                showSelectedVehicleInfo('선택 안함', 0);
+                showSelectedVehicleInfo('차량 선택 안함', 0);
                 document.getElementById('quickSubsidy').value = 0;
             }
             
             syncQuickCalc();
         }
 
-        // 지자체 보조금 선택 옵션 생성
-        function populateLocalSubsidySelect() {
+        // 선택된 차량의 지역별 보조금 업데이트
+        function updateLocalSubsidyForVehicle(vehicle) {
             const select = document.getElementById('localSubsidy');
             
             // 기존 옵션 제거 (첫 번째 제외)
@@ -1478,13 +1506,39 @@
                 select.removeChild(select.lastChild);
             }
             
-            localSubsidyData.forEach(item => {
+            // 차량별 지역 보조금이 있는 경우 우선 표시
+            if (vehicle && vehicle.regions && vehicle.regions.size > 0) {
+                vehicle.regions.forEach((subsidy, region) => {
+                    const option = document.createElement('option');
+                    option.value = subsidy;
+                    option.textContent = `${region} (${subsidy}만원) - 해당 차량`;
+                    option.style.fontWeight = 'bold';
+                    option.style.color = '#059669';
+                    select.appendChild(option);
+                });
+                
+                // 구분선 추가
+                const divider = document.createElement('option');
+                divider.disabled = true;
+                divider.textContent = '── 기타 지역 ──';
+                select.appendChild(divider);
+            }
+            
+            // 나머지 지역들 추가
+            regionData.forEach(item => {
+                // 이미 차량별 데이터가 있는 지역은 제외
+                if (vehicle && vehicle.regions && vehicle.regions.has(item.region)) {
+                    return;
+                }
+                
                 const option = document.createElement('option');
                 option.value = item.subsidy;
                 option.textContent = `${item.region} (${item.subsidy}만원)`;
                 select.appendChild(option);
             });
         }
+
+        // 지자체 보조금 선택 옵션 생성 (함수 제거됨)
 
         // 차량 탭 전환
         function switchVehicleTab(tab) {
@@ -1497,6 +1551,26 @@
             // 탭 패널 표시/숨김
             document.querySelectorAll('.vehicle-tab-panel').forEach(panel => panel.classList.remove('active'));
             document.getElementById(`${tab}-tab`).classList.add('active');
+            
+            // 직접 입력 탭으로 전환 시 차량 선택 초기화
+            if (tab === 'direct') {
+                // 모든 선택 해제
+                document.querySelectorAll('.vehicle-item, .no-selection-item').forEach(item => item.classList.remove('selected'));
+                selectedVehicle = null;
+                
+                // 선택된 차량 정보 숨김
+                document.getElementById('selectedVehicleInfo').style.display = 'none';
+                
+                // 지자체 보조금 비활성화
+                const localSubsidySelect = document.getElementById('localSubsidy');
+                localSubsidySelect.disabled = true;
+                localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
+                localSubsidySelect.value = 0;
+                
+                // 빠른 계산기 초기화
+                document.getElementById('quickSubsidy').value = 0;
+                document.getElementById('quickLocal').value = 0;
+            }
         }
 
         // 선택된 차량 정보 표시
@@ -1592,7 +1666,7 @@
                 return;
             }
 
-            // 국고 보조금 계산
+            // 국고 보조금 결정
             let nationalSubsidy = 0;
             if (currentTab === 'list' && selectedVehicle) {
                 nationalSubsidy = selectedVehicle.nationalSubsidy;
