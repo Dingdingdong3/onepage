@@ -40,23 +40,6 @@
             overflow: hidden;
         }
 
-        .header {
-            background: #1e293b;
-            color: white;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .header p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
 
         .main-content {
             padding: 40px;
@@ -831,9 +814,6 @@
     <div class="page-wrapper">
         <div class="main-container">
             <div class="container">
-                <div class="header">
-                    <h1>전기차 스마트 계산기</h1>
-                </div>
 
                 <div class="main-content">
                     <!-- 필수 정보 입력 -->
@@ -914,6 +894,7 @@
                             <label class="form-label required">차량 종류</label>
                             <select id="vehicleType" class="input" onchange="syncQuickCalc()">
                                 <option value="passenger" selected>승용차 (7%)</option>
+                                <option value="compact">경차 (4% + 75만원 감면)</option>
                                 <option value="van">승합차 (5%)</option>
                                 <option value="truck">화물차 (5%)</option>
                                 <option value="commercial">영업용 자동차 (4%)</option>
@@ -1346,8 +1327,24 @@
         function processVehicleData(data) {
             const vehicleMap = new Map();
             
+            // 제조사 이름 매핑
+            const nameMap = {
+                '현대자동차': '현대',
+                '기아자동차': '기아',
+                '기아': '기아',
+                '메르세데스벤츠코리아': '벤츠',
+                '메르세데스-벤츠 코리아': '벤츠',
+                '테슬라코리아': '테슬라',
+                '테슬라': '테슬라',
+                '폭스바겐그룹코리아': '폭스바겐',
+                '포르쉐코리아': '포르쉐',
+                '볼보자동차코리아': '볼보',
+                '제네시스코리아': '제네시스'
+            };
+            
             data.forEach(row => {
-                const manufacturer = row['제조사'];
+                const originalManufacturer = row['제조사'];
+                const manufacturer = nameMap[originalManufacturer] || originalManufacturer;
                 const model = row['모델명'] || row['차종'];
                 const nationalSubsidy = parseInt(row['국비보조금(만원)']) || 0;
                 
@@ -1447,6 +1444,21 @@
             
             const manufacturers = [...new Set(vehicleData.map(vehicle => vehicle.manufacturer))];
             
+            // 제조사 이름 간소화
+            const nameMap = {
+                '현대자동차': '현대',
+                '기아자동차': '기아',
+                '기아': '기아',
+                '메르세데스벤츠코리아': '벤츠',
+                '메르세데스-벤츠 코리아': '벤츠',
+                '테슬라코리아': '테슬라',
+                '테슬라': '테슬라',
+                '폭스바겐그룹코리아': '폭스바겐',
+                '포르쉐코리아': '포르쉐',
+                '볼보자동차코리아': '볼보',
+                '제네시스코리아': '제네시스'
+            };
+            
             // 제조사 정렬: 현대, 기아 우선, 그 다음 인기 제조사
             const priorityOrder = {
                 '현대': 1,
@@ -1462,16 +1474,19 @@
             };
             
             manufacturers.sort((a, b) => {
-                const orderA = priorityOrder[a] || 999;
-                const orderB = priorityOrder[b] || 999;
+                const displayA = nameMap[a] || a;
+                const displayB = nameMap[b] || b;
+                const orderA = priorityOrder[displayA] || 999;
+                const orderB = priorityOrder[displayB] || 999;
                 if (orderA !== orderB) return orderA - orderB;
-                return a.localeCompare(b);
+                return displayA.localeCompare(displayB);
             });
             
             manufacturers.forEach(manufacturer => {
                 const option = document.createElement('option');
                 option.value = manufacturer;
-                option.textContent = manufacturer;
+                const displayName = nameMap[manufacturer] || manufacturer;
+                option.textContent = displayName;
                 select.appendChild(option);
             });
         }
@@ -1789,6 +1804,7 @@
             const vehicleType = document.getElementById('vehicleType').value;
             const taxRates = {
                 'passenger': 0.07,
+                'compact': 0.04,  // 경차
                 'van': 0.05,
                 'truck': 0.05,
                 'commercial': 0.04
@@ -1797,7 +1813,16 @@
             
             // 기본 취득세 계산
             const baseTax = Math.floor(quickPrice * taxRate);
-            const taxReduction = Math.min(140, baseTax);
+            
+            // 감면 계산
+            let taxReduction;
+            if (vehicleType === 'compact') {
+                // 경차: 4% 적용 후 75만원 감면
+                taxReduction = 75;
+            } else {
+                // 일반 전기차: 최대 140만원 감면
+                taxReduction = Math.min(140, baseTax);
+            }
             const finalTax = Math.max(0, baseTax - taxReduction);
 
             // 총 지불 금액
@@ -1842,6 +1867,7 @@
             // 세율 설정
             const taxRates = {
                 'passenger': 0.07,
+                'compact': 0.04,  // 경차
                 'van': 0.05,
                 'truck': 0.05,
                 'commercial': 0.04
@@ -1864,7 +1890,14 @@
             const baseTax = Math.floor(vehiclePrice * taxRate);
 
             // 감면 계산
-            const taxReduction = Math.min(140, baseTax);
+            let taxReduction;
+            if (vehicleType === 'compact') {
+                // 경차: 4% 적용 후 75만원 감면
+                taxReduction = 75;
+            } else {
+                // 일반 전기차: 최대 140만원 감면
+                taxReduction = Math.min(140, baseTax);
+            }
             const finalTax = Math.max(0, baseTax - taxReduction);
 
             // 총 지불 금액
