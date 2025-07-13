@@ -1143,8 +1143,9 @@
                 // 연도 선택 옵션 생성
                 populateYearOptions(availableYears);
                 
-                // 가장 최신 연도를 기본값으로 설정
-                const defaultYear = availableYears[availableYears.length - 1];
+                // 현재 연도를 기본값으로 설정 (사용 가능한 연도 중에서)
+                const currentYear = new Date().getFullYear();
+                const defaultYear = availableYears.includes(currentYear) ? currentYear : availableYears[availableYears.length - 1];
                 document.getElementById('dataYear').value = defaultYear;
                 
                 // 초기 데이터 로드
