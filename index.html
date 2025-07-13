@@ -725,6 +725,11 @@
                 padding: 10px;
             }
             
+            /* 모바일에서 빠른 계산기 숨기기 */
+            .right-sidebar {
+                display: none;
+            }
+            
             .container {
                 margin: 10px;
                 border-radius: 8px;
@@ -827,14 +832,12 @@
         <div class="main-container">
             <div class="container">
                 <div class="header">
-                    <h1>🚗 전기차 스마트 계산기</h1>
-                    <p>전기차 구매 시 취득세와 보조금을 간편하게 계산하세요</p>
+                    <h1>전기차 스마트 계산기</h1>
                 </div>
 
                 <div class="main-content">
                     <!-- 필수 정보 입력 -->
                     <div class="section">
-                        <h2 class="section-title">📋 필수 정보</h2>
                         
                         <div class="form-group">
                             <label class="form-label required">연도 선택</label>
@@ -920,7 +923,6 @@
 
                     <!-- 선택 정보 입력 -->
                     <div class="section">
-                        <h2 class="section-title">⚙️ 선택 정보</h2>
                         
                         <div class="form-group">
                             <label class="form-label">지역 선택 (지자체 보조금)</label>
@@ -1444,7 +1446,27 @@
             }
             
             const manufacturers = [...new Set(vehicleData.map(vehicle => vehicle.manufacturer))];
-            manufacturers.sort();
+            
+            // 제조사 정렬: 현대, 기아 우선, 그 다음 인기 제조사
+            const priorityOrder = {
+                '현대': 1,
+                '기아': 2,
+                'BMW': 3,
+                '벤츠': 4,
+                '테슬라': 5,
+                '아우디': 6,
+                '폭스바겐': 7,
+                '볼보': 8,
+                '포르쉐': 9,
+                '제네시스': 10
+            };
+            
+            manufacturers.sort((a, b) => {
+                const orderA = priorityOrder[a] || 999;
+                const orderB = priorityOrder[b] || 999;
+                if (orderA !== orderB) return orderA - orderB;
+                return a.localeCompare(b);
+            });
             
             manufacturers.forEach(manufacturer => {
                 const option = document.createElement('option');
@@ -1489,6 +1511,23 @@
                 vehicleList.appendChild(emptyItem);
                 return;
             }
+            
+            // 차량 정렬: 제조사별로 인기 모델 우선
+            const vehiclePriority = {
+                '현대': {'아이오닉 5': 1, '아이오닉 6': 2, '코나 Electric': 3, 'NEXO': 4},
+                '기아': {'EV6': 1, 'EV9': 2, '니로 EV': 3, '봉고3 EV': 4},
+                'BMW': {'i4': 1, 'iX': 2, 'i7': 3},
+                '벤츠': {'EQE': 1, 'EQS': 2, 'EQA': 3},
+                '테슬라': {'Model 3': 1, 'Model Y': 2, 'Model S': 3, 'Model X': 4}
+            };
+            
+            filteredVehicles.sort((a, b) => {
+                const manufacturerPriority = vehiclePriority[a.manufacturer] || {};
+                const priorityA = manufacturerPriority[a.model] || 999;
+                const priorityB = manufacturerPriority[b.model] || 999;
+                if (priorityA !== priorityB) return priorityA - priorityB;
+                return b.nationalSubsidy - a.nationalSubsidy; // 보조금 높은 순
+            });
             
             filteredVehicles.forEach((vehicle) => {
                 const vehicleItem = document.createElement('div');
