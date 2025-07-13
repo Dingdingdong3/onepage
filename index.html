@@ -939,8 +939,8 @@
                                             <div class="info-text" style="font-size: 0.875rem; color: #64748b; margin-bottom: 8px;">
                                                 * 차량을 먼저 선택하면 해당 차량의 지역별 보조금이 표시됩니다
                                             </div>
-                                            <select id="localSubsidy" class="input" onchange="syncQuickCalc()" disabled>
-                                                <option value="0">먼저 차량을 선택해주세요</option>
+                                            <select id="localSubsidy" class="input" onchange="syncQuickCalc()">
+                                                <option value="0">지역을 선택하세요</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1148,8 +1148,69 @@
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', function() {
             console.log('페이지 로드 시작...');
-            loadDataFromCSV();
+            loadAvailableYears();
         });
+
+        // 사용 가능한 연도 확인 및 로드
+        async function loadAvailableYears() {
+            try {
+                console.log('사용 가능한 연도 확인 중...');
+                
+                const availableYears = [];
+                const currentYear = new Date().getFullYear();
+                
+                // 현재 연도부터 과거 3년, 미래 3년까지 확인
+                for (let year = currentYear - 3; year <= currentYear + 3; year++) {
+                    try {
+                        const csvPath = `csv/${year}.csv`;
+                        const response = await fetch(csvPath);
+                        
+                        if (response.ok) {
+                            availableYears.push(year);
+                            console.log(`${year}년 데이터 파일 확인됨`);
+                        }
+                    } catch (error) {
+                        // 파일이 없으면 무시
+                        console.log(`${year}년 데이터 파일 없음`);
+                    }
+                }
+                
+                // 연도 선택 옵션 생성
+                populateYearOptions(availableYears);
+                
+                // 첫 번째 사용 가능한 연도로 데이터 로드
+                if (availableYears.length > 0) {
+                    const defaultYear = availableYears.includes(currentYear) ? currentYear : availableYears[availableYears.length - 1];
+                    document.getElementById('dataYear').value = defaultYear;
+                    await loadDataFromCSV();
+                } else {
+                    console.error('사용 가능한 연도 데이터가 없습니다');
+                    document.getElementById('dataYear').innerHTML = '<option value="">사용 가능한 데이터가 없습니다</option>';
+                }
+                
+            } catch (error) {
+                console.error('연도 확인 실패:', error);
+                document.getElementById('dataYear').innerHTML = '<option value="">연도 확인 실패</option>';
+            }
+        }
+
+        // 연도 옵션 생성
+        function populateYearOptions(years) {
+            const yearSelect = document.getElementById('dataYear');
+            yearSelect.innerHTML = '';
+            
+            // 최신 연도부터 정렬
+            years.sort((a, b) => b - a);
+            
+            years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = `${year}년`;
+                yearSelect.appendChild(option);
+            });
+            
+            console.log(`사용 가능한 연도: ${years.join(', ')}`);
+        }
 
         // CSV에서 데이터 로드
         async function loadDataFromCSV() {
@@ -1158,6 +1219,12 @@
                 
                 // 선택된 연도 기준 CSV 파일 경로
                 const selectedYear = document.getElementById('dataYear').value;
+                
+                if (!selectedYear) {
+                    console.log('선택된 연도가 없습니다');
+                    return;
+                }
+                
                 const csvPath = `csv/${selectedYear}.csv`;
                 
                 console.log(`CSV 파일 경로: ${csvPath}`);
@@ -1190,6 +1257,11 @@
                 populateManufacturerOptions();
                 populateVehicleList();
                 
+                // 지역별 보조금 목록 초기화
+                if (currentLocalSubsidyTab === 'region') {
+                    updateLocalSubsidyOptions();
+                }
+                
                 console.log(`${selectedYear}년 CSV 데이터 로드 완료`);
                 
             } catch (error) {
@@ -1221,11 +1293,18 @@
             // 선택된 차량 정보 숨김
             document.getElementById('selectedVehicleInfo').style.display = 'none';
             
-            // 지자체 보조금 비활성화
-            const localSubsidySelect = document.getElementById('localSubsidy');
-            localSubsidySelect.disabled = true;
-            localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
-            localSubsidySelect.value = 0;
+            // 지자체 보조금이 지역별 탭인 경우 초기화
+            if (currentLocalSubsidyTab === 'region') {
+                const localSubsidySelect = document.getElementById('localSubsidy');
+                // 차량이 선택되지 않은 경우 전체 지역 목록 표시
+                if (!selectedVehicle) {
+                    updateLocalSubsidyOptions();
+                }
+                localSubsidySelect.value = 0;
+            } else {
+                // 직접 입력 탭인 경우 0으로 초기화
+                document.getElementById('customLocalSubsidy').value = 0;
+            }
             
             // 제조사 필터 초기화
             document.getElementById('manufacturerFilter').value = '';
@@ -1473,15 +1552,13 @@
                 const localSubsidySelect = document.getElementById('localSubsidy');
                 
                 if (vehicle) {
-                    // 지역별 보조금 업데이트 및 활성화
+                    // 지역별 보조금 업데이트
                     updateLocalSubsidyForVehicle(vehicle);
-                    localSubsidySelect.disabled = false;
                 } else {
-                    // 지역별 보조금 비활성화 및 초기화
-                    localSubsidySelect.disabled = true;
-                    localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
-                    localSubsidySelect.value = 0;
+                    // 차량이 선택되지 않은 경우 전체 지역 목록 표시
+                    updateLocalSubsidyOptions();
                 }
+                localSubsidySelect.value = 0;
             }
             
             // 선택된 차량 정보 표시
@@ -1497,14 +1574,28 @@
             syncQuickCalc();
         }
 
+        // 지역별 보조금 옵션 업데이트 (차량이 선택되지 않은 경우)
+        function updateLocalSubsidyOptions() {
+            const select = document.getElementById('localSubsidy');
+            
+            // 기존 옵션 제거
+            select.innerHTML = '<option value="0">지역을 선택하세요</option>';
+            
+            // 모든 지역 추가
+            regionData.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.subsidy;
+                option.textContent = `${item.region} (${item.subsidy}만원)`;
+                select.appendChild(option);
+            });
+        }
+
         // 선택된 차량의 지역별 보조금 업데이트
         function updateLocalSubsidyForVehicle(vehicle) {
             const select = document.getElementById('localSubsidy');
             
-            // 기존 옵션 제거 (첫 번째 제외)
-            while (select.children.length > 1) {
-                select.removeChild(select.lastChild);
-            }
+            // 기존 옵션 제거
+            select.innerHTML = '<option value="0">지역을 선택하세요</option>';
             
             // 차량별 지역 보조금이 있는 경우 우선 표시
             if (vehicle && vehicle.regions && vehicle.regions.size > 0) {
@@ -1540,17 +1631,38 @@
 
         // 지자체 보조금 선택 옵션 생성 (함수 제거됨)
 
+        // 지자체 보조금 탭 전환
+        function switchLocalSubsidyTab(tab) {
+            currentLocalSubsidyTab = tab;
+            
+            // 탭 버튼 활성화 상태 변경
+            const localSubsidyTabs = document.querySelectorAll('.form-group:last-of-type .vehicle-tab');
+            localSubsidyTabs.forEach(t => t.classList.remove('active'));
+            localSubsidyTabs[tab === 'region' ? 0 : 1].classList.add('active');
+            
+            // 탭 패널 표시/숨김
+            document.getElementById('region-tab').classList.toggle('active', tab === 'region');
+            document.getElementById('manual-tab').classList.toggle('active', tab === 'manual');
+            
+            // 빠른 계산기 동기화
+            syncQuickCalc();
+        }
+
         // 차량 탭 전환
         function switchVehicleTab(tab) {
             currentTab = tab;
             
-            // 탭 버튼 활성화 상태 변경
-            document.querySelectorAll('.vehicle-tab').forEach(t => t.classList.remove('active'));
-            document.querySelector(`[onclick="switchVehicleTab('${tab}')"]`).classList.add('active');
+            // 차량 선택 탭의 탭 버튼만 활성화 상태 변경
+            const vehicleTabButtons = document.querySelectorAll('.vehicle-selection .vehicle-tab');
+            vehicleTabButtons.forEach((t, index) => {
+                if (index === 0 && tab === 'list') t.classList.add('active');
+                else if (index === 1 && tab === 'direct') t.classList.add('active');
+                else t.classList.remove('active');
+            });
             
-            // 탭 패널 표시/숨김
-            document.querySelectorAll('.vehicle-tab-panel').forEach(panel => panel.classList.remove('active'));
-            document.getElementById(`${tab}-tab`).classList.add('active');
+            // 차량 선택 탭의 패널만 변경
+            document.getElementById('list-tab').classList.toggle('active', tab === 'list');
+            document.getElementById('direct-tab').classList.toggle('active', tab === 'direct');
             
             // 직접 입력 탭으로 전환 시 차량 선택 초기화
             if (tab === 'direct') {
@@ -1561,15 +1673,19 @@
                 // 선택된 차량 정보 숨김
                 document.getElementById('selectedVehicleInfo').style.display = 'none';
                 
-                // 지자체 보조금 비활성화
-                const localSubsidySelect = document.getElementById('localSubsidy');
-                localSubsidySelect.disabled = true;
-                localSubsidySelect.innerHTML = '<option value="0">먼저 차량을 선택해주세요</option>';
-                localSubsidySelect.value = 0;
+                // 지자체 보조금이 지역별 탭인 경우 초기화
+                if (currentLocalSubsidyTab === 'region') {
+                    const localSubsidySelect = document.getElementById('localSubsidy');
+                    // 차량이 선택되지 않은 경우 전체 지역 목록 표시
+                    updateLocalSubsidyOptions();
+                    localSubsidySelect.value = 0;
+                }
                 
                 // 빠른 계산기 초기화
                 document.getElementById('quickSubsidy').value = 0;
-                document.getElementById('quickLocal').value = 0;
+                if (currentLocalSubsidyTab === 'region') {
+                    document.getElementById('quickLocal').value = 0;
+                }
             }
         }
 
@@ -1596,14 +1712,21 @@
         // 좌측과 우측 동기화
         function syncQuickCalc() {
             const vehiclePrice = document.getElementById('vehiclePrice').value;
-            const localSubsidy = document.getElementById('localSubsidy').value;
             
             if (vehiclePrice) {
                 document.getElementById('quickPrice').value = vehiclePrice;
             }
+
+            // 지자체 보조금 동기화
+            let localSubsidyValue = 0;
+            if (currentLocalSubsidyTab === 'region') {
+                localSubsidyValue = document.getElementById('localSubsidy').value;
+            } else {
+                localSubsidyValue = document.getElementById('customLocalSubsidy').value;
+            }
             
-            if (localSubsidy) {
-                document.getElementById('quickLocal').value = localSubsidy;
+            if (localSubsidyValue) {
+                document.getElementById('quickLocal').value = localSubsidyValue;
             }
 
             // 선택된 차량이 있으면 보조금도 동기화
@@ -1659,7 +1782,14 @@
         function calculateTax() {
             const vehiclePrice = parseInt(document.getElementById('vehiclePrice').value) || 0;
             const vehicleType = document.getElementById('vehicleType').value;
-            const localSubsidyAmount = parseInt(document.getElementById('localSubsidy').value) || 0;
+            
+            // 지자체 보조금 가져오기
+            let localSubsidyAmount = 0;
+            if (currentLocalSubsidyTab === 'region') {
+                localSubsidyAmount = parseInt(document.getElementById('localSubsidy').value) || 0;
+            } else {
+                localSubsidyAmount = parseInt(document.getElementById('customLocalSubsidy').value) || 0;
+            }
 
             if (!vehiclePrice) {
                 alert('차량 가액을 입력해주세요.');
