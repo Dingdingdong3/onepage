@@ -199,7 +199,7 @@
         
         .form-inline {
             display: grid;
-            grid-template-columns: 140px 1fr;
+            grid-template-columns: 140px 350px;
             align-items: center;
             gap: 16px;
         }
@@ -211,7 +211,7 @@
         }
         
         .form-inline .input-wrapper {
-            max-width: 350px;
+            width: 100%;
         }
 
         .required::after {
@@ -386,7 +386,7 @@
             gap: 8px;
             margin-top: 12px;
             margin-left: 156px; /* 140px (label width) + 16px (gap) */
-            max-width: 350px;
+            width: 350px;
         }
 
         .price-btn {
@@ -398,6 +398,8 @@
             cursor: pointer;
             font-size: 0.875rem;
             transition: all 0.2s;
+            width: 100%;
+            min-width: 0;
         }
 
         .price-btn:hover {
