@@ -206,12 +206,13 @@
         .form-inline .form-label {
             margin-bottom: 0;
             white-space: nowrap;
-            min-width: 120px;
+            min-width: 140px;
+            text-align: left;
         }
         
         .form-inline .input-wrapper {
             flex: 1;
-            max-width: 400px;
+            max-width: 350px;
         }
 
         .required::after {
@@ -1539,7 +1540,7 @@
             const noSelectionItem = document.createElement('div');
             noSelectionItem.className = 'no-selection-item';
             noSelectionItem.onclick = () => selectVehicleFromList(null, noSelectionItem);
-            noSelectionItem.innerHTML = '<div class="no-selection-text">🚫 차량 선택 안함 <span style="font-size: 0.875rem; color: #64748b; font-weight: normal;">(취듍세만 계산)</span></div>';
+            noSelectionItem.innerHTML = '<div class="no-selection-text">🚫 차량 선택 안함 <span style="font-size: 0.875rem; color: #64748b; font-weight: normal;">(취득세만 계산)</span></div>';
             vehicleList.appendChild(noSelectionItem);
             
             if (filteredVehicles.length === 0) {
