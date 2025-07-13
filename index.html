@@ -1222,8 +1222,15 @@
                 const data = parseCSV(csvText);
                 console.log(`${selectedYear}년 파싱된 데이터 행 수:`, data.length);
                 
-                // 데이터 연도 필터링
-                const filteredData = data.filter(row => row['데이터연도'] == selectedYear);
+                // 데이터 연도 필터링 (2024년은 데이터연도 컬럼이 없음)
+                let filteredData;
+                if (selectedYear == '2024') {
+                    // 2024년은 모든 데이터 사용
+                    filteredData = data;
+                } else {
+                    // 2025년 이후는 데이터연도 컬럼으로 필터링
+                    filteredData = data.filter(row => row['데이터연도'] == selectedYear);
+                }
                 console.log(`${selectedYear}년 필터링된 데이터:`, filteredData.length);
                 
                 // 차량 데이터 처리
