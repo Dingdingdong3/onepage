@@ -196,6 +196,22 @@
             font-weight: 500;
             color: #475569;
         }
+        
+        .form-inline {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .form-inline .form-label {
+            margin-bottom: 0;
+            white-space: nowrap;
+            min-width: 120px;
+        }
+        
+        .form-inline .input-wrapper {
+            flex: 1;
+        }
 
         .required::after {
             content: " *";
@@ -874,11 +890,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">차량 가액 (만원)</label>
-                            <div class="price-input-container">
-                                <input type="number" id="vehiclePrice" class="input price-input" 
-                                       placeholder="차량 가격을 입력하세요" min="0" step="1" oninput="syncQuickCalc()" />
-                                <span>만원</span>
+                            <div class="form-inline">
+                                <label class="form-label required">차량 가액 (만원)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="vehiclePrice" class="input" 
+                                           placeholder="차량 가격을 입력하세요" min="0" step="1" oninput="syncQuickCalc()" />
+                                </div>
                             </div>
                             <div class="price-buttons">
                                 <button class="price-btn" onclick="addPrice(1000)">+ 1,000만</button>
@@ -891,14 +908,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">차량 종류</label>
-                            <select id="vehicleType" class="input" onchange="syncQuickCalc()">
-                                <option value="passenger" selected>승용차 (7%)</option>
-                                <option value="compact">경차 (4% + 75만원 감면)</option>
-                                <option value="van">승합차 (5%)</option>
-                                <option value="truck">화물차 (5%)</option>
-                                <option value="commercial">영업용 자동차 (4%)</option>
-                            </select>
+                            <div class="form-inline">
+                                <label class="form-label required">차량 종류</label>
+                                <div class="input-wrapper">
+                                    <select id="vehicleType" class="input" onchange="syncQuickCalc()">
+                                        <option value="passenger" selected>승용차 (7%)</option>
+                                        <option value="compact">경차 (4% + 75만원 감면)</option>
+                                        <option value="van">승합차 (5%)</option>
+                                        <option value="truck">화물차 (5%)</option>
+                                        <option value="commercial">영업용 자동차 (4%)</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1643,7 +1664,7 @@
                 vehicle.regions.forEach((subsidy, region) => {
                     const option = document.createElement('option');
                     option.value = subsidy;
-                    option.textContent = `${region} (${subsidy}만원) - 해당 차량`;
+                    option.textContent = `${region} (${subsidy}만원)`;
                     option.style.fontWeight = 'bold';
                     option.style.color = '#059669';
                     select.appendChild(option);
