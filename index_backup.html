@@ -1084,12 +1084,10 @@
         </div>
     </div>
 
-    <!-- 통합 데이터 로더 모듈 -->
-    <script src="comprehensive_data_loader.js"></script>
     <script>
         // 전역 변수
         const SPREADSHEET_ID = '1-r-TPHcy0TBAMmnytN510pKV3npE0b5M-hqQQIm3ddA';
-        const API_KEY = 'AIzaSyC2WdvJ29WTuvjkuCBGDwwiIMmmKll59ws';
+        const API_KEY = 'AIzaSyC07iXSP28LyFr31vUbcY44LHX6rnweTH8';
         let vehicleData = [];
         let localSubsidyData = [];
         let selectedVehicle = null;
@@ -1099,53 +1097,10 @@
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', function() {
             console.log('페이지 로드 시작...');
-            // 새로운 모듈 방식으로 데이터 로드
-            loadDataWithNewModule();
+            loadDataFromSheets();
         });
 
-        // 통합 데이터 로드
-        async function loadDataWithNewModule() {
-            updateDataStatus('loading');
-            
-            try {
-                // 통합 데이터 로더 사용
-                const data = await loadComprehensiveData();
-                
-                if (data && data.vehicles && data.vehicles.length > 0) {
-                    vehicleData = data.vehicles;
-                    filteredVehicles = vehicleData;
-                    
-                    // 지역별 보조금 데이터 (지방비 = 지자체 보조금)
-                    localSubsidyData = data.regions.map(region => ({
-                        region: region.region,
-                        subsidy: region.avgSubsidy  // 평균 지방비 사용
-                    }));
-                    
-                    // UI 업데이트
-                    populateManufacturerOptions();
-                    populateVehicleList();
-                    populateLocalSubsidySelect();
-                    
-                    updateDataStatus('success');
-                    
-                    // 메타데이터 표시
-                    if (data.metadata) {
-                        console.log('📅 데이터 업데이트:', data.metadata.lastUpdated);
-                        console.log('🚗 총 차량:', data.metadata.totalVehicles + '개');
-                        console.log('🏭 총 지역:', data.metadata.totalRegions + '개');
-                    }
-                } else {
-                    throw new Error('유효한 데이터를 찾을 수 없음');
-                }
-                
-            } catch (error) {
-                console.error('데이터 로드 실패:', error);
-                updateDataStatus('error', error.message);
-                loadFallbackData();
-            }
-        }
-
-        // 기존 Google Sheets에서 데이터 로드 (백업용)
+        // Google Sheets에서 데이터 로드
         async function loadDataFromSheets() {
             updateDataStatus('loading');
             
@@ -1230,7 +1185,7 @@
                     statusEl.className = 'status-indicator';
                     break;
                 case 'success':
-                    statusEl.innerHTML = `✅ 최신 데이터 로드 완료 - 차량 ${vehicleData.length}개, 지역 ${localSubsidyData.length}개`;
+                    statusEl.innerHTML = `✅ 최신 데이터 로드 완료 - 차량 ${vehicleData.length}개, 지자체 ${localSubsidyData.length}개`;
                     statusEl.className = 'status-indicator working';
                     break;
                 case 'error':

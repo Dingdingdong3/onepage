@@ -1,0 +1,4332 @@
+{
+  "서울특별시": [
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치",
+      "national_subsidy": "287",
+      "local_subsidy": "28.8",
+      "total_subsidy": "315.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치",
+      "national_subsidy": "261",
+      "local_subsidy": "26.4",
+      "total_subsidy": "287.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치",
+      "national_subsidy": "251",
+      "local_subsidy": "25.2",
+      "total_subsidy": "276.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치",
+      "national_subsidy": "236",
+      "local_subsidy": "24",
+      "total_subsidy": "260"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치",
+      "national_subsidy": "244",
+      "local_subsidy": "25.2",
+      "total_subsidy": "269.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치",
+      "national_subsidy": "260",
+      "local_subsidy": "26.4",
+      "total_subsidy": "286.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 스탠다드 2WD 18인치",
+      "national_subsidy": "635",
+      "local_subsidy": "54",
+      "total_subsidy": "689"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "58.8",
+      "total_subsidy": "744.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 20인치",
+      "national_subsidy": "680",
+      "local_subsidy": "58.8",
+      "total_subsidy": "738.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "58.8",
+      "total_subsidy": "744.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 20인치",
+      "national_subsidy": "647",
+      "local_subsidy": "55.2",
+      "total_subsidy": "702.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national_subsidy": "573",
+      "local_subsidy": "45.6",
+      "total_subsidy": "618.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national_subsidy": "623",
+      "local_subsidy": "54",
+      "total_subsidy": "677"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national_subsidy": "568",
+      "local_subsidy": "48",
+      "total_subsidy": "616"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉5 N",
+      "national_subsidy": "232",
+      "local_subsidy": "24",
+      "total_subsidy": "256"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national_subsidy": "659",
+      "local_subsidy": "58.8",
+      "total_subsidy": "717.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national_subsidy": "656",
+      "local_subsidy": "58.8",
+      "total_subsidy": "714.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national_subsidy": "651",
+      "local_subsidy": "58.8",
+      "total_subsidy": "709.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national_subsidy": "624",
+      "local_subsidy": "55.2",
+      "total_subsidy": "679.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national_subsidy": "650",
+      "local_subsidy": "57.6",
+      "total_subsidy": "707.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national_subsidy": "633",
+      "local_subsidy": "56.4",
+      "total_subsidy": "689.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national_subsidy": "602",
+      "local_subsidy": "52.8",
+      "total_subsidy": "654.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified G80 AWD 19인치(2025)",
+      "national_subsidy": "275",
+      "local_subsidy": "27.6",
+      "total_subsidy": "302.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national_subsidy": "561",
+      "local_subsidy": "50.4",
+      "total_subsidy": "611.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치(2025)",
+      "national_subsidy": "250",
+      "local_subsidy": "25.2",
+      "total_subsidy": "275.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "26.4",
+      "total_subsidy": "292.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national_subsidy": "623",
+      "local_subsidy": "54",
+      "total_subsidy": "677"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 성능형 AWD",
+      "national_subsidy": "277",
+      "local_subsidy": "27.6",
+      "total_subsidy": "304.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 AWD",
+      "national_subsidy": "276",
+      "local_subsidy": "27.6",
+      "total_subsidy": "303.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 2WD",
+      "national_subsidy": "279",
+      "local_subsidy": "28.8",
+      "total_subsidy": "307.8"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national_subsidy": "248",
+      "local_subsidy": "25.2",
+      "total_subsidy": "273.2"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "26.4",
+      "total_subsidy": "292.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치(2025)",
+      "national_subsidy": "277",
+      "local_subsidy": "27.6",
+      "total_subsidy": "304.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치(2025)",
+      "national_subsidy": "290",
+      "local_subsidy": "30",
+      "total_subsidy": "320"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "The all-new Kia Niro EV",
+      "national_subsidy": "590",
+      "local_subsidy": "51.6",
+      "total_subsidy": "641.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 19인치",
+      "national_subsidy": "275",
+      "local_subsidy": "27.6",
+      "total_subsidy": "302.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 20인치",
+      "national_subsidy": "273",
+      "local_subsidy": "27.6",
+      "total_subsidy": "300.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 19인치",
+      "national_subsidy": "259",
+      "local_subsidy": "26.4",
+      "total_subsidy": "285.4"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 21인치",
+      "national_subsidy": "265",
+      "local_subsidy": "26.4",
+      "total_subsidy": "291.4"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 GTL 4WD 21인치",
+      "national_subsidy": "257",
+      "local_subsidy": "26.4",
+      "total_subsidy": "283.4"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 20인치",
+      "national_subsidy": "617",
+      "local_subsidy": "55.2",
+      "total_subsidy": "672.2"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 20인치",
+      "national_subsidy": "644",
+      "local_subsidy": "58.8",
+      "total_subsidy": "702.8"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 19인치",
+      "national_subsidy": "646",
+      "local_subsidy": "58.8",
+      "total_subsidy": "704.8"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 19인치",
+      "national_subsidy": "655",
+      "local_subsidy": "60",
+      "total_subsidy": "715"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "57.6",
+      "total_subsidy": "622.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "57.6",
+      "total_subsidy": "622.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 스탠다드 2WD",
+      "national_subsidy": "479",
+      "local_subsidy": "49.2",
+      "total_subsidy": "528.2"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 GT",
+      "national_subsidy": "232",
+      "local_subsidy": "24",
+      "total_subsidy": "256"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 스탠다드",
+      "national_subsidy": "582",
+      "local_subsidy": "52.8",
+      "total_subsidy": "634.8"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 스탠다드",
+      "national_subsidy": "242",
+      "local_subsidy": "24",
+      "total_subsidy": "266"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 GTL 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "57.6",
+      "total_subsidy": "622.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 19인치",
+      "national_subsidy": "491",
+      "local_subsidy": "50.4",
+      "total_subsidy": "541.4"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "57.6",
+      "total_subsidy": "622.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "57.6",
+      "total_subsidy": "622.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 17인치",
+      "national_subsidy": "522",
+      "local_subsidy": "54",
+      "total_subsidy": "576"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Cooper SE",
+      "national_subsidy": "303",
+      "local_subsidy": "26",
+      "total_subsidy": "329"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40",
+      "national_subsidy": "189",
+      "local_subsidy": "19.2",
+      "total_subsidy": "208.2"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50",
+      "national_subsidy": "172",
+      "local_subsidy": "16.8",
+      "total_subsidy": "188.8"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX1 xDrive30",
+      "national_subsidy": "154",
+      "local_subsidy": "15.6",
+      "total_subsidy": "169.6"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40 LCI",
+      "national_subsidy": "187",
+      "local_subsidy": "19.2",
+      "total_subsidy": "206.2"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX2 eDrive20",
+      "national_subsidy": "167",
+      "local_subsidy": "16.8",
+      "total_subsidy": "183.8"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman SE ALL4",
+      "national_subsidy": "158",
+      "local_subsidy": "13",
+      "total_subsidy": "171"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman E",
+      "national_subsidy": "166",
+      "local_subsidy": "14",
+      "total_subsidy": "180"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman SE",
+      "national_subsidy": "306",
+      "local_subsidy": "26",
+      "total_subsidy": "332"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50 LCI",
+      "national_subsidy": "177",
+      "local_subsidy": "18",
+      "total_subsidy": "195"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW Aceman E",
+      "national_subsidy": "151",
+      "local_subsidy": "13",
+      "total_subsidy": "164"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW E",
+      "national_subsidy": "147",
+      "local_subsidy": "12",
+      "total_subsidy": "159"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman E",
+      "national_subsidy": "306",
+      "local_subsidy": "26",
+      "total_subsidy": "332"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model 3 RWD(2024)",
+      "national_subsidy": "183",
+      "local_subsidy": "18",
+      "total_subsidy": "201"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Long Range",
+      "national_subsidy": "202",
+      "local_subsidy": "20.4",
+      "total_subsidy": "222.4"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y RWD",
+      "national_subsidy": "201",
+      "local_subsidy": "16.8",
+      "total_subsidy": "217.8"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range",
+      "national_subsidy": "184",
+      "local_subsidy": "18",
+      "total_subsidy": "202"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Performance",
+      "national_subsidy": "191",
+      "local_subsidy": "19.2",
+      "total_subsidy": "210.2"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Performance",
+      "national_subsidy": "187",
+      "local_subsidy": "19.2",
+      "total_subsidy": "206.2"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range 19인치",
+      "national_subsidy": "202",
+      "local_subsidy": "20.4",
+      "total_subsidy": "222.4"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 RWD",
+      "national_subsidy": "186",
+      "local_subsidy": "19.2",
+      "total_subsidy": "205.2"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y Long Range",
+      "national_subsidy": "207",
+      "local_subsidy": "20.4",
+      "total_subsidy": "227.4"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y RWD",
+      "national_subsidy": "188",
+      "local_subsidy": "19.2",
+      "total_subsidy": "207.2"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "13",
+      "total_subsidy": "165"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "13",
+      "total_subsidy": "165"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQA250(Facelift)",
+      "national_subsidy": "190",
+      "local_subsidy": "16",
+      "total_subsidy": "206"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(5인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "13",
+      "total_subsidy": "167"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(7인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "13",
+      "total_subsidy": "167"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 40 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "17",
+      "total_subsidy": "218"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national_subsidy": "202",
+      "local_subsidy": "17",
+      "total_subsidy": "219"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "36",
+      "total_subsidy": "458"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 ID.5 Pro",
+      "national_subsidy": "215",
+      "local_subsidy": "18",
+      "total_subsidy": "233"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "폭스바겐 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "36",
+      "total_subsidy": "458"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 Sportback 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "17",
+      "total_subsidy": "218"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "17",
+      "total_subsidy": "218"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q6 e-tron performance",
+      "national_subsidy": "220",
+      "local_subsidy": "18",
+      "total_subsidy": "238"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 18인치",
+      "national_subsidy": "373",
+      "local_subsidy": "36",
+      "total_subsidy": "409"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 20인치",
+      "national_subsidy": "356",
+      "local_subsidy": "34.8",
+      "total_subsidy": "390.8"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "코란도 EV 2WD",
+      "national_subsidy": "340",
+      "local_subsidy": "29",
+      "total_subsidy": "369"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 18인치",
+      "national_subsidy": "364",
+      "local_subsidy": "37.2",
+      "total_subsidy": "401.2"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 20인치",
+      "national_subsidy": "354",
+      "local_subsidy": "36",
+      "total_subsidy": "390"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Single Motor",
+      "national_subsidy": "181",
+      "local_subsidy": "15",
+      "total_subsidy": "196"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Dual Motor",
+      "national_subsidy": "141",
+      "local_subsidy": "12",
+      "total_subsidy": "153"
+    },
+    {
+      "manufacturer": "볼보자동차코리아",
+      "model": "일반승용",
+      "model_detail": "볼보 EX30 Single Motor ER",
+      "national_subsidy": "247",
+      "local_subsidy": "21",
+      "total_subsidy": "268"
+    },
+    {
+      "manufacturer": "비와이디코리아",
+      "model": "일반승용",
+      "model_detail": "BYD ATTO 3",
+      "national_subsidy": "145",
+      "local_subsidy": "12",
+      "total_subsidy": "157"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 4인승 승용",
+      "national_subsidy": "457",
+      "local_subsidy": "45.6",
+      "total_subsidy": "502.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 2인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "45.6",
+      "total_subsidy": "502.6"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 1인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "45.6",
+      "total_subsidy": "502.6"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "50.4",
+      "total_subsidy": "550.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "50.4",
+      "total_subsidy": "550.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 기본형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "50.4",
+      "total_subsidy": "550.4"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 크로스 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "50.4",
+      "total_subsidy": "550.4"
+    },
+    {
+      "manufacturer": "쎄보모빌리티",
+      "model": "초소형",
+      "model_detail": "(단종)CEVO-C SE",
+      "national_subsidy": "200",
+      "local_subsidy": "25",
+      "total_subsidy": "225"
+    }
+  ],
+  "부산광역시": [
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치",
+      "national_subsidy": "287",
+      "local_subsidy": "163",
+      "total_subsidy": "450"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치",
+      "national_subsidy": "261",
+      "local_subsidy": "153",
+      "total_subsidy": "414"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치",
+      "national_subsidy": "251",
+      "local_subsidy": "149",
+      "total_subsidy": "400"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치",
+      "national_subsidy": "236",
+      "local_subsidy": "143",
+      "total_subsidy": "379"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치",
+      "national_subsidy": "244",
+      "local_subsidy": "146",
+      "total_subsidy": "390"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치",
+      "national_subsidy": "260",
+      "local_subsidy": "153",
+      "total_subsidy": "413"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 스탠다드 2WD 18인치",
+      "national_subsidy": "635",
+      "local_subsidy": "258",
+      "total_subsidy": "893"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "278",
+      "total_subsidy": "964"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 20인치",
+      "national_subsidy": "680",
+      "local_subsidy": "275",
+      "total_subsidy": "955"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "278",
+      "total_subsidy": "964"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 20인치",
+      "national_subsidy": "647",
+      "local_subsidy": "262",
+      "total_subsidy": "909"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national_subsidy": "573",
+      "local_subsidy": "227",
+      "total_subsidy": "800"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national_subsidy": "623",
+      "local_subsidy": "257",
+      "total_subsidy": "880"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national_subsidy": "568",
+      "local_subsidy": "235",
+      "total_subsidy": "803"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉5 N",
+      "national_subsidy": "232",
+      "local_subsidy": "142",
+      "total_subsidy": "374"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national_subsidy": "659",
+      "local_subsidy": "278",
+      "total_subsidy": "937"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national_subsidy": "656",
+      "local_subsidy": "277",
+      "total_subsidy": "933"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national_subsidy": "651",
+      "local_subsidy": "275",
+      "total_subsidy": "926"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national_subsidy": "624",
+      "local_subsidy": "264",
+      "total_subsidy": "888"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national_subsidy": "650",
+      "local_subsidy": "275",
+      "total_subsidy": "925"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national_subsidy": "633",
+      "local_subsidy": "268",
+      "total_subsidy": "901"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national_subsidy": "602",
+      "local_subsidy": "256",
+      "total_subsidy": "858"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified G80 AWD 19인치(2025)",
+      "national_subsidy": "275",
+      "local_subsidy": "159",
+      "total_subsidy": "434"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national_subsidy": "561",
+      "local_subsidy": "245",
+      "total_subsidy": "806"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치(2025)",
+      "national_subsidy": "250",
+      "local_subsidy": "149",
+      "total_subsidy": "399"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "155",
+      "total_subsidy": "421"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national_subsidy": "623",
+      "local_subsidy": "257",
+      "total_subsidy": "880"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 성능형 AWD",
+      "national_subsidy": "277",
+      "local_subsidy": "159",
+      "total_subsidy": "436"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 AWD",
+      "national_subsidy": "276",
+      "local_subsidy": "159",
+      "total_subsidy": "435"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 2WD",
+      "national_subsidy": "279",
+      "local_subsidy": "160",
+      "total_subsidy": "439"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national_subsidy": "248",
+      "local_subsidy": "148",
+      "total_subsidy": "396"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "155",
+      "total_subsidy": "421"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치(2025)",
+      "national_subsidy": "277",
+      "local_subsidy": "159",
+      "total_subsidy": "436"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치(2025)",
+      "national_subsidy": "290",
+      "local_subsidy": "165",
+      "total_subsidy": "455"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "The all-new Kia Niro EV",
+      "national_subsidy": "590",
+      "local_subsidy": "247",
+      "total_subsidy": "837"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 19인치",
+      "national_subsidy": "275",
+      "local_subsidy": "159",
+      "total_subsidy": "434"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 20인치",
+      "national_subsidy": "273",
+      "local_subsidy": "158",
+      "total_subsidy": "431"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 19인치",
+      "national_subsidy": "259",
+      "local_subsidy": "152",
+      "total_subsidy": "411"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 21인치",
+      "national_subsidy": "265",
+      "local_subsidy": "155",
+      "total_subsidy": "420"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 GTL 4WD 21인치",
+      "national_subsidy": "257",
+      "local_subsidy": "151",
+      "total_subsidy": "408"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 20인치",
+      "national_subsidy": "617",
+      "local_subsidy": "264",
+      "total_subsidy": "881"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 20인치",
+      "national_subsidy": "644",
+      "local_subsidy": "275",
+      "total_subsidy": "919"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 19인치",
+      "national_subsidy": "646",
+      "local_subsidy": "276",
+      "total_subsidy": "922"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 19인치",
+      "national_subsidy": "655",
+      "local_subsidy": "280",
+      "total_subsidy": "935"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "274",
+      "total_subsidy": "839"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "274",
+      "total_subsidy": "839"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 스탠다드 2WD",
+      "national_subsidy": "479",
+      "local_subsidy": "239",
+      "total_subsidy": "718"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 GT",
+      "national_subsidy": "232",
+      "local_subsidy": "142",
+      "total_subsidy": "374"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 스탠다드",
+      "national_subsidy": "582",
+      "local_subsidy": "252",
+      "total_subsidy": "834"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 스탠다드",
+      "national_subsidy": "242",
+      "local_subsidy": "145",
+      "total_subsidy": "387"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 GTL 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "274",
+      "total_subsidy": "839"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 19인치",
+      "national_subsidy": "491",
+      "local_subsidy": "244",
+      "total_subsidy": "735"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "274",
+      "total_subsidy": "839"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "274",
+      "total_subsidy": "839"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 17인치",
+      "national_subsidy": "522",
+      "local_subsidy": "257",
+      "total_subsidy": "779"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Cooper SE",
+      "national_subsidy": "303",
+      "local_subsidy": "120",
+      "total_subsidy": "423"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40",
+      "national_subsidy": "189",
+      "local_subsidy": "74",
+      "total_subsidy": "263"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50",
+      "national_subsidy": "172",
+      "local_subsidy": "68",
+      "total_subsidy": "240"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX1 xDrive30",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40 LCI",
+      "national_subsidy": "187",
+      "local_subsidy": "74",
+      "total_subsidy": "261"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX2 eDrive20",
+      "national_subsidy": "167",
+      "local_subsidy": "66",
+      "total_subsidy": "233"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman SE ALL4",
+      "national_subsidy": "158",
+      "local_subsidy": "62",
+      "total_subsidy": "220"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman E",
+      "national_subsidy": "166",
+      "local_subsidy": "65",
+      "total_subsidy": "231"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman SE",
+      "national_subsidy": "306",
+      "local_subsidy": "121",
+      "total_subsidy": "427"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50 LCI",
+      "national_subsidy": "177",
+      "local_subsidy": "70",
+      "total_subsidy": "247"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW Aceman E",
+      "national_subsidy": "151",
+      "local_subsidy": "59",
+      "total_subsidy": "210"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW E",
+      "national_subsidy": "147",
+      "local_subsidy": "58",
+      "total_subsidy": "205"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman E",
+      "national_subsidy": "306",
+      "local_subsidy": "121",
+      "total_subsidy": "427"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model 3 RWD(2024)",
+      "national_subsidy": "183",
+      "local_subsidy": "72",
+      "total_subsidy": "255"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Long Range",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y RWD",
+      "national_subsidy": "201",
+      "local_subsidy": "67",
+      "total_subsidy": "268"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range",
+      "national_subsidy": "184",
+      "local_subsidy": "72",
+      "total_subsidy": "256"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Performance",
+      "national_subsidy": "191",
+      "local_subsidy": "75",
+      "total_subsidy": "266"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Performance",
+      "national_subsidy": "187",
+      "local_subsidy": "74",
+      "total_subsidy": "261"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range 19인치",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 RWD",
+      "national_subsidy": "186",
+      "local_subsidy": "73",
+      "total_subsidy": "259"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y Long Range",
+      "national_subsidy": "207",
+      "local_subsidy": "82",
+      "total_subsidy": "289"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y RWD",
+      "national_subsidy": "188",
+      "local_subsidy": "74",
+      "total_subsidy": "262"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "60",
+      "total_subsidy": "212"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "60",
+      "total_subsidy": "212"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQA250(Facelift)",
+      "national_subsidy": "190",
+      "local_subsidy": "75",
+      "total_subsidy": "265"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(5인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(7인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 40 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "167",
+      "total_subsidy": "589"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 ID.5 Pro",
+      "national_subsidy": "215",
+      "local_subsidy": "85",
+      "total_subsidy": "300"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "폭스바겐 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "167",
+      "total_subsidy": "589"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 Sportback 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q6 e-tron performance",
+      "national_subsidy": "220",
+      "local_subsidy": "87",
+      "total_subsidy": "307"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 18인치",
+      "national_subsidy": "373",
+      "local_subsidy": "191",
+      "total_subsidy": "564"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 20인치",
+      "national_subsidy": "356",
+      "local_subsidy": "184",
+      "total_subsidy": "540"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "코란도 EV 2WD",
+      "national_subsidy": "340",
+      "local_subsidy": "184",
+      "total_subsidy": "524"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 18인치",
+      "national_subsidy": "364",
+      "local_subsidy": "194",
+      "total_subsidy": "558"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 20인치",
+      "national_subsidy": "354",
+      "local_subsidy": "190",
+      "total_subsidy": "544"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Single Motor",
+      "national_subsidy": "181",
+      "local_subsidy": "71",
+      "total_subsidy": "252"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Dual Motor",
+      "national_subsidy": "141",
+      "local_subsidy": "55",
+      "total_subsidy": "196"
+    },
+    {
+      "manufacturer": "볼보자동차코리아",
+      "model": "일반승용",
+      "model_detail": "볼보 EX30 Single Motor ER",
+      "national_subsidy": "247",
+      "local_subsidy": "97",
+      "total_subsidy": "344"
+    },
+    {
+      "manufacturer": "비와이디코리아",
+      "model": "일반승용",
+      "model_detail": "BYD ATTO 3",
+      "national_subsidy": "145",
+      "local_subsidy": "57",
+      "total_subsidy": "202"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 4인승 승용",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 2인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 1인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 기본형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 크로스 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "쎄보모빌리티",
+      "model": "초소형",
+      "model_detail": "(단종)CEVO-C SE",
+      "national_subsidy": "200",
+      "local_subsidy": "130",
+      "total_subsidy": "330"
+    }
+  ],
+  "대구광역시": [
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치",
+      "national_subsidy": "287",
+      "local_subsidy": "123",
+      "total_subsidy": "410"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치",
+      "national_subsidy": "261",
+      "local_subsidy": "112",
+      "total_subsidy": "373"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치",
+      "national_subsidy": "251",
+      "local_subsidy": "108",
+      "total_subsidy": "359"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치",
+      "national_subsidy": "236",
+      "local_subsidy": "101",
+      "total_subsidy": "337"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치",
+      "national_subsidy": "244",
+      "local_subsidy": "105",
+      "total_subsidy": "349"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치",
+      "national_subsidy": "260",
+      "local_subsidy": "112",
+      "total_subsidy": "372"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 스탠다드 2WD 18인치",
+      "national_subsidy": "635",
+      "local_subsidy": "226",
+      "total_subsidy": "861"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "247",
+      "total_subsidy": "933"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 20인치",
+      "national_subsidy": "680",
+      "local_subsidy": "245",
+      "total_subsidy": "925"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "247",
+      "total_subsidy": "933"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 20인치",
+      "national_subsidy": "647",
+      "local_subsidy": "231",
+      "total_subsidy": "878"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national_subsidy": "573",
+      "local_subsidy": "192",
+      "total_subsidy": "765"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national_subsidy": "623",
+      "local_subsidy": "225",
+      "total_subsidy": "848"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national_subsidy": "568",
+      "local_subsidy": "202",
+      "total_subsidy": "770"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉5 N",
+      "national_subsidy": "232",
+      "local_subsidy": "100",
+      "total_subsidy": "332"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national_subsidy": "659",
+      "local_subsidy": "248",
+      "total_subsidy": "907"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national_subsidy": "656",
+      "local_subsidy": "247",
+      "total_subsidy": "903"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national_subsidy": "651",
+      "local_subsidy": "245",
+      "total_subsidy": "896"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national_subsidy": "624",
+      "local_subsidy": "233",
+      "total_subsidy": "857"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national_subsidy": "650",
+      "local_subsidy": "244",
+      "total_subsidy": "894"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national_subsidy": "633",
+      "local_subsidy": "237",
+      "total_subsidy": "870"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national_subsidy": "602",
+      "local_subsidy": "224",
+      "total_subsidy": "826"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified G80 AWD 19인치(2025)",
+      "national_subsidy": "275",
+      "local_subsidy": "118",
+      "total_subsidy": "393"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national_subsidy": "561",
+      "local_subsidy": "212",
+      "total_subsidy": "773"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치(2025)",
+      "national_subsidy": "250",
+      "local_subsidy": "107",
+      "total_subsidy": "357"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "114",
+      "total_subsidy": "380"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national_subsidy": "623",
+      "local_subsidy": "225",
+      "total_subsidy": "848"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 성능형 AWD",
+      "national_subsidy": "277",
+      "local_subsidy": "119",
+      "total_subsidy": "396"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 AWD",
+      "national_subsidy": "276",
+      "local_subsidy": "118",
+      "total_subsidy": "394"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 2WD",
+      "national_subsidy": "279",
+      "local_subsidy": "120",
+      "total_subsidy": "399"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national_subsidy": "248",
+      "local_subsidy": "106",
+      "total_subsidy": "354"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "114",
+      "total_subsidy": "380"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치(2025)",
+      "national_subsidy": "277",
+      "local_subsidy": "119",
+      "total_subsidy": "396"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치(2025)",
+      "national_subsidy": "290",
+      "local_subsidy": "125",
+      "total_subsidy": "415"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "The all-new Kia Niro EV",
+      "national_subsidy": "590",
+      "local_subsidy": "215",
+      "total_subsidy": "805"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 19인치",
+      "national_subsidy": "275",
+      "local_subsidy": "118",
+      "total_subsidy": "393"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 20인치",
+      "national_subsidy": "273",
+      "local_subsidy": "117",
+      "total_subsidy": "390"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 19인치",
+      "national_subsidy": "259",
+      "local_subsidy": "111",
+      "total_subsidy": "370"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 21인치",
+      "national_subsidy": "265",
+      "local_subsidy": "114",
+      "total_subsidy": "379"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 GTL 4WD 21인치",
+      "national_subsidy": "257",
+      "local_subsidy": "110",
+      "total_subsidy": "367"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 20인치",
+      "national_subsidy": "617",
+      "local_subsidy": "233",
+      "total_subsidy": "850"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 20인치",
+      "national_subsidy": "644",
+      "local_subsidy": "245",
+      "total_subsidy": "889"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 19인치",
+      "national_subsidy": "646",
+      "local_subsidy": "246",
+      "total_subsidy": "892"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 19인치",
+      "national_subsidy": "655",
+      "local_subsidy": "250",
+      "total_subsidy": "905"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "243",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "243",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 스탠다드 2WD",
+      "national_subsidy": "479",
+      "local_subsidy": "206",
+      "total_subsidy": "685"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 GT",
+      "national_subsidy": "232",
+      "local_subsidy": "100",
+      "total_subsidy": "332"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 스탠다드",
+      "national_subsidy": "582",
+      "local_subsidy": "220",
+      "total_subsidy": "802"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 스탠다드",
+      "national_subsidy": "242",
+      "local_subsidy": "104",
+      "total_subsidy": "346"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 GTL 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "243",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 19인치",
+      "national_subsidy": "491",
+      "local_subsidy": "211",
+      "total_subsidy": "702"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "243",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "243",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 17인치",
+      "national_subsidy": "522",
+      "local_subsidy": "225",
+      "total_subsidy": "747"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Cooper SE",
+      "national_subsidy": "303",
+      "local_subsidy": "130",
+      "total_subsidy": "433"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40",
+      "national_subsidy": "189",
+      "local_subsidy": "81",
+      "total_subsidy": "270"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50",
+      "national_subsidy": "172",
+      "local_subsidy": "74",
+      "total_subsidy": "246"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX1 xDrive30",
+      "national_subsidy": "154",
+      "local_subsidy": "66",
+      "total_subsidy": "220"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40 LCI",
+      "national_subsidy": "187",
+      "local_subsidy": "80",
+      "total_subsidy": "267"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX2 eDrive20",
+      "national_subsidy": "167",
+      "local_subsidy": "71",
+      "total_subsidy": "238"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman SE ALL4",
+      "national_subsidy": "158",
+      "local_subsidy": "68",
+      "total_subsidy": "226"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman E",
+      "national_subsidy": "166",
+      "local_subsidy": "71",
+      "total_subsidy": "237"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman SE",
+      "national_subsidy": "306",
+      "local_subsidy": "131",
+      "total_subsidy": "437"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50 LCI",
+      "national_subsidy": "177",
+      "local_subsidy": "76",
+      "total_subsidy": "253"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW Aceman E",
+      "national_subsidy": "151",
+      "local_subsidy": "65",
+      "total_subsidy": "216"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW E",
+      "national_subsidy": "147",
+      "local_subsidy": "63",
+      "total_subsidy": "210"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman E",
+      "national_subsidy": "306",
+      "local_subsidy": "131",
+      "total_subsidy": "437"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model 3 RWD(2024)",
+      "national_subsidy": "183",
+      "local_subsidy": "78",
+      "total_subsidy": "261"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Long Range",
+      "national_subsidy": "202",
+      "local_subsidy": "87",
+      "total_subsidy": "289"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y RWD",
+      "national_subsidy": "201",
+      "local_subsidy": "72",
+      "total_subsidy": "273"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range",
+      "national_subsidy": "184",
+      "local_subsidy": "79",
+      "total_subsidy": "263"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Performance",
+      "national_subsidy": "191",
+      "local_subsidy": "82",
+      "total_subsidy": "273"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Performance",
+      "national_subsidy": "187",
+      "local_subsidy": "80",
+      "total_subsidy": "267"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range 19인치",
+      "national_subsidy": "202",
+      "local_subsidy": "87",
+      "total_subsidy": "289"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 RWD",
+      "national_subsidy": "186",
+      "local_subsidy": "80",
+      "total_subsidy": "266"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y Long Range",
+      "national_subsidy": "207",
+      "local_subsidy": "89",
+      "total_subsidy": "296"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y RWD",
+      "national_subsidy": "188",
+      "local_subsidy": "81",
+      "total_subsidy": "269"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "65",
+      "total_subsidy": "217"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "65",
+      "total_subsidy": "217"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQA250(Facelift)",
+      "national_subsidy": "190",
+      "local_subsidy": "81",
+      "total_subsidy": "271"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(5인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "66",
+      "total_subsidy": "220"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(7인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "66",
+      "total_subsidy": "220"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 40 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "86",
+      "total_subsidy": "287"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national_subsidy": "202",
+      "local_subsidy": "87",
+      "total_subsidy": "289"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "181",
+      "total_subsidy": "603"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 ID.5 Pro",
+      "national_subsidy": "215",
+      "local_subsidy": "92",
+      "total_subsidy": "307"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "폭스바겐 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "181",
+      "total_subsidy": "603"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 Sportback 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "86",
+      "total_subsidy": "287"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "86",
+      "total_subsidy": "287"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q6 e-tron performance",
+      "national_subsidy": "220",
+      "local_subsidy": "94",
+      "total_subsidy": "314"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 18인치",
+      "national_subsidy": "373",
+      "local_subsidy": "153",
+      "total_subsidy": "526"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 20인치",
+      "national_subsidy": "356",
+      "local_subsidy": "146",
+      "total_subsidy": "502"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "코란도 EV 2WD",
+      "national_subsidy": "340",
+      "local_subsidy": "146",
+      "total_subsidy": "486"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 18인치",
+      "national_subsidy": "364",
+      "local_subsidy": "156",
+      "total_subsidy": "520"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 20인치",
+      "national_subsidy": "354",
+      "local_subsidy": "152",
+      "total_subsidy": "506"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Single Motor",
+      "national_subsidy": "181",
+      "local_subsidy": "78",
+      "total_subsidy": "259"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Dual Motor",
+      "national_subsidy": "141",
+      "local_subsidy": "60",
+      "total_subsidy": "201"
+    },
+    {
+      "manufacturer": "볼보자동차코리아",
+      "model": "일반승용",
+      "model_detail": "볼보 EX30 Single Motor ER",
+      "national_subsidy": "247",
+      "local_subsidy": "106",
+      "total_subsidy": "353"
+    },
+    {
+      "manufacturer": "비와이디코리아",
+      "model": "일반승용",
+      "model_detail": "BYD ATTO 3",
+      "national_subsidy": "145",
+      "local_subsidy": "62",
+      "total_subsidy": "207"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 4인승 승용",
+      "national_subsidy": "457",
+      "local_subsidy": "206",
+      "total_subsidy": "663"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 2인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "206",
+      "total_subsidy": "663"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 1인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "206",
+      "total_subsidy": "663"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "226",
+      "total_subsidy": "726"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "226",
+      "total_subsidy": "726"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 기본형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "226",
+      "total_subsidy": "726"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 크로스 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "226",
+      "total_subsidy": "726"
+    },
+    {
+      "manufacturer": "쎄보모빌리티",
+      "model": "초소형",
+      "model_detail": "(단종)CEVO-C SE",
+      "national_subsidy": "200",
+      "local_subsidy": "120",
+      "total_subsidy": "320"
+    }
+  ],
+  "인천광역시": [
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치",
+      "national_subsidy": "287",
+      "local_subsidy": "113",
+      "total_subsidy": "400"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치",
+      "national_subsidy": "261",
+      "local_subsidy": "103",
+      "total_subsidy": "364"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치",
+      "national_subsidy": "251",
+      "local_subsidy": "99",
+      "total_subsidy": "350"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치",
+      "national_subsidy": "236",
+      "local_subsidy": "93",
+      "total_subsidy": "329"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치",
+      "national_subsidy": "244",
+      "local_subsidy": "96",
+      "total_subsidy": "340"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치",
+      "national_subsidy": "260",
+      "local_subsidy": "103",
+      "total_subsidy": "363"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 스탠다드 2WD 18인치",
+      "national_subsidy": "635",
+      "local_subsidy": "208",
+      "total_subsidy": "843"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "228",
+      "total_subsidy": "914"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 20인치",
+      "national_subsidy": "680",
+      "local_subsidy": "225",
+      "total_subsidy": "905"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "228",
+      "total_subsidy": "914"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 20인치",
+      "national_subsidy": "647",
+      "local_subsidy": "212",
+      "total_subsidy": "859"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national_subsidy": "573",
+      "local_subsidy": "177",
+      "total_subsidy": "750"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national_subsidy": "623",
+      "local_subsidy": "207",
+      "total_subsidy": "830"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national_subsidy": "568",
+      "local_subsidy": "185",
+      "total_subsidy": "753"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉5 N",
+      "national_subsidy": "232",
+      "local_subsidy": "92",
+      "total_subsidy": "324"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national_subsidy": "659",
+      "local_subsidy": "228",
+      "total_subsidy": "887"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national_subsidy": "656",
+      "local_subsidy": "227",
+      "total_subsidy": "883"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national_subsidy": "651",
+      "local_subsidy": "225",
+      "total_subsidy": "876"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national_subsidy": "624",
+      "local_subsidy": "214",
+      "total_subsidy": "838"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national_subsidy": "650",
+      "local_subsidy": "225",
+      "total_subsidy": "875"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national_subsidy": "633",
+      "local_subsidy": "218",
+      "total_subsidy": "851"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national_subsidy": "602",
+      "local_subsidy": "206",
+      "total_subsidy": "808"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified G80 AWD 19인치(2025)",
+      "national_subsidy": "275",
+      "local_subsidy": "109",
+      "total_subsidy": "384"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national_subsidy": "561",
+      "local_subsidy": "195",
+      "total_subsidy": "756"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치(2025)",
+      "national_subsidy": "250",
+      "local_subsidy": "99",
+      "total_subsidy": "349"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "105",
+      "total_subsidy": "371"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national_subsidy": "623",
+      "local_subsidy": "207",
+      "total_subsidy": "830"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 성능형 AWD",
+      "national_subsidy": "277",
+      "local_subsidy": "109",
+      "total_subsidy": "386"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 AWD",
+      "national_subsidy": "276",
+      "local_subsidy": "109",
+      "total_subsidy": "385"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 2WD",
+      "national_subsidy": "279",
+      "local_subsidy": "110",
+      "total_subsidy": "389"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national_subsidy": "248",
+      "local_subsidy": "98",
+      "total_subsidy": "346"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "105",
+      "total_subsidy": "371"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치(2025)",
+      "national_subsidy": "277",
+      "local_subsidy": "109",
+      "total_subsidy": "386"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치(2025)",
+      "national_subsidy": "290",
+      "local_subsidy": "115",
+      "total_subsidy": "405"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "The all-new Kia Niro EV",
+      "national_subsidy": "590",
+      "local_subsidy": "197",
+      "total_subsidy": "787"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 19인치",
+      "national_subsidy": "275",
+      "local_subsidy": "109",
+      "total_subsidy": "384"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 20인치",
+      "national_subsidy": "273",
+      "local_subsidy": "108",
+      "total_subsidy": "381"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 19인치",
+      "national_subsidy": "259",
+      "local_subsidy": "102",
+      "total_subsidy": "361"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 21인치",
+      "national_subsidy": "265",
+      "local_subsidy": "105",
+      "total_subsidy": "370"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 GTL 4WD 21인치",
+      "national_subsidy": "257",
+      "local_subsidy": "101",
+      "total_subsidy": "358"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 20인치",
+      "national_subsidy": "617",
+      "local_subsidy": "214",
+      "total_subsidy": "831"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 20인치",
+      "national_subsidy": "644",
+      "local_subsidy": "225",
+      "total_subsidy": "869"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 19인치",
+      "national_subsidy": "646",
+      "local_subsidy": "226",
+      "total_subsidy": "872"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 19인치",
+      "national_subsidy": "655",
+      "local_subsidy": "230",
+      "total_subsidy": "885"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "224",
+      "total_subsidy": "789"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "224",
+      "total_subsidy": "789"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 스탠다드 2WD",
+      "national_subsidy": "479",
+      "local_subsidy": "189",
+      "total_subsidy": "668"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 GT",
+      "national_subsidy": "232",
+      "local_subsidy": "92",
+      "total_subsidy": "324"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 스탠다드",
+      "national_subsidy": "582",
+      "local_subsidy": "202",
+      "total_subsidy": "784"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 스탠다드",
+      "national_subsidy": "242",
+      "local_subsidy": "95",
+      "total_subsidy": "337"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 GTL 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "224",
+      "total_subsidy": "789"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 19인치",
+      "national_subsidy": "491",
+      "local_subsidy": "194",
+      "total_subsidy": "685"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "224",
+      "total_subsidy": "789"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "224",
+      "total_subsidy": "789"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 17인치",
+      "national_subsidy": "522",
+      "local_subsidy": "207",
+      "total_subsidy": "729"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Cooper SE",
+      "national_subsidy": "303",
+      "local_subsidy": "120",
+      "total_subsidy": "423"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40",
+      "national_subsidy": "189",
+      "local_subsidy": "74",
+      "total_subsidy": "263"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50",
+      "national_subsidy": "172",
+      "local_subsidy": "68",
+      "total_subsidy": "240"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX1 xDrive30",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40 LCI",
+      "national_subsidy": "187",
+      "local_subsidy": "74",
+      "total_subsidy": "261"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX2 eDrive20",
+      "national_subsidy": "167",
+      "local_subsidy": "66",
+      "total_subsidy": "233"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman SE ALL4",
+      "national_subsidy": "158",
+      "local_subsidy": "62",
+      "total_subsidy": "220"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman E",
+      "national_subsidy": "166",
+      "local_subsidy": "65",
+      "total_subsidy": "231"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman SE",
+      "national_subsidy": "306",
+      "local_subsidy": "121",
+      "total_subsidy": "427"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50 LCI",
+      "national_subsidy": "177",
+      "local_subsidy": "70",
+      "total_subsidy": "247"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW Aceman E",
+      "national_subsidy": "151",
+      "local_subsidy": "59",
+      "total_subsidy": "210"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW E",
+      "national_subsidy": "147",
+      "local_subsidy": "58",
+      "total_subsidy": "205"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman E",
+      "national_subsidy": "306",
+      "local_subsidy": "121",
+      "total_subsidy": "427"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model 3 RWD(2024)",
+      "national_subsidy": "183",
+      "local_subsidy": "72",
+      "total_subsidy": "255"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Long Range",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y RWD",
+      "national_subsidy": "201",
+      "local_subsidy": "67",
+      "total_subsidy": "268"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range",
+      "national_subsidy": "184",
+      "local_subsidy": "72",
+      "total_subsidy": "256"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Performance",
+      "national_subsidy": "191",
+      "local_subsidy": "75",
+      "total_subsidy": "266"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Performance",
+      "national_subsidy": "187",
+      "local_subsidy": "74",
+      "total_subsidy": "261"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range 19인치",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 RWD",
+      "national_subsidy": "186",
+      "local_subsidy": "73",
+      "total_subsidy": "259"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y Long Range",
+      "national_subsidy": "207",
+      "local_subsidy": "82",
+      "total_subsidy": "289"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y RWD",
+      "national_subsidy": "188",
+      "local_subsidy": "74",
+      "total_subsidy": "262"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "60",
+      "total_subsidy": "212"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "60",
+      "total_subsidy": "212"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQA250(Facelift)",
+      "national_subsidy": "190",
+      "local_subsidy": "75",
+      "total_subsidy": "265"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(5인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(7인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "61",
+      "total_subsidy": "215"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 40 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national_subsidy": "202",
+      "local_subsidy": "80",
+      "total_subsidy": "282"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "167",
+      "total_subsidy": "589"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 ID.5 Pro",
+      "national_subsidy": "215",
+      "local_subsidy": "85",
+      "total_subsidy": "300"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "폭스바겐 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "167",
+      "total_subsidy": "589"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 Sportback 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "79",
+      "total_subsidy": "280"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q6 e-tron performance",
+      "national_subsidy": "220",
+      "local_subsidy": "87",
+      "total_subsidy": "307"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 18인치",
+      "national_subsidy": "373",
+      "local_subsidy": "141",
+      "total_subsidy": "514"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 20인치",
+      "national_subsidy": "356",
+      "local_subsidy": "134",
+      "total_subsidy": "490"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "코란도 EV 2WD",
+      "national_subsidy": "340",
+      "local_subsidy": "134",
+      "total_subsidy": "474"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 18인치",
+      "national_subsidy": "364",
+      "local_subsidy": "144",
+      "total_subsidy": "508"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 20인치",
+      "national_subsidy": "354",
+      "local_subsidy": "140",
+      "total_subsidy": "494"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Single Motor",
+      "national_subsidy": "181",
+      "local_subsidy": "71",
+      "total_subsidy": "252"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Dual Motor",
+      "national_subsidy": "141",
+      "local_subsidy": "55",
+      "total_subsidy": "196"
+    },
+    {
+      "manufacturer": "볼보자동차코리아",
+      "model": "일반승용",
+      "model_detail": "볼보 EX30 Single Motor ER",
+      "national_subsidy": "247",
+      "local_subsidy": "97",
+      "total_subsidy": "344"
+    },
+    {
+      "manufacturer": "비와이디코리아",
+      "model": "일반승용",
+      "model_detail": "BYD ATTO 3",
+      "national_subsidy": "145",
+      "local_subsidy": "57",
+      "total_subsidy": "202"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 4인승 승용",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 2인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 1인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "181",
+      "total_subsidy": "638"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 기본형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 크로스 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "198",
+      "total_subsidy": "698"
+    },
+    {
+      "manufacturer": "쎄보모빌리티",
+      "model": "초소형",
+      "model_detail": "(단종)CEVO-C SE",
+      "national_subsidy": "200",
+      "local_subsidy": "80",
+      "total_subsidy": "280"
+    }
+  ],
+  "광주광역시": [
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치",
+      "national_subsidy": "287",
+      "local_subsidy": "163",
+      "total_subsidy": "450"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치",
+      "national_subsidy": "261",
+      "local_subsidy": "148",
+      "total_subsidy": "409"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치",
+      "national_subsidy": "251",
+      "local_subsidy": "142",
+      "total_subsidy": "393"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치",
+      "national_subsidy": "236",
+      "local_subsidy": "134",
+      "total_subsidy": "370"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치",
+      "national_subsidy": "244",
+      "local_subsidy": "138",
+      "total_subsidy": "382"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치",
+      "national_subsidy": "260",
+      "local_subsidy": "147",
+      "total_subsidy": "407"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 스탠다드 2WD 18인치",
+      "national_subsidy": "635",
+      "local_subsidy": "299",
+      "total_subsidy": "934"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "327",
+      "total_subsidy": "1,013"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 2WD 20인치",
+      "national_subsidy": "680",
+      "local_subsidy": "323",
+      "total_subsidy": "1,003"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 18인치",
+      "national_subsidy": "686",
+      "local_subsidy": "327",
+      "total_subsidy": "1,013"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉6 롱레인지 AWD 20인치",
+      "national_subsidy": "647",
+      "local_subsidy": "304",
+      "total_subsidy": "951"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national_subsidy": "573",
+      "local_subsidy": "254",
+      "total_subsidy": "827"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national_subsidy": "623",
+      "local_subsidy": "298",
+      "total_subsidy": "921"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national_subsidy": "568",
+      "local_subsidy": "266",
+      "total_subsidy": "834"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉5 N",
+      "national_subsidy": "232",
+      "local_subsidy": "132",
+      "total_subsidy": "364"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national_subsidy": "659",
+      "local_subsidy": "328",
+      "total_subsidy": "987"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national_subsidy": "656",
+      "local_subsidy": "326",
+      "total_subsidy": "982"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national_subsidy": "651",
+      "local_subsidy": "323",
+      "total_subsidy": "974"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national_subsidy": "624",
+      "local_subsidy": "308",
+      "total_subsidy": "932"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national_subsidy": "650",
+      "local_subsidy": "323",
+      "total_subsidy": "973"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national_subsidy": "633",
+      "local_subsidy": "313",
+      "total_subsidy": "946"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national_subsidy": "602",
+      "local_subsidy": "295",
+      "total_subsidy": "897"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified G80 AWD 19인치(2025)",
+      "national_subsidy": "275",
+      "local_subsidy": "156",
+      "total_subsidy": "431"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national_subsidy": "561",
+      "local_subsidy": "280",
+      "total_subsidy": "841"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 20인치(2025)",
+      "national_subsidy": "250",
+      "local_subsidy": "142",
+      "total_subsidy": "392"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "Electrified GV70 AWD 19인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "151",
+      "total_subsidy": "417"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national_subsidy": "623",
+      "local_subsidy": "298",
+      "total_subsidy": "921"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 성능형 AWD",
+      "national_subsidy": "277",
+      "local_subsidy": "157",
+      "total_subsidy": "434"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 AWD",
+      "national_subsidy": "276",
+      "local_subsidy": "157",
+      "total_subsidy": "433"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "아이오닉9 항속형 2WD",
+      "national_subsidy": "279",
+      "local_subsidy": "158",
+      "total_subsidy": "437"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national_subsidy": "248",
+      "local_subsidy": "141",
+      "total_subsidy": "389"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 20인치(2025)",
+      "national_subsidy": "266",
+      "local_subsidy": "151",
+      "total_subsidy": "417"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 AWD 19인치(2025)",
+      "national_subsidy": "277",
+      "local_subsidy": "157",
+      "total_subsidy": "434"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "일반승용",
+      "model_detail": "GV60 스탠다드 2WD 19인치(2025)",
+      "national_subsidy": "290",
+      "local_subsidy": "165",
+      "total_subsidy": "455"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "The all-new Kia Niro EV",
+      "national_subsidy": "590",
+      "local_subsidy": "283",
+      "total_subsidy": "873"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 19인치",
+      "national_subsidy": "275",
+      "local_subsidy": "156",
+      "total_subsidy": "431"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 2WD 20인치",
+      "national_subsidy": "273",
+      "local_subsidy": "155",
+      "total_subsidy": "428"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 19인치",
+      "national_subsidy": "259",
+      "local_subsidy": "147",
+      "total_subsidy": "406"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 4WD 21인치",
+      "national_subsidy": "265",
+      "local_subsidy": "150",
+      "total_subsidy": "415"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 롱레인지 GTL 4WD 21인치",
+      "national_subsidy": "257",
+      "local_subsidy": "146",
+      "total_subsidy": "403"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 20인치",
+      "national_subsidy": "617",
+      "local_subsidy": "308",
+      "total_subsidy": "925"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 20인치",
+      "national_subsidy": "644",
+      "local_subsidy": "323",
+      "total_subsidy": "967"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 4WD 19인치",
+      "national_subsidy": "646",
+      "local_subsidy": "324",
+      "total_subsidy": "970"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 롱레인지 2WD 19인치",
+      "national_subsidy": "655",
+      "local_subsidy": "330",
+      "total_subsidy": "985"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "321",
+      "total_subsidy": "886"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "321",
+      "total_subsidy": "886"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV3 스탠다드 2WD",
+      "national_subsidy": "479",
+      "local_subsidy": "272",
+      "total_subsidy": "751"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 GT",
+      "national_subsidy": "232",
+      "local_subsidy": "132",
+      "total_subsidy": "364"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "더뉴EV6 스탠다드",
+      "national_subsidy": "582",
+      "local_subsidy": "290",
+      "total_subsidy": "872"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV9 스탠다드",
+      "national_subsidy": "242",
+      "local_subsidy": "137",
+      "total_subsidy": "379"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 GTL 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "321",
+      "total_subsidy": "886"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 19인치",
+      "national_subsidy": "491",
+      "local_subsidy": "279",
+      "total_subsidy": "770"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 17인치",
+      "national_subsidy": "565",
+      "local_subsidy": "321",
+      "total_subsidy": "886"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 롱레인지 2WD 19인치",
+      "national_subsidy": "565",
+      "local_subsidy": "321",
+      "total_subsidy": "886"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "일반승용",
+      "model_detail": "EV4 스탠다드 2WD 17인치",
+      "national_subsidy": "522",
+      "local_subsidy": "297",
+      "total_subsidy": "819"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Cooper SE",
+      "national_subsidy": "303",
+      "local_subsidy": "172",
+      "total_subsidy": "475"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40",
+      "national_subsidy": "189",
+      "local_subsidy": "107",
+      "total_subsidy": "296"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50",
+      "national_subsidy": "172",
+      "local_subsidy": "97",
+      "total_subsidy": "269"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX1 xDrive30",
+      "national_subsidy": "154",
+      "local_subsidy": "87",
+      "total_subsidy": "241"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 eDrive40 LCI",
+      "national_subsidy": "187",
+      "local_subsidy": "106",
+      "total_subsidy": "293"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "iX2 eDrive20",
+      "national_subsidy": "167",
+      "local_subsidy": "95",
+      "total_subsidy": "262"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman SE ALL4",
+      "national_subsidy": "158",
+      "local_subsidy": "89",
+      "total_subsidy": "247"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Countryman E",
+      "national_subsidy": "166",
+      "local_subsidy": "94",
+      "total_subsidy": "260"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman SE",
+      "national_subsidy": "306",
+      "local_subsidy": "174",
+      "total_subsidy": "480"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "i4 M50 LCI",
+      "national_subsidy": "177",
+      "local_subsidy": "100",
+      "total_subsidy": "277"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW Aceman E",
+      "national_subsidy": "151",
+      "local_subsidy": "85",
+      "total_subsidy": "236"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI JCW E",
+      "national_subsidy": "147",
+      "local_subsidy": "83",
+      "total_subsidy": "230"
+    },
+    {
+      "manufacturer": "BMW",
+      "model": "일반승용",
+      "model_detail": "MINI Aceman E",
+      "national_subsidy": "306",
+      "local_subsidy": "174",
+      "total_subsidy": "480"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model 3 RWD(2024)",
+      "national_subsidy": "183",
+      "local_subsidy": "104",
+      "total_subsidy": "287"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Long Range",
+      "national_subsidy": "202",
+      "local_subsidy": "114",
+      "total_subsidy": "316"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y RWD",
+      "national_subsidy": "201",
+      "local_subsidy": "96",
+      "total_subsidy": "297"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range",
+      "national_subsidy": "184",
+      "local_subsidy": "104",
+      "total_subsidy": "288"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Performance",
+      "national_subsidy": "191",
+      "local_subsidy": "108",
+      "total_subsidy": "299"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 Performance",
+      "national_subsidy": "187",
+      "local_subsidy": "106",
+      "total_subsidy": "293"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)Model Y Long Range 19인치",
+      "national_subsidy": "202",
+      "local_subsidy": "114",
+      "total_subsidy": "316"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "Model 3 RWD",
+      "national_subsidy": "186",
+      "local_subsidy": "105",
+      "total_subsidy": "291"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y Long Range",
+      "national_subsidy": "207",
+      "local_subsidy": "117",
+      "total_subsidy": "324"
+    },
+    {
+      "manufacturer": "테슬라코리아",
+      "model": "일반승용",
+      "model_detail": "New Model Y RWD",
+      "national_subsidy": "188",
+      "local_subsidy": "106",
+      "total_subsidy": "294"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "86",
+      "total_subsidy": "238"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national_subsidy": "152",
+      "local_subsidy": "86",
+      "total_subsidy": "238"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQA250(Facelift)",
+      "national_subsidy": "190",
+      "local_subsidy": "108",
+      "total_subsidy": "298"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(5인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "87",
+      "total_subsidy": "241"
+    },
+    {
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "일반승용",
+      "model_detail": "EQB300 4MATIC(Facelift)(7인승)",
+      "national_subsidy": "154",
+      "local_subsidy": "87",
+      "total_subsidy": "241"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 40 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "114",
+      "total_subsidy": "315"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national_subsidy": "202",
+      "local_subsidy": "114",
+      "total_subsidy": "316"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "240",
+      "total_subsidy": "662"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "(단종)폭스바겐 ID.5 Pro",
+      "national_subsidy": "215",
+      "local_subsidy": "122",
+      "total_subsidy": "337"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "폭스바겐 ID.4 Pro",
+      "national_subsidy": "422",
+      "local_subsidy": "240",
+      "total_subsidy": "662"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 Sportback 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "114",
+      "total_subsidy": "315"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q4 45 e-tron",
+      "national_subsidy": "201",
+      "local_subsidy": "114",
+      "total_subsidy": "315"
+    },
+    {
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "일반승용",
+      "model_detail": "아우디 Q6 e-tron performance",
+      "national_subsidy": "220",
+      "local_subsidy": "125",
+      "total_subsidy": "345"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 18인치",
+      "national_subsidy": "373",
+      "local_subsidy": "202",
+      "total_subsidy": "575"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 2WD 20인치",
+      "national_subsidy": "356",
+      "local_subsidy": "192",
+      "total_subsidy": "548"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "코란도 EV 2WD",
+      "national_subsidy": "340",
+      "local_subsidy": "193",
+      "total_subsidy": "533"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 18인치",
+      "national_subsidy": "364",
+      "local_subsidy": "207",
+      "total_subsidy": "571"
+    },
+    {
+      "manufacturer": "케이지모빌리티",
+      "model": "일반승용",
+      "model_detail": "토레스 EVX 20인치",
+      "national_subsidy": "354",
+      "local_subsidy": "201",
+      "total_subsidy": "555"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Single Motor",
+      "national_subsidy": "181",
+      "local_subsidy": "102",
+      "total_subsidy": "283"
+    },
+    {
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "일반승용",
+      "model_detail": "Polestar 4 Long Range Dual Motor",
+      "national_subsidy": "141",
+      "local_subsidy": "80",
+      "total_subsidy": "221"
+    },
+    {
+      "manufacturer": "볼보자동차코리아",
+      "model": "일반승용",
+      "model_detail": "볼보 EX30 Single Motor ER",
+      "national_subsidy": "247",
+      "local_subsidy": "140",
+      "total_subsidy": "387"
+    },
+    {
+      "manufacturer": "비와이디코리아",
+      "model": "일반승용",
+      "model_detail": "BYD ATTO 3",
+      "national_subsidy": "145",
+      "local_subsidy": "82",
+      "total_subsidy": "227"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 4인승 승용",
+      "national_subsidy": "457",
+      "local_subsidy": "267",
+      "total_subsidy": "724"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 2인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "267",
+      "total_subsidy": "724"
+    },
+    {
+      "manufacturer": "기아",
+      "model": "경·소형",
+      "model_detail": "레이 EV 2WD 14인치 1인승 밴",
+      "national_subsidy": "457",
+      "local_subsidy": "267",
+      "total_subsidy": "724"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "292",
+      "total_subsidy": "792"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 항속형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "292",
+      "total_subsidy": "792"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 기본형 15인치",
+      "national_subsidy": "500",
+      "local_subsidy": "292",
+      "total_subsidy": "792"
+    },
+    {
+      "manufacturer": "현대자동차",
+      "model": "경·소형",
+      "model_detail": "캐스퍼 일렉트릭 크로스 17인치",
+      "national_subsidy": "500",
+      "local_subsidy": "292",
+      "total_subsidy": "792"
+    },
+    {
+      "manufacturer": "쎄보모빌리티",
+      "model": "초소형",
+      "model_detail": "(단종)CEVO-C SE",
+      "national_subsidy": "200",
+      "local_subsidy": "120",
+      "total_subsidy": "320"
+    }
+  ]
+}
