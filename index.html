@@ -1059,7 +1059,7 @@
                             <div class="final-result">
                                 <div class="final-label">총 차량 지불 금액</div>
                                 <div class="final-value" id="totalPayment">
-                                    <span>🏦</span>0만원
+                                    0만원
                                 </div>
                             </div>
                         </div>
@@ -1629,8 +1629,16 @@
                 showSelectedVehicleInfo(`${vehicle.manufacturer} ${vehicle.model}`, vehicle.nationalSubsidy);
                 // 빠른 계산기 동기화
                 document.getElementById('quickSubsidy').value = vehicle.nationalSubsidy;
+                
+                // 차량을 선택하면 차량 가액 입력란에 포커스
+                const vehiclePriceInput = document.getElementById('vehiclePrice');
+                if (vehiclePriceInput && !vehiclePriceInput.value) {
+                    vehiclePriceInput.focus();
+                    vehiclePriceInput.style.borderColor = '#3b82f6';
+                    vehiclePriceInput.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+                }
             } else {
-                showSelectedVehicleInfo('차량 선택 안함 (취듍세만 계산)', 0);
+                showSelectedVehicleInfo('차량 선택 안함 (취득세만 계산)', 0);
                 document.getElementById('quickSubsidy').value = 0;
             }
             
@@ -1963,7 +1971,7 @@
             document.getElementById('totalPaymentBreakdown').textContent = `${results.totalPayment.toLocaleString()}만원`;
             
             // 최종 결과 표시
-            document.getElementById('totalPayment').innerHTML = `<span>🏦</span>${results.totalPayment.toLocaleString()}만원`;
+            document.getElementById('totalPayment').innerHTML = `${results.totalPayment.toLocaleString()}만원`;
         }
     </script>
 </body>
