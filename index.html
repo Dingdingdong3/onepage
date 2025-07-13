@@ -198,7 +198,8 @@
         }
         
         .form-inline {
-            display: flex;
+            display: grid;
+            grid-template-columns: 140px 1fr;
             align-items: center;
             gap: 16px;
         }
@@ -206,12 +207,10 @@
         .form-inline .form-label {
             margin-bottom: 0;
             white-space: nowrap;
-            min-width: 140px;
             text-align: left;
         }
         
         .form-inline .input-wrapper {
-            flex: 1;
             max-width: 350px;
         }
 
@@ -386,6 +385,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             margin-top: 12px;
+            margin-left: 156px; /* 140px (label width) + 16px (gap) */
+            max-width: 350px;
         }
 
         .price-btn {
