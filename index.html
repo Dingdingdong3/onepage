@@ -211,6 +211,7 @@
         
         .form-inline .input-wrapper {
             flex: 1;
+            max-width: 400px;
         }
 
         .required::after {
@@ -309,7 +310,7 @@
             background: #f8fafc;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            padding: 16px;
+            padding: 12px;
             margin-bottom: 12px;
             cursor: pointer;
             transition: all 0.2s;
@@ -330,7 +331,7 @@
         .no-selection-text {
             font-weight: 600;
             color: #64748b;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .vehicle-name {
@@ -1538,7 +1539,7 @@
             const noSelectionItem = document.createElement('div');
             noSelectionItem.className = 'no-selection-item';
             noSelectionItem.onclick = () => selectVehicleFromList(null, noSelectionItem);
-            noSelectionItem.innerHTML = '<div class="no-selection-text">🚫 차량 선택 안함</div>';
+            noSelectionItem.innerHTML = '<div class="no-selection-text">🚫 차량 선택 안함 <span style="font-size: 0.875rem; color: #64748b; font-weight: normal;">(취듍세만 계산)</span></div>';
             vehicleList.appendChild(noSelectionItem);
             
             if (filteredVehicles.length === 0) {
@@ -1629,7 +1630,7 @@
                 // 빠른 계산기 동기화
                 document.getElementById('quickSubsidy').value = vehicle.nationalSubsidy;
             } else {
-                showSelectedVehicleInfo('차량 선택 안함', 0);
+                showSelectedVehicleInfo('차량 선택 안함 (취듍세만 계산)', 0);
                 document.getElementById('quickSubsidy').value = 0;
             }
             
