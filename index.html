@@ -520,10 +520,7 @@
 
         .payment-summary {
             display: flex;
-            gap: 32px;
-            align-items: stretch;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         .calculation-breakdown {
@@ -536,7 +533,7 @@
         }
         
         .calculation-breakdown.expanded {
-            flex: 2;
+            width: 100%;
             max-width: 600px;
         }
 
@@ -1022,13 +1019,6 @@
                                 <div class="breakdown-item breakdown-result">
                                     <span class="breakdown-label">실제 지불 금액</span>
                                     <span class="breakdown-value" id="totalPaymentBreakdown">0만원</span>
-                                </div>
-                            </div>
-                            
-                            <div class="final-result">
-                                <div class="final-label">총 차량 지불 금액</div>
-                                <div class="final-value" id="totalPayment">
-                                    0만원
                                 </div>
                             </div>
                         </div>
@@ -1926,7 +1916,6 @@
             
             // 최종 결과
             document.getElementById('totalPaymentBreakdown').textContent = `${results.totalPayment.toLocaleString()}만원`;
-            document.getElementById('totalPayment').innerHTML = `${results.totalPayment.toLocaleString()}만원`;
         }
     </script>
 </body>
