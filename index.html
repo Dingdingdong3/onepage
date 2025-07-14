@@ -519,10 +519,11 @@
         }
 
         .payment-summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
             gap: 32px;
             align-items: stretch;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .calculation-breakdown {
@@ -532,6 +533,11 @@
             border: 1px solid #e2e8f0;
             height: 100%;
             min-height: 200px;
+        }
+        
+        .calculation-breakdown.expanded {
+            flex: 2;
+            max-width: 600px;
         }
 
         .calculation-breakdown h4 {
@@ -547,6 +553,12 @@
             align-items: center;
             padding: 8px 0;
             font-size: 0.95rem;
+        }
+        
+        .breakdown-item.breakdown-sub {
+            padding-left: 24px;
+            font-size: 0.875rem;
+            color: #64748b;
         }
 
         .breakdown-label {
@@ -967,61 +979,45 @@
                             📊 계산 결과
                         </h3>
                         
-                        <div class="result-grid">
-                            <div class="result-item subsidy">
-                                <div class="result-label">국고 보조금</div>
-                                <div class="result-value positive" id="nationalSubsidy">
-                                    <span class="result-icon">💰</span>0만원
-                                </div>
-                            </div>
-                            <div class="result-item subsidy">
-                                <div class="result-label">지자체 보조금</div>
-                                <div class="result-value positive" id="localSubsidyAmount">
-                                    <span class="result-icon">🏛️</span>0만원
-                                </div>
-                            </div>
-                            <div class="result-item subsidy">
-                                <div class="result-label">총 보조금</div>
-                                <div class="result-value positive" id="totalSubsidy">
-                                    <span class="result-icon">💎</span>0만원
-                                </div>
-                            </div>
-                            <div class="result-item tax">
-                                <div class="result-label">기본 취득세</div>
-                                <div class="result-value" id="baseTax">
-                                    <span class="result-icon">📋</span>0만원
-                                </div>
-                            </div>
-                            <div class="result-item reduction">
-                                <div class="result-label">감면 혜택</div>
-                                <div class="result-value positive" id="taxReduction">
-                                    <span class="result-icon">🎁</span>0만원
-                                </div>
-                            </div>
-                            <div class="result-item tax">
-                                <div class="result-label">최종 취득세</div>
-                                <div class="result-value" id="finalTaxInGrid">
-                                    <span class="result-icon">💸</span>0만원
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 총 지불금액과 계산 요약 -->
+                        <!-- 계산 요약만 표시 -->
                         <div class="payment-summary">
-                            <div class="calculation-breakdown">
+                            <div class="calculation-breakdown expanded">
                                 <h4>💡 계산 요약</h4>
+                                
+                                <!-- 차량 가격 -->
                                 <div class="breakdown-item">
                                     <span class="breakdown-label">차량 가격</span>
                                     <span class="breakdown-value" id="vehiclePriceDisplay">0만원</span>
+                                </div>
+                                
+                                <!-- 취득세 세부 항목 -->
+                                <div class="breakdown-item breakdown-sub">
+                                    <span class="breakdown-label">기본 취득세</span>
+                                    <span class="breakdown-value" id="baseTaxDisplay">0만원</span>
+                                </div>
+                                <div class="breakdown-item breakdown-sub">
+                                    <span class="breakdown-label">- 감면 혜택</span>
+                                    <span class="breakdown-value" id="taxReductionDisplay">0만원</span>
                                 </div>
                                 <div class="breakdown-item breakdown-add">
                                     <span class="breakdown-label">+ 최종 취득세</span>
                                     <span class="breakdown-value" id="finalTaxDisplay">0만원</span>
                                 </div>
+                                
+                                <!-- 보조금 세부 항목 -->
+                                <div class="breakdown-item breakdown-sub">
+                                    <span class="breakdown-label">국고 보조금</span>
+                                    <span class="breakdown-value" id="nationalSubsidyDisplay">0만원</span>
+                                </div>
+                                <div class="breakdown-item breakdown-sub">
+                                    <span class="breakdown-label">지자체 보조금</span>
+                                    <span class="breakdown-value" id="localSubsidyDisplay">0만원</span>
+                                </div>
                                 <div class="breakdown-item breakdown-subtract">
                                     <span class="breakdown-label">- 총 보조금</span>
                                     <span class="breakdown-value" id="totalSubsidyDisplay">0만원</span>
                                 </div>
+                                
                                 <div class="breakdown-divider"></div>
                                 <div class="breakdown-item breakdown-result">
                                     <span class="breakdown-label">실제 지불 금액</span>
@@ -1915,21 +1911,21 @@
 
         // 결과 표시
         function displayResults(results) {
-            // 기본 결과 표시
-            document.getElementById('nationalSubsidy').innerHTML = `<span class="result-icon">💰</span>${results.nationalSubsidy.toLocaleString()}만원`;
-            document.getElementById('localSubsidyAmount').innerHTML = `<span class="result-icon">🏛️</span>${results.localSubsidy.toLocaleString()}만원`;
-            document.getElementById('totalSubsidy').innerHTML = `<span class="result-icon">💎</span>${results.totalSubsidy.toLocaleString()}만원`;
-            document.getElementById('baseTax').innerHTML = `<span class="result-icon">📋</span>${results.baseTax.toLocaleString()}만원`;
-            document.getElementById('taxReduction').innerHTML = `<span class="result-icon">🎁</span>${results.taxReduction.toLocaleString()}만원`;
-            document.getElementById('finalTaxInGrid').innerHTML = `<span class="result-icon">💸</span>${results.finalTax.toLocaleString()}만원`;
-            
             // 계산 요약 표시
             document.getElementById('vehiclePriceDisplay').textContent = `${results.vehiclePrice.toLocaleString()}만원`;
-            document.getElementById('finalTaxDisplay').textContent = `${results.finalTax.toLocaleString()}만원`;
-            document.getElementById('totalSubsidyDisplay').textContent = `${results.totalSubsidy.toLocaleString()}만원`;
-            document.getElementById('totalPaymentBreakdown').textContent = `${results.totalPayment.toLocaleString()}만원`;
             
-            // 최종 결과 표시
+            // 취득세 세부 항목
+            document.getElementById('baseTaxDisplay').textContent = `${results.baseTax.toLocaleString()}만원`;
+            document.getElementById('taxReductionDisplay').textContent = `${results.taxReduction.toLocaleString()}만원`;
+            document.getElementById('finalTaxDisplay').textContent = `${results.finalTax.toLocaleString()}만원`;
+            
+            // 보조금 세부 항목
+            document.getElementById('nationalSubsidyDisplay').textContent = `${results.nationalSubsidy.toLocaleString()}만원`;
+            document.getElementById('localSubsidyDisplay').textContent = `${results.localSubsidy.toLocaleString()}만원`;
+            document.getElementById('totalSubsidyDisplay').textContent = `${results.totalSubsidy.toLocaleString()}만원`;
+            
+            // 최종 결과
+            document.getElementById('totalPaymentBreakdown').textContent = `${results.totalPayment.toLocaleString()}만원`;
             document.getElementById('totalPayment').innerHTML = `${results.totalPayment.toLocaleString()}만원`;
         }
     </script>
