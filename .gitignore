@@ -1,0 +1,42 @@
+# 환경 변수
+.env
+.env.local
+.env.production
+
+# API 키 및 인증 정보
+*.json
+!package.json
+!ev_*.json
+youtube-search-api-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# 로그 파일
+*.log
+crawl_log.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 임시 파일
+*.tmp
+*.temp
+*.cache
+
+# 크롤링 데이터 (선택적)
+# ev_subsidy_*.json
