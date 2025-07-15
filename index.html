@@ -1233,14 +1233,32 @@
             try {
                 console.log('사용 가능한 연도 확인 중...');
                 
-                // 사용 가능한 연도를 직접 지정 (CSV 파일이 있는 연도)
-                const availableYears = [2024, 2025];
+                // 현재 연도 기준으로 3년간의 데이터 연도 계산
+                const currentYear = new Date().getFullYear();
+                const availableYears = [];
+                
+                // 현재 연도부터 3년간의 연도 확인 (미래 포함)
+                for (let year = currentYear - 2; year <= currentYear + 1; year++) {
+                    // CSV 파일 존재 여부 확인
+                    try {
+                        const response = await fetch(`csv/${year}.csv`, { method: 'HEAD' });
+                        if (response.ok) {
+                            availableYears.push(year);
+                        }
+                    } catch (e) {
+                        // 파일이 없으면 무시
+                    }
+                }
+                
+                // 사용 가능한 연도가 없으면 기본값 사용
+                if (availableYears.length === 0) {
+                    availableYears.push(2025); // 최소한 2025년은 있다고 가정
+                }
                 
                 // 연도 선택 옵션 생성
                 populateYearOptions(availableYears);
                 
                 // 현재 연도를 기본값으로 설정 (사용 가능한 연도 중에서)
-                const currentYear = new Date().getFullYear();
                 const defaultYear = availableYears.includes(currentYear) ? currentYear : availableYears[availableYears.length - 1];
                 document.getElementById('dataYear').value = defaultYear;
                 
