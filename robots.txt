@@ -4,4 +4,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://ecalculator.co.kr/sitemap.xml
+Sitemap: https://xn--989a00a691b.shop/sitemap.xml
