@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="전기차 스마트 계산기 사이트맵 - 사이트 전체 구조와 페이지를 한눈에 확인하세요.">
+    <title>사이트맵 - 전기차 스마트 계산기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #1e293b;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .sitemap-section {
+            margin-bottom: 40px;
+        }
+        
+        .sitemap-section h2 {
+            color: #3b82f6;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .sitemap-list {
+            list-style: none;
+        }
+        
+        .sitemap-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .sitemap-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+        
+        .sitemap-list a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        
+        .sitemap-list a:hover {
+            color: #3b82f6;
+        }
+        
+        .page-description {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .back-to-home a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .back-to-home a:hover {
+            background: #2563eb;
+        }
+        
+        .update-info {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .sitemap-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>사이트맵</h1>
+        <p class="subtitle">전기차 스마트 계산기의 모든 페이지를 한눈에 확인하세요</p>
+        
+        <div class="sitemap-section">
+            <h2>메인 페이지</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="/">홈 - 전기차 스마트 계산기</a>
+                    <p class="page-description">전기차 보조금과 취득세를 실시간으로 계산하는 메인 페이지입니다.</p>
+                </li>
+                <li>
+                    <a href="/index.html">전기차 보조금 계산기</a>
+                    <p class="page-description">차량별·지역별 맞춤 보조금과 실제 구매비용을 계산할 수 있습니다.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sitemap-section">
+            <h2>주요 기능</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <strong>차량별 보조금 조회</strong>
+                    <p class="page-description">현대, 기아, 테슬라 등 모든 전기차의 국고 보조금 확인</p>
+                </li>
+                <li>
+                    <strong>지역별 보조금 확인</strong>
+                    <p class="page-description">전국 17개 시·도의 지자체 보조금 실시간 확인</p>
+                </li>
+                <li>
+                    <strong>취득세 자동 계산</strong>
+                    <p class="page-description">차량 종류별 취득세율 적용 및 감면 혜택 자동 계산</p>
+                </li>
+                <li>
+                    <strong>빠른 계산기</strong>
+                    <p class="page-description">간편하게 예상 구매비용을 즉시 확인</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sitemap-section">
+            <h2>정보 페이지</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="/sitemap.xml">XML 사이트맵</a>
+                    <p class="page-description">검색엔진용 XML 형식 사이트맵</p>
+                </li>
+                <li>
+                    <a href="/robots.txt">Robots.txt</a>
+                    <p class="page-description">검색엔진 크롤러 접근 제어 파일</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="back-to-home">
+            <a href="/">메인 페이지로 돌아가기</a>
+        </div>
+        
+        <p class="update-info">최종 업데이트: 2025년 1월 15일</p>
+    </div>
+</body>
+</html>
