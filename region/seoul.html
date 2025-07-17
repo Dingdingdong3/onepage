@@ -214,6 +214,53 @@
             color: #0ea5e9;
         }
 
+        /* 네비게이션 스타일 */
+        .top-nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
         /* 반응형 디자인 */
         @media (max-width: 768px) {
             .hero-title {
@@ -226,6 +273,10 @@
 
             .subsidy-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
             }
         }
     </style>
@@ -245,10 +296,6 @@
                     <a href="/region/seoul" class="nav-link">서울</a>
                     <a href="/region/gyeonggi" class="nav-link">경기</a>
                     <a href="/region/incheon" class="nav-link">인천</a>
-                </div>
-                <div class="nav-group">
-                    <a href="/guide/subsidy-2025" class="nav-link">보조금 가이드</a>
-                    <a href="/guide/tax" class="nav-link">취득세 가이드</a>
                 </div>
             </div>
         </div>
@@ -324,6 +371,7 @@
         </section>
     </div>
 
+    <script src="/js/region-data.js"></script>
     <script>
         // 지역별 데이터 로드
         document.addEventListener('DOMContentLoaded', async function() {
@@ -341,7 +389,16 @@
             // CSV 파싱 및 데이터 처리 로직
             const lines = csvData.split('\n');
             const headers = lines[0].split(',');
+            
+            // 서울특별시 데이터 필터링
             const seoulData = lines.filter(line => line.includes('서울특별시'));
+            
+            // RegionManager를 사용한 정렬
+            const allRegions = RegionManager.getAllRegions();
+            const sortedRegions = RegionManager.sortRegions(allRegions);
+            
+            console.log('Seoul filtered data:', seoulData);
+            console.log('All regions sorted:', sortedRegions);
             
             // 데이터 업데이트 로직
             // (실제 구현 시 추가)

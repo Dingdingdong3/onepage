@@ -360,6 +360,16 @@
 
         // 차량 정보 업데이트
         function updateVehicleInfo() {
+            // 테슬라 브랜드 차량 필터링
+            const allVehicles = regionSubsidyManager.getAllVehicles();
+            const teslaVehicles = allVehicles.filter(vehicleName => {
+                const vehicleData = regionSubsidyManager.getVehicleSubsidy(vehicleName);
+                return vehicleData && vehicleData.manufacturer === 'Tesla';
+            });
+            
+            console.log('Tesla vehicles:', teslaVehicles);
+            
+            // 기본 Model 차량들 업데이트
             const vehicles = ['Model 3', 'Model Y'];
             vehicles.forEach(vehicle => {
                 const data = regionSubsidyManager.getVehicleSubsidy(vehicle);

@@ -360,6 +360,16 @@
 
         // 차량 정보 업데이트
         function updateVehicleInfo() {
+            // 기아 브랜드 차량 필터링
+            const allVehicles = regionSubsidyManager.getAllVehicles();
+            const kiaVehicles = allVehicles.filter(vehicleName => {
+                const vehicleData = regionSubsidyManager.getVehicleSubsidy(vehicleName);
+                return vehicleData && vehicleData.manufacturer === '기아';
+            });
+            
+            console.log('Kia vehicles:', kiaVehicles);
+            
+            // 기본 EV 차량들 업데이트
             const vehicles = ['EV6', 'EV9'];
             vehicles.forEach(vehicle => {
                 const data = regionSubsidyManager.getVehicleSubsidy(vehicle);

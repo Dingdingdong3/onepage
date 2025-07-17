@@ -397,10 +397,6 @@
                     <a href="/region/gyeonggi" class="nav-link">경기</a>
                     <a href="/region/incheon" class="nav-link">인천</a>
                 </div>
-                <div class="nav-group">
-                    <a href="/guide/subsidy-2025" class="nav-link">보조금 가이드</a>
-                    <a href="/guide/tax" class="nav-link">취득세 가이드</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -521,14 +517,14 @@
         // 차량 데이터 로드
         async function loadVehicleData(vehicleName) {
             try {
-                const response = await fetch('csv/2025.csv');
+                const response = await fetch('/csv/2025.csv');
                 const csvText = await response.text();
                 const data = parseCSV(csvText);
                 
-                // 해당 차량 데이터 필터링
+                // 해당 차량 데이터 필터링 (EV6 전용)
                 vehicleData = data.filter(row => 
-                    row['모델명'].includes(vehicleName) || 
-                    vehicleName.includes(row['모델명'])
+                    row['모델명'].includes('EV6') || 
+                    row['모델명'].includes('ev6')
                 );
                 
                 if (vehicleData.length > 0) {
@@ -610,7 +606,11 @@
             const regionSelect = document.getElementById('regionSelect');
             const regions = [...new Set(vehicleData.map(row => row['지역']))];
             
-            regions.forEach(region => {
+            // 지역 정렬 적용 (RegionManager 사용)
+            const sortedRegions = typeof RegionManager !== 'undefined' ? 
+                RegionManager.sortRegions(regions) : regions;
+            
+            sortedRegions.forEach(region => {
                 const option = document.createElement('option');
                 option.value = region;
                 option.textContent = region;
