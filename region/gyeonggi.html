@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="naver-site-verification" content="ff5731732e25b2a5deb9c1d7103d143df8908aea" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="경기도 전기차 보조금 정보와 실시간 계산기. 2025년 차종별 국가보조금과 경기도 보조금을 합산한 맞춤형 구매 계산기입니다." />
+    <meta name="keywords" content="경기도 전기차 보조금, 경기도 전기차 지원금, 전기차 보조금 경기도, 경기도 전기차 구매, 전기차 실구매가" />
+    <meta name="author" content="전기차 스마트 계산기" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="경기도 전기차 보조금 | 2025년 지원금 실시간 계산기" />
+    <meta property="og:description" content="경기도 전기차 보조금 정보와 실시간 계산기. 2025년 차종별 국가보조금과 경기도 보조금을 합산한 맞춤형 구매 계산기입니다." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="전기차 스마트 계산기" />
+    <meta property="og:url" content="https://xn--989a00a691b.shop/region/gyeonggi" />
+
+    <!-- 구조화된 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GovernmentService",
+        "name": "경기도 전기차 보조금 계산기",
+        "description": "경기도 전기차 보조금 정보와 실시간 계산기",
+        "provider": {
+            "@type": "GovernmentOrganization",
+            "name": "경기도",
+            "url": "https://www.gg.go.kr"
+        },
+        "areaServed": {
+            "@type": "State",
+            "name": "경기도"
+        },
+        "serviceType": "보조금 지원",
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://xn--989a00a691b.shop/region/gyeonggi"
+        },
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "경기도 거주자"
+        }
+    }
+    </script>
+
+    <title>경기도 전기차 보조금 계산기 | 2025년 지원금 정보</title>
+    <link rel="canonical" href="https://xn--989a00a691b.shop/region/gyeonggi" />
+
+    <style>
+        /* 기본 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 히어로 섹션 */
+        .hero-section {
+            background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* 메인 콘텐츠 */
+        .main-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 보조금 카드 */
+        .subsidy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .subsidy-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s;
+        }
+
+        .subsidy-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .subsidy-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .subsidy-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #16a34a;
+            margin-bottom: 16px;
+        }
+
+        .subsidy-details {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* 차량 목록 */
+        .vehicle-list {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .vehicle-item {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vehicle-item:last-child {
+            border-bottom: none;
+        }
+
+        .vehicle-name {
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .vehicle-subsidy {
+            font-weight: 600;
+            color: #16a34a;
+        }
+
+        /* 안내사항 */
+        .info-section {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #15803d;
+            margin-bottom: 16px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            color: #166534;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-list li::before {
+            content: "•";
+            margin-right: 8px;
+            color: #22c55e;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .main-section {
+                padding: 24px;
+            }
+
+            .subsidy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 메뉴 -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">전기차 계산기</a>
+            <div class="nav-links">
+                <div class="nav-group">
+                    <a href="/brands/hyundai" class="nav-link">현대</a>
+                    <a href="/brands/kia" class="nav-link">기아</a>
+                    <a href="/brands/tesla" class="nav-link">테슬라</a>
+                </div>
+                <div class="nav-group">
+                    <a href="/region/seoul" class="nav-link">서울</a>
+                    <a href="/region/gyeonggi" class="nav-link">경기</a>
+                    <a href="/region/incheon" class="nav-link">인천</a>
+                </div>
+                <div class="nav-group">
+                    <a href="/guide/subsidy-2025" class="nav-link">보조금 가이드</a>
+                    <a href="/guide/tax" class="nav-link">취득세 가이드</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">경기도 전기차 보조금 계산기</h1>
+                <p class="hero-subtitle">2025년 최신 전기차 보조금 정보와 실시간 계산기를 제공합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="container">
+        <!-- 보조금 개요 -->
+        <section class="main-section">
+            <h2 class="section-title">경기도 전기차 보조금 개요</h2>
+            <div class="subsidy-grid">
+                <div class="subsidy-card">
+                    <h3 class="subsidy-title">국가 보조금</h3>
+                    <div class="subsidy-amount">최대 420만원</div>
+                    <p class="subsidy-details">차량 가격과 유형에 따라 차등 지원됩니다.</p>
+                </div>
+                <div class="subsidy-card">
+                    <h3 class="subsidy-title">경기도 보조금</h3>
+                    <div class="subsidy-amount">최대 380만원</div>
+                    <p class="subsidy-details">경기도 거주자 대상 추가 지원금입니다.</p>
+                </div>
+                <div class="subsidy-card">
+                    <h3 class="subsidy-title">취득세 감면</h3>
+                    <div class="subsidy-amount">최대 140만원</div>
+                    <p class="subsidy-details">2026년까지 취득세 감면 혜택이 제공됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 주요 차종별 보조금 -->
+        <section class="main-section">
+            <h2 class="section-title">주요 차종별 보조금</h2>
+            <div class="vehicle-list">
+                <div class="vehicle-item">
+                    <span class="vehicle-name">현대 아이오닉 5</span>
+                    <span class="vehicle-subsidy">최대 800만원</span>
+                </div>
+                <div class="vehicle-item">
+                    <span class="vehicle-name">테슬라 모델 3</span>
+                    <span class="vehicle-subsidy">최대 730만원</span>
+                </div>
+                <div class="vehicle-item">
+                    <span class="vehicle-name">기아 EV6</span>
+                    <span class="vehicle-subsidy">최대 780만원</span>
+                </div>
+                <div class="vehicle-item">
+                    <span class="vehicle-name">기아 EV9</span>
+                    <span class="vehicle-subsidy">최대 700만원</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 안내사항 -->
+        <section class="info-section">
+            <h3 class="info-title">경기도 전기차 보조금 지원 안내</h3>
+            <ul class="info-list">
+                <li>경기도에 주민등록이 되어 있는 개인, 법인, 단체가 신청 가능합니다.</li>
+                <li>국가 보조금과 지방 보조금은 차량 출고 순서대로 지원되며, 예산 소진 시 조기 마감될 수 있습니다.</li>
+                <li>차량 가격이 5,300만원 이상 ~ 8,500만원 미만인 경우 보조금이 50% 지원됩니다.</li>
+                <li>보조금 신청은 차량 구매 대리점을 통해 진행됩니다.</li>
+                <li>취득세 감면은 2026년까지 최대 140만원이 지원됩니다.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // 지역별 데이터 로드
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const response = await fetch('/csv/2025.csv');
+                const data = await response.text();
+                updateSubsidyInfo(data);
+            } catch (error) {
+                console.error('데이터 로드 실패:', error);
+            }
+        });
+
+        // 보조금 정보 업데이트
+        function updateSubsidyInfo(csvData) {
+            // CSV 파싱 및 데이터 처리 로직
+            const lines = csvData.split('\n');
+            const headers = lines[0].split(',');
+            const gyeonggiData = lines.filter(line => line.includes('경기도'));
+            
+            // 데이터 업데이트 로직
+            // (실제 구현 시 추가)
+        }
+    </script>
+</body>
+</html>

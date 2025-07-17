@@ -1,7 +1,18 @@
+# Global settings
 User-agent: *
 Allow: /
+Disallow: /js/
+Disallow: /csv/
+Disallow: /*.py$
+Disallow: /*.json$
 
+# Naver Search Robot settings
 User-agent: Yeti
 Allow: /
+Disallow: /js/
+Disallow: /csv/
+Disallow: /*.py$
+Disallow: /*.json$
 
+# Sitemap location
 Sitemap: https://xn--989a00a691b.shop/sitemap.xml
