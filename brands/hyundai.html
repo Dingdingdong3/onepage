@@ -18,52 +18,65 @@
     <meta property="og:site_name" content="전기차 스마트 계산기" />
     <meta property="og:url" content="https://xn--989a00a691b.shop/brands/hyundai" />
 
-    <!-- 구조화된 데이터 (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Brand",
-        "name": "현대자동차",
-        "url": "https://xn--989a00a691b.shop/brands/hyundai",
-        "logo": "https://www.hyundai.com/static/images/hyundai-logo.png",
-        "sameAs": [
-            "https://www.hyundai.com",
-            "https://www.facebook.com/hyundai.korea",
-            "https://www.instagram.com/hyundai.korea"
-        ],
-        "offers": {
-            "@type": "AggregateOffer",
-            "highPrice": "7200",
-            "lowPrice": "4500",
-            "priceCurrency": "KRW",
-            "offerCount": "5",
-            "offers": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Car",
-                        "name": "아이오닉 5",
-                        "vehicleConfiguration": "전기차"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Car",
-                        "name": "아이오닉 6",
-                        "vehicleConfiguration": "전기차"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
-
     <title>현대 전기차 보조금 계산기 | 2025년 실시간 견적</title>
     <link rel="canonical" href="https://xn--989a00a691b.shop/brands/hyundai" />
-
+    
+    <!-- 기본 CSS 스타일 (index.html과 동일) -->
     <style>
-        /* 기본 스타일 */
+        /* 네비게이션 스타일 */
+        .top-nav {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -83,18 +96,12 @@
             padding: 20px;
         }
 
-        /* 히어로 섹션 */
         .hero-section {
-            background: linear-gradient(135deg, #002c5f 0%, #00498c 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
             color: white;
             padding: 60px 0;
-            margin-bottom: 40px;
-        }
-
-        .hero-content {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 40px;
         }
 
         .hero-title {
@@ -109,275 +116,410 @@
             margin-bottom: 30px;
         }
 
-        /* 차량 그리드 */
-        .vehicle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .vehicle-card {
+        .calculator-section {
             background: white;
             border-radius: 16px;
-            overflow: hidden;
+            padding: 40px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .vehicle-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .vehicle-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: #f1f5f9;
-        }
-
-        .vehicle-content {
-            padding: 24px;
-        }
-
-        .vehicle-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .vehicle-specs {
-            margin-bottom: 20px;
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .spec-label {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        .spec-value {
-            font-weight: 500;
-            color: #1e293b;
-        }
-
-        .vehicle-link {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #002c5f;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: background-color 0.2s;
-        }
-
-        .vehicle-link:hover {
-            background: #00498c;
-        }
-
-        /* 정보 섹션 */
-        .info-section {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
             color: #1e293b;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .info-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 24px;
-        }
-
-        .info-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #002c5f;
-            margin-bottom: 16px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            margin-bottom: 12px;
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
             color: #475569;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 16px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .calculate-btn:hover {
+            background: #2563eb;
+        }
+
+        .result-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .result-value.positive {
+            color: #059669;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-list {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            list-style: none;
+            font-size: 0.875rem;
         }
 
-        .info-list li::before {
-            content: "•";
-            margin-right: 8px;
-            color: #002c5f;
+        .breadcrumb-item {
+            color: #64748b;
         }
 
-        /* 반응형 디자인 */
+        .breadcrumb-item a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: #cbd5e1;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
             }
-
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-section {
-                padding: 24px;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
+            
+            .calculator-section {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- 네비게이션 메뉴 -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">전기차 계산기</a>
+            <div class="nav-links">
+                <div class="nav-group">
+                    <a href="/brands/hyundai" class="nav-link">현대</a>
+                    <a href="/brands/kia" class="nav-link">기아</a>
+                    <a href="/brands/tesla" class="nav-link">테슬라</a>
+                </div>
+                <div class="nav-group">
+                    <a href="/region/seoul" class="nav-link">서울</a>
+                    <a href="/region/gyeonggi" class="nav-link">경기</a>
+                    <a href="/region/incheon" class="nav-link">인천</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 브레드크럼 -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="/">홈</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item"><a href="/">전기차 계산기</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item">현대 전기차</li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- 히어로 섹션 -->
     <div class="hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">현대 전기차 보조금 계산기</h1>
-                <p class="hero-subtitle">현대자동차의 모든 전기차 모델별 실시간 보조금과 구매 비용을 확인하세요.</p>
-            </div>
+            <h1 class="hero-title">현대 전기차 보조금 계산기</h1>
+            <p class="hero-subtitle">현대 전기차의 정확한 보조금과 취득세를 실시간으로 계산하세요</p>
         </div>
     </div>
 
-    <!-- 메인 콘텐츠 -->
+    <!-- 계산기 섹션 -->
     <div class="container">
-        <!-- 차량 목록 -->
-        <div class="vehicle-grid">
-            <div class="vehicle-card">
-                <div class="vehicle-image" style="background-image: url('/images/ioniq5.jpg')"></div>
-                <div class="vehicle-content">
-                    <h2 class="vehicle-title">아이오닉 5</h2>
-                    <div class="vehicle-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">국가 보조금</span>
-                            <span class="spec-value">420만원</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">주행거리</span>
-                            <span class="spec-value">458km</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">출력</span>
-                            <span class="spec-value">217kW</span>
-                        </div>
-                    </div>
-                    <a href="/ioniq5.html" class="vehicle-link">자세히 보기</a>
-                </div>
+        <div class="calculator-section">
+            <h2 class="section-title">현대 전기차 보조금 계산</h2>
+            
+            <div class="form-group">
+                <label class="form-label">차량 선택</label>
+                <select class="form-input" id="vehicleSelect">
+                    <option value="">차량을 선택하세요</option>
+                    <!-- JavaScript로 동적 생성 -->
+                </select>
             </div>
 
-            <div class="vehicle-card">
-                <div class="vehicle-image" style="background-image: url('/images/ioniq6.jpg')"></div>
-                <div class="vehicle-content">
-                    <h2 class="vehicle-title">아이오닉 6</h2>
-                    <div class="vehicle-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">국가 보조금</span>
-                            <span class="spec-value">400만원</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">주행거리</span>
-                            <span class="spec-value">524km</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">출력</span>
-                            <span class="spec-value">239kW</span>
-                        </div>
+            <div class="form-group">
+                <label class="form-label">차량 가격 (만원)</label>
+                <input type="number" class="form-input" id="vehiclePrice" placeholder="차량 가격을 입력하세요" min="0" step="1">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">지역 선택</label>
+                <select class="form-input" id="regionSelect">
+                    <option value="">지역을 선택하세요</option>
+                    <!-- JavaScript로 동적 생성 -->
+                </select>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateVehicle()">계산하기</button>
+
+            <!-- 결과 섹션 -->
+            <div class="result-section" id="resultSection">
+                <h3 class="section-title">계산 결과</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-label">국고 보조금</div>
+                        <div class="result-value positive" id="nationalSubsidy">0만원</div>
                     </div>
-                    <a href="/ioniq6.html" class="vehicle-link">자세히 보기</a>
+                    <div class="result-item">
+                        <div class="result-label">지자체 보조금</div>
+                        <div class="result-value positive" id="localSubsidy">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">취득세</div>
+                        <div class="result-value" id="acquisitionTax">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">최종 구매 비용</div>
+                        <div class="result-value" id="finalCost">0만원</div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- 보조금 정보 -->
-        <section class="info-section">
-            <h2 class="section-title">현대 전기차 보조금 안내</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3 class="info-title">보조금 지원 기준</h3>
-                    <ul class="info-list">
-                        <li>차량 가격 5,300만원 미만: 보조금 100% 지원</li>
-                        <li>5,300만원 이상 ~ 8,500만원 미만: 보조금 50% 지원</li>
-                        <li>8,500만원 이상: 보조금 미지원</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3 class="info-title">취득세 감면 혜택</h3>
-                    <ul class="info-list">
-                        <li>2026년까지 최대 140만원 감면</li>
-                        <li>2027년부터 최대 100만원 감면</li>
-                        <li>차량 가격에 따른 차등 감면 없음</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <h3 class="info-title">충전 혜택</h3>
-                    <ul class="info-list">
-                        <li>공용 충전소 충전 요금 할인</li>
-                        <li>홈 충전기 설치 지원</li>
-                        <li>무료 충전 카드 제공</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
     </div>
 
-    <script src="/js/region-subsidy.js"></script>
+    <script src="/js/region-data.js"></script>
     <script>
-        // 페이지 로드 시 데이터 초기화
-        document.addEventListener('DOMContentLoaded', async function() {
-            await regionSubsidyManager.initialize();
-            updateVehicleInfo();
+        // 차량 데이터 저장
+        let vehicleData = [];
+        let currentVehicle = null;
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVehicleData();
         });
 
-        // 차량 정보 업데이트
-        function updateVehicleInfo() {
-            // 현대 브랜드 차량 필터링
-            const allVehicles = regionSubsidyManager.getAllVehicles();
-            const hyundaiVehicles = allVehicles.filter(vehicleName => {
-                const vehicleData = regionSubsidyManager.getVehicleSubsidy(vehicleName);
-                return vehicleData && vehicleData.manufacturer === '현대자동차';
-            });
-            
-            console.log('Hyundai vehicles:', hyundaiVehicles);
-            
-            // 기본 아이오닉 차량들 업데이트
-            const vehicles = ['아이오닉 5', '아이오닉 6'];
-            vehicles.forEach(vehicle => {
-                const data = regionSubsidyManager.getVehicleSubsidy(vehicle);
-                if (data) {
-                    // 보조금 정보 업데이트 로직
-                    // (실제 구현 시 추가)
+        // 차량 데이터 로드
+        async function loadVehicleData() {
+            try {
+                const response = await fetch('/csv/2025.csv');
+                const csvText = await response.text();
+                const data = parseCSV(csvText);
+                
+                // 현대 차량만 필터링
+                vehicleData = data.filter(row => 
+                    row['제조사'] === '현대자동차' || 
+                    row['제조사'] === '현대' ||
+                    row['제조사'].includes('현대')
+                );
+                
+                console.log('현대 차량 데이터:', vehicleData);
+                
+                if (vehicleData.length > 0) {
+                    loadVehicleOptions();
+                    loadRegionOptions();
+                } else {
+                    alert('현대 차량 데이터를 찾을 수 없습니다.');
                 }
+            } catch (error) {
+                console.error('데이터 로드 실패:', error);
+                alert('데이터를 불러올 수 없습니다.');
+            }
+        }
+
+        // CSV 파싱 함수
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            const data = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+                
+                const values = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let j = 0; j < line.length; j++) {
+                    const char = line[j];
+                    
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                values.push(current.trim());
+                
+                if (values.length >= headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                }
+            }
+            
+            return data;
+        }
+
+        // 차량 옵션 로드
+        function loadVehicleOptions() {
+            const vehicleSelect = document.getElementById('vehicleSelect');
+            const vehicles = [...new Set(vehicleData.map(row => row['모델명']))];
+            
+            vehicles.forEach(vehicle => {
+                const option = document.createElement('option');
+                option.value = vehicle;
+                option.textContent = vehicle;
+                vehicleSelect.appendChild(option);
             });
+        }
+
+        // 지역 옵션 로드
+        function loadRegionOptions() {
+            const regionSelect = document.getElementById('regionSelect');
+            const regions = [...new Set(vehicleData.map(row => row['지역']))];
+            
+            // 지역 정렬 적용
+            const sortedRegions = typeof RegionManager !== 'undefined' ? 
+                RegionManager.sortRegions(regions) : regions;
+            
+            sortedRegions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region;
+                option.textContent = region;
+                regionSelect.appendChild(option);
+            });
+        }
+
+        // 계산 함수
+        function calculateVehicle() {
+            const selectedVehicle = document.getElementById('vehicleSelect').value;
+            const vehiclePrice = parseInt(document.getElementById('vehiclePrice').value) || 0;
+            const selectedRegion = document.getElementById('regionSelect').value;
+            
+            if (!selectedVehicle) {
+                alert('차량을 선택하세요.');
+                return;
+            }
+            
+            if (!vehiclePrice) {
+                alert('차량 가격을 입력하세요.');
+                return;
+            }
+            
+            if (!selectedRegion) {
+                alert('지역을 선택하세요.');
+                return;
+            }
+            
+            // 선택된 차량과 지역의 데이터 찾기
+            const vehicleRegionData = vehicleData.find(row => 
+                row['모델명'] === selectedVehicle && row['지역'] === selectedRegion
+            );
+            
+            if (!vehicleRegionData) {
+                alert('해당 차량과 지역의 데이터를 찾을 수 없습니다.');
+                return;
+            }
+            
+            const nationalSubsidy = parseInt(vehicleRegionData['국비보조금(만원)']) || 0;
+            const localSubsidy = parseInt(vehicleRegionData['지방비보조금(만원)']) || 0;
+            
+            // 보조금 지원 기준 적용
+            let subsidyRate = 1;
+            if (vehiclePrice >= 8500) {
+                subsidyRate = 0;
+            } else if (vehiclePrice >= 5300) {
+                subsidyRate = 0.5;
+            }
+            
+            const finalNationalSubsidy = Math.floor(nationalSubsidy * subsidyRate);
+            const finalLocalSubsidy = Math.floor(localSubsidy * subsidyRate);
+            const totalSubsidy = finalNationalSubsidy + finalLocalSubsidy;
+            
+            // 취득세 계산 (승용차 7% 기준)
+            const baseTax = Math.floor(vehiclePrice * 0.07);
+            const taxReduction = Math.min(140, baseTax); // 최대 140만원 감면
+            const finalTax = Math.max(0, baseTax - taxReduction);
+            
+            // 최종 구매 비용
+            const finalCost = Math.max(0, vehiclePrice + finalTax - totalSubsidy);
+            
+            // 결과 표시
+            document.getElementById('nationalSubsidy').textContent = `${finalNationalSubsidy.toLocaleString()}만원`;
+            document.getElementById('localSubsidy').textContent = `${finalLocalSubsidy.toLocaleString()}만원`;
+            document.getElementById('acquisitionTax').textContent = `${finalTax.toLocaleString()}만원`;
+            document.getElementById('finalCost').textContent = `${finalCost.toLocaleString()}만원`;
+            
+            document.getElementById('resultSection').style.display = 'block';
         }
     </script>
 </body>

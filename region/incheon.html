@@ -214,6 +214,129 @@
             color: #0ea5e9;
         }
 
+        /* 계산기 스타일 */
+        .calculator-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: white;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0284c7;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-bottom: 32px;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .result-section {
+            display: none;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .result-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .result-value.positive {
+            color: #0284c7;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb-item {
+            color: #64748b;
+        }
+
+        .breadcrumb-item a {
+            color: #0284c7;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: #cbd5e1;
+        }
+
         /* 네비게이션 스타일 */
         .top-nav {
             background: white;
@@ -271,6 +394,10 @@
                 padding: 24px;
             }
 
+            .calculator-section {
+                padding: 24px;
+            }
+
             .subsidy-grid {
                 grid-template-columns: 1fr;
             }
@@ -301,18 +428,82 @@
         </div>
     </nav>
 
+    <!-- 브레드크럼 -->
+    <div class="container">
+        <nav class="breadcrumb">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="/">홈</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item"><a href="/">전기차 계산기</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item">인천광역시</li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- 히어로 섹션 -->
     <div class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">인천시 전기차 보조금 계산기</h1>
-                <p class="hero-subtitle">2025년 최신 전기차 보조금 정보와 실시간 계산기를 제공합니다.</p>
+                <h1 class="hero-title">인천광역시 전기차 보조금 계산기</h1>
+                <p class="hero-subtitle">인천광역시의 정확한 전기차 보조금과 취득세를 실시간으로 계산하세요</p>
             </div>
         </div>
     </div>
 
     <!-- 메인 콘텐츠 -->
     <div class="container">
+        <!-- 계산기 섹션 -->
+        <div class="calculator-section">
+            <h2 class="section-title">인천광역시 전기차 보조금 계산</h2>
+            
+            <div class="form-group">
+                <label class="form-label">차량 선택</label>
+                <select class="form-input" id="vehicleSelect">
+                    <option value="">차량을 선택하세요</option>
+                    <!-- JavaScript로 동적 생성 -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">차량 가격 (만원)</label>
+                <input type="number" class="form-input" id="vehiclePrice" placeholder="차량 가격을 입력하세요" min="0" step="1">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">지역 선택</label>
+                <select class="form-input" id="regionSelect">
+                    <option value="">지역을 선택하세요</option>
+                    <!-- JavaScript로 동적 생성 -->
+                </select>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateVehicle()">계산하기</button>
+
+            <!-- 결과 섹션 -->
+            <div class="result-section" id="resultSection">
+                <h3 class="section-title">계산 결과</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-label">국고 보조금</div>
+                        <div class="result-value positive" id="nationalSubsidy">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">지자체 보조금</div>
+                        <div class="result-value positive" id="localSubsidy">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">취득세</div>
+                        <div class="result-value" id="acquisitionTax">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">최종 구매 비용</div>
+                        <div class="result-value" id="finalCost">0만원</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 보조금 개요 -->
         <section class="main-section">
             <h2 class="section-title">인천시 전기차 보조금 개요</h2>
@@ -373,35 +564,173 @@
 
     <script src="/js/region-data.js"></script>
     <script>
-        // 지역별 데이터 로드
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                const response = await fetch('/csv/2025.csv');
-                const data = await response.text();
-                updateSubsidyInfo(data);
-            } catch (error) {
-                console.error('데이터 로드 실패:', error);
-            }
+        // 차량 데이터 저장
+        let vehicleData = [];
+        const targetRegion = '인천광역시';
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVehicleData();
         });
 
-        // 보조금 정보 업데이트
-        function updateSubsidyInfo(csvData) {
-            // CSV 파싱 및 데이터 처리 로직
-            const lines = csvData.split('\n');
-            const headers = lines[0].split(',');
+        // 차량 데이터 로드
+        async function loadVehicleData() {
+            try {
+                const response = await fetch('/csv/2025.csv');
+                const csvText = await response.text();
+                const data = parseCSV(csvText);
+                
+                // 인천광역시 데이터만 필터링
+                vehicleData = data.filter(row => 
+                    row['지역'] === targetRegion
+                );
+                
+                console.log('인천광역시 차량 데이터:', vehicleData);
+                
+                if (vehicleData.length > 0) {
+                    loadVehicleOptions();
+                    loadRegionOptions();
+                } else {
+                    alert('인천광역시 차량 데이터를 찾을 수 없습니다.');
+                }
+            } catch (error) {
+                console.error('데이터 로드 실패:', error);
+                alert('데이터를 불러올 수 없습니다.');
+            }
+        }
+
+        // CSV 파싱 함수
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            const data = [];
             
-            // 인천광역시 데이터 필터링
-            const incheonData = lines.filter(line => line.includes('인천광역시'));
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+                
+                const values = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let j = 0; j < line.length; j++) {
+                    const char = line[j];
+                    
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                values.push(current.trim());
+                
+                if (values.length >= headers.length) {
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index];
+                    });
+                    data.push(row);
+                }
+            }
             
-            // RegionManager를 사용한 정렬
-            const allRegions = RegionManager.getAllRegions();
-            const sortedRegions = RegionManager.sortRegions(allRegions);
+            return data;
+        }
+
+        // 차량 옵션 로드
+        function loadVehicleOptions() {
+            const vehicleSelect = document.getElementById('vehicleSelect');
+            const vehicles = [...new Set(vehicleData.map(row => row['모델명']))];
             
-            console.log('Incheon filtered data:', incheonData);
-            console.log('All regions sorted:', sortedRegions);
+            vehicles.forEach(vehicle => {
+                const option = document.createElement('option');
+                option.value = vehicle;
+                option.textContent = vehicle;
+                vehicleSelect.appendChild(option);
+            });
+        }
+
+        // 지역 옵션 로드 (인천광역시 사전 선택)
+        function loadRegionOptions() {
+            const regionSelect = document.getElementById('regionSelect');
+            const regions = [...new Set(vehicleData.map(row => row['지역']))];
             
-            // 데이터 업데이트 로직
-            // (실제 구현 시 추가)
+            // 지역 정렬 적용
+            const sortedRegions = typeof RegionManager !== 'undefined' ? 
+                RegionManager.sortRegions(regions) : regions;
+            
+            sortedRegions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region;
+                option.textContent = region;
+                if (region === targetRegion) {
+                    option.selected = true;
+                }
+                regionSelect.appendChild(option);
+            });
+        }
+
+        // 계산 함수
+        function calculateVehicle() {
+            const selectedVehicle = document.getElementById('vehicleSelect').value;
+            const vehiclePrice = parseInt(document.getElementById('vehiclePrice').value) || 0;
+            const selectedRegion = document.getElementById('regionSelect').value;
+            
+            if (!selectedVehicle) {
+                alert('차량을 선택하세요.');
+                return;
+            }
+            
+            if (!vehiclePrice) {
+                alert('차량 가격을 입력하세요.');
+                return;
+            }
+            
+            if (!selectedRegion) {
+                alert('지역을 선택하세요.');
+                return;
+            }
+            
+            // 선택된 차량과 지역의 데이터 찾기
+            const vehicleRegionData = vehicleData.find(row => 
+                row['모델명'] === selectedVehicle && row['지역'] === selectedRegion
+            );
+            
+            if (!vehicleRegionData) {
+                alert('해당 차량과 지역의 데이터를 찾을 수 없습니다.');
+                return;
+            }
+            
+            const nationalSubsidy = parseInt(vehicleRegionData['국비보조금(만원)']) || 0;
+            const localSubsidy = parseInt(vehicleRegionData['지방비보조금(만원)']) || 0;
+            
+            // 보조금 지원 기준 적용
+            let subsidyRate = 1;
+            if (vehiclePrice >= 8500) {
+                subsidyRate = 0;
+            } else if (vehiclePrice >= 5300) {
+                subsidyRate = 0.5;
+            }
+            
+            const finalNationalSubsidy = Math.round(nationalSubsidy * subsidyRate);
+            const finalLocalSubsidy = Math.round(localSubsidy * subsidyRate);
+            
+            // 취득세 계산 (7% 기준, 최대 140만원 감면)
+            const acquisitionTax = Math.min(Math.round(vehiclePrice * 0.07), 140);
+            
+            // 최종 구매 비용 계산
+            const finalCost = vehiclePrice - finalNationalSubsidy - finalLocalSubsidy - acquisitionTax;
+            
+            // 결과 표시
+            document.getElementById('nationalSubsidy').textContent = finalNationalSubsidy + '만원';
+            document.getElementById('localSubsidy').textContent = finalLocalSubsidy + '만원';
+            document.getElementById('acquisitionTax').textContent = acquisitionTax + '만원';
+            document.getElementById('finalCost').textContent = finalCost + '만원';
+            
+            // 결과 섹션 표시
+            document.getElementById('resultSection').style.display = 'block';
         }
     </script>
 </body>
