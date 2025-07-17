@@ -337,52 +337,6 @@
             color: #cbd5e1;
         }
 
-        /* 네비게이션 스타일 */
-        .top-nav {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e293b;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-link {
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover {
-            color: #3b82f6;
-        }
 
         /* 반응형 디자인 */
         @media (max-width: 768px) {
@@ -402,31 +356,10 @@
                 grid-template-columns: 1fr;
             }
 
-            .nav-links {
-                display: none;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- 네비게이션 메뉴 -->
-    <nav class="top-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">전기차 계산기</a>
-            <div class="nav-links">
-                <div class="nav-group">
-                    <a href="/brands/hyundai" class="nav-link">현대</a>
-                    <a href="/brands/kia" class="nav-link">기아</a>
-                    <a href="/brands/tesla" class="nav-link">테슬라</a>
-                </div>
-                <div class="nav-group">
-                    <a href="/region/seoul" class="nav-link">서울</a>
-                    <a href="/region/gyeonggi" class="nav-link">경기</a>
-                    <a href="/region/incheon" class="nav-link">인천</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <!-- 브레드크럼 -->
     <div class="container">
